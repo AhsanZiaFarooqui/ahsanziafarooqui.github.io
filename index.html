@@ -55,7 +55,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
       gap: 32px;
       align-items: center;
       padding: 44px 0 32px;
@@ -176,6 +176,13 @@
       text-align: left;
     }
 
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
     .profile-photo {
       width: 200px;
       height: 240px;
@@ -229,6 +236,14 @@
 <body>
   <header>
     <div class="container hero">
+      <div class="card profile-card" aria-label="Profile photograph placeholder">
+        <div class="profile-photo">
+          <!-- Replace "headshot.jpg" with your photo file name and keep it in the repo. -->
+          <!-- <img src="headshot.jpg" alt="Portrait of Ahsan Zia Farooqui"> -->
+          Headshot placeholder
+        </div>
+        <p>Senior economist working on public finance, fiscal institutions, and bureaucratic systems.</p>
+      </div>
       <div class="hero-intro">
         <h1>Ahsan Zia Farooqui</h1>
         <p>PhD Economics, University of Sussex · Doctoral Fellow, ICTD · Senior Programs Manager &amp; Consulting Lead, IDEAS</p>
@@ -240,6 +255,8 @@
           <a href="#about">About</a>
           <a href="#research">Research</a>
           <a href="#policy">Policy work</a>
+          <a href="#reports">Reports</a>
+          <a href="#blogs">Blogs</a>
           <a href="#teaching">Teaching &amp; supervision</a>
           <a href="#contact">Contact / CV</a>
         </nav>
@@ -320,6 +337,44 @@
           </ul>
         </section>
 
+        <section id="reports">
+          <h2>Reports</h2>
+          <p class="section-subtitle">Recent reports and policy briefs authored or co-authored.</p>
+          <div class="card">
+            <h3>Report title placeholder</h3>
+            <p class="meta">Year · Publisher/Institution</p>
+            <p>
+              Short description of the report’s focus and findings. Replace with your own summary and add a link.
+            </p>
+            <p>
+              <a href="https://example.com/report-link" target="_blank" rel="noopener noreferrer">
+                Read the report
+              </a>
+            </p>
+          </div>
+          <p class="section-subtitle">
+            To add your own reports, duplicate the card above and replace the link with your report URL or a PDF file
+            in this repository (e.g., <code>reports/report-name.pdf</code>).
+          </p>
+        </section>
+
+        <section id="blogs">
+          <h2>Blogs</h2>
+          <p class="section-subtitle">Selected blog posts and commentary.</p>
+          <div class="card">
+            <h3>Blog post title placeholder</h3>
+            <p class="meta">Publication · Month Year</p>
+            <p>
+              Brief summary of the post. Add a link to the post below.
+            </p>
+            <p>
+              <a href="https://example.com/blog-post" target="_blank" rel="noopener noreferrer">
+                Read the post
+              </a>
+            </p>
+          </div>
+        </section>
+
         <section id="teaching">
           <h2>Teaching &amp; supervision</h2>
           <p class="section-subtitle">
@@ -350,6 +405,9 @@
                 <span style="display:block;font-size:0.8rem;color:var(--muted);margin-top:2px;">
                   (Upload your CV to this repository with this file name.)
                 </span>
+              </li>
+              <li>
+                Reports: Add PDFs in a <code>reports/</code> folder and link them above in the Reports section.
               </li>
             </ul>
           </div>
