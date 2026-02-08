@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Ahsan Zia Farooqui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <section class="page-title">
+        <h1>Contact</h1>
+        <p>Get in touch or download my CV.</p>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="container layout">
+      <section>
+        <div class="card">
+          <ul class="contact-list">
+            <li>Email: <a href="mailto:YOUR.EMAIL@DOMAIN">YOUR.EMAIL@DOMAIN</a></li>
+            <li>Twitter: <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">@your_handle</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Profile</a></li>
+            <li>GitHub: <a href="https://github.com/ahsan-zia-farooqui" target="_blank" rel="noopener noreferrer">ahsan-zia-farooqui</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Curriculum vitae</h3>
+          <p>
+            <a href="Ahsan_Zia_Farooqui_CV.pdf" target="_blank" rel="noopener noreferrer">
+              Download CV (PDF)
+            </a>
+          </p>
+          <p class="section-subtitle">(Upload your CV to this repository with this file name.)</p>
+        </div>
+      </section>
+      <aside>
+        <div class="card">
+          <h3>Reports</h3>
+          <p>
+            Add PDFs in a <code>reports/</code> folder and link them from the Reports page.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Ahsan Zia Farooqui
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
