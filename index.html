@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <title>Ahsan Zia Farooqui | Economics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
   <style>
     :root {
-      --bg: #f7f7f7;
-      --fg: #222;
-      --accent: #1f6feb;
-      --muted: #666;
-      --border: #ddd;
+      --bg: #f5f3ef;
+      --fg: #1e2328;
+      --accent: #1f4b99;
+      --muted: #5c6773;
+      --border: #e0dbd3;
       --card: #ffffff;
+      --shadow: 0 20px 45px rgba(30, 35, 40, 0.08);
     }
 
     * {
@@ -20,7 +27,7 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--fg);
       line-height: 1.6;
@@ -35,33 +42,43 @@
       text-decoration: underline;
     }
 
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
-
     .container {
       max-width: 980px;
       margin: 0 auto;
       padding: 0 16px;
     }
 
-    .top-bar {
-      display: flex;
-      flex-wrap: wrap;
+    header {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 243, 239, 0.8));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+      gap: 32px;
       align-items: center;
-      justify-content: space-between;
-      padding: 20px 0 10px 0;
-      gap: 12px;
+      padding: 44px 0 32px;
     }
 
-    .name-block h1 {
+    .hero-intro h1 {
       margin: 0;
-      font-size: 1.9rem;
+      font-size: 2.6rem;
+      font-family: "Crimson Pro", "Times New Roman", serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
 
-    .name-block p {
-      margin: 4px 0 0 0;
+    .hero-intro p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-meta {
+      margin-top: 14px;
+      display: grid;
+      gap: 6px;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -71,15 +88,19 @@
       flex-wrap: wrap;
       gap: 12px;
       font-size: 0.94rem;
+      margin-top: 20px;
     }
 
     nav a {
-      padding-bottom: 3px;
+      padding-bottom: 4px;
       border-bottom: 2px solid transparent;
+      color: var(--accent);
+      font-weight: 500;
     }
 
     nav a:hover {
       border-bottom-color: var(--accent);
+      text-decoration: none;
     }
 
     main {
@@ -99,7 +120,9 @@
 
     h2 {
       margin: 0 0 4px 0;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
+      font-family: "Crimson Pro", "Times New Roman", serif;
+      font-weight: 600;
     }
 
     .section-subtitle {
@@ -116,14 +139,17 @@
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 14px 16px;
+      border-radius: 12px;
+      padding: 16px 18px;
       margin-bottom: 14px;
+      box-shadow: var(--shadow);
     }
 
     .card h3 {
       margin: 0 0 4px 0;
       font-size: 1.02rem;
+      font-family: "Crimson Pro", "Times New Roman", serif;
+      font-weight: 600;
     }
 
     .card .meta {
@@ -143,6 +169,38 @@
       margin-bottom: 4px;
     }
 
+    .profile-card {
+      display: grid;
+      gap: 12px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .profile-photo {
+      width: 200px;
+      height: 240px;
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      background: linear-gradient(135deg, rgba(31, 75, 153, 0.12), rgba(31, 75, 153, 0.02));
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     footer {
       border-top: 1px solid var(--border);
       padding: 14px 0 20px 0;
@@ -155,21 +213,50 @@
       .layout {
         grid-template-columns: 1fr;
       }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .profile-card {
+        text-align: center;
+      }
+
+      .profile-photo {
+        margin: 0 auto;
+      }
+
+      nav {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="top-bar">
-        <div class="name-block">
-          <h1>Ahsan Zia Farooqui</h1>
-          <p>PhD Economics, University of Sussex · Doctoral Fellow, ICTD · Senior Programs Manager &amp; Consulting Lead, IDEAS</p>
+    <div class="container hero">
+      <div class="card profile-card" aria-label="Profile photograph placeholder">
+        <div class="profile-photo">
+          <!-- Replace "headshot.jpg" with your photo file name and keep it in the repo. -->
+          <!-- <img src="headshot.jpg" alt="Portrait of Ahsan Zia Farooqui"> -->
+          Headshot placeholder
+        </div>
+        <p>Senior economist working on public finance, fiscal institutions, and bureaucratic systems.</p>
+      </div>
+      <div class="hero-intro">
+        <h1>Ahsan Zia Farooqui</h1>
+        <p>PhD Economics, University of Sussex · Doctoral Fellow, ICTD · Senior Programs Manager &amp; Consulting Lead, IDEAS</p>
+        <div class="hero-meta">
+          <span>Research focus: taxation, state capacity, and digital public infrastructure.</span>
+          <span>Based in Brighton, UK · Working with Punjab Government partners.</span>
         </div>
         <nav>
           <a href="#about">About</a>
           <a href="#research">Research</a>
           <a href="#policy">Policy work</a>
+          <a href="#reports">Reports</a>
+          <a href="#blogs">Blogs</a>
           <a href="#teaching">Teaching &amp; supervision</a>
           <a href="#contact">Contact / CV</a>
         </nav>
@@ -246,6 +333,44 @@
           </ul>
         </section>
 
+        <section id="reports">
+          <h2>Reports</h2>
+          <p class="section-subtitle">Recent reports and policy briefs authored or co-authored.</p>
+          <div class="card">
+            <h3>Report title placeholder</h3>
+            <p class="meta">Year · Publisher/Institution</p>
+            <p>
+              Short description of the report’s focus and findings. Replace with your own summary and add a link.
+            </p>
+            <p>
+              <a href="https://example.com/report-link" target="_blank" rel="noopener noreferrer">
+                Read the report
+              </a>
+            </p>
+          </div>
+          <p class="section-subtitle">
+            To add your own reports, duplicate the card above and replace the link with your report URL or a PDF file
+            in this repository (e.g., <code>reports/report-name.pdf</code>).
+          </p>
+        </section>
+
+        <section id="blogs">
+          <h2>Blogs</h2>
+          <p class="section-subtitle">Selected blog posts and commentary.</p>
+          <div class="card">
+            <h3>Blog post title placeholder</h3>
+            <p class="meta">Publication · Month Year</p>
+            <p>
+              Brief summary of the post. Add a link to the post below.
+            </p>
+            <p>
+              <a href="https://example.com/blog-post" target="_blank" rel="noopener noreferrer">
+                Read the post
+              </a>
+            </p>
+          </div>
+        </section>
+
         <section id="teaching">
           <h2>Teaching &amp; supervision</h2>
           <p class="section-subtitle">
@@ -276,6 +401,9 @@
                 <span style="display:block;font-size:0.8rem;color:var(--muted);margin-top:2px;">
                   (Upload your CV to this repository with this file name.)
                 </span>
+              </li>
+              <li>
+                Reports: Add PDFs in a <code>reports/</code> folder and link them above in the Reports section.
               </li>
             </ul>
           </div>
