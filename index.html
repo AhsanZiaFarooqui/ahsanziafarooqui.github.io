@@ -10,228 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
-  <style>
-    :root {
-      --bg: #f9fafb;
-      --fg: #1f2933;
-      --accent: #2f5fb3;
-      --muted: #5f6b7a;
-      --border: #e4e7eb;
-      --card: #ffffff;
-      --shadow: 0 18px 32px rgba(31, 41, 51, 0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
-      gap: 36px;
-      align-items: center;
-      padding: 40px 0 30px;
-    }
-
-    .hero-intro h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-family: "Crimson Text", "Times New Roman", serif;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-intro p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    .hero-meta {
-      margin-top: 14px;
-      display: grid;
-      gap: 6px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 0.95rem;
-      margin-top: 18px;
-    }
-
-    nav a {
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      border-bottom-color: var(--accent);
-      text-decoration: none;
-    }
-
-    main {
-      padding: 26px 0 40px 0;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.3fr);
-      gap: 32px;
-      align-items: flex-start;
-    }
-
-    section {
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      margin: 0 0 4px 0;
-      font-size: 1.35rem;
-      font-family: "Crimson Text", "Times New Roman", serif;
-      font-weight: 600;
-    }
-
-    .section-subtitle {
-      margin: 0 0 10px 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    ul {
-      padding-left: 18px;
-      margin: 8px 0 0 0;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin-bottom: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      margin: 0 0 4px 0;
-      font-size: 1.02rem;
-      font-family: "Crimson Text", "Times New Roman", serif;
-      font-weight: 600;
-    }
-
-    .card .meta {
-      margin: 0 0 6px 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .contact-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 6px 0 0 0;
-      font-size: 0.92rem;
-    }
-
-    .contact-list li {
-      margin-bottom: 4px;
-    }
-
-    .profile-card {
-      display: grid;
-      gap: 12px;
-      align-items: center;
-      text-align: left;
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .profile-photo {
-      width: 210px;
-      height: 250px;
-      border-radius: 12px;
-      border: 2px solid var(--border);
-      background: linear-gradient(135deg, rgba(47, 95, 179, 0.12), rgba(47, 95, 179, 0.02));
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .profile-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 14px 0 20px 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-      background: var(--card);
-    }
-
-    @media (max-width: 800px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .profile-card {
-        text-align: center;
-      }
-
-      .profile-photo {
-        margin: 0 auto;
-      }
-
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -242,7 +21,7 @@
           <!-- <img src="headshot.jpg" alt="Portrait of Ahsan Zia Farooqui"> -->
           Headshot placeholder
         </div>
-        <p>Senior economist working on public finance, fiscal institutions, and bureaucratic systems.</p>
+        <p>PhD candidate focused on public finance, fiscal institutions, and bureaucratic systems.</p>
       </div>
       <div class="hero-intro">
         <h1>Ahsan Zia Farooqui</h1>
@@ -252,193 +31,69 @@
           <span>Based in Brighton, UK · Collaborating with Punjab Government partners.</span>
         </div>
         <nav>
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#working-papers">Working papers</a>
-          <a href="#policy">Policy work</a>
-          <a href="#reports">Reports</a>
-          <a href="#blogs">Blogs</a>
-          <a href="#teaching">Teaching &amp; supervision</a>
-          <a href="#contact">Contact / CV</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="working-papers.html">Working papers</a>
+          <a href="policy.html">Policy work</a>
+          <a href="reports.html">Reports</a>
+          <a href="blogs.html">Blogs</a>
+          <a href="teaching.html">Teaching &amp; supervision</a>
+          <a href="contact.html">Contact / CV</a>
         </nav>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="container layout">
-      <div>
-        <!-- LEFT COLUMN: ABOUT + RESEARCH -->
-        <section id="about">
-          <h2>About</h2>
-          <p>
-            I am a PhD candidate in Economics at the University of Sussex and a Doctoral Fellow at the
-            International Centre for Tax and Development (ICTD). My research studies how tax systems
-            and frontline bureaucrats shape state capacity, with a focus on Pakistan.
-          </p>
-          <p>
-            My current work centres on subnational taxation, bureaucratic discretion, and the design
-            of digital public infrastructure in property and excise taxation. I also work closely with
-            government partners through IDEAS on teacher recruitment, merit-based reforms, and education policy.
-          </p>
-        </section>
+    <div class="container">
+      <section class="page-title">
+        <h1>Welcome</h1>
+        <p>
+          Explore my research, working papers, policy work, reports, blogs, and teaching across separate pages.
+        </p>
+      </section>
 
-        <section id="research">
-          <h2>Research</h2>
-          <p class="section-subtitle">Selected ongoing projects and thesis chapters.</p>
-
+      <section class="layout">
+        <div>
           <div class="card">
-            <h3>Property tax, bureaucratic discretion, and effective progressivity in Punjab</h3>
-            <p class="meta">PhD thesis project · with Excise &amp; Taxation Department, Government of Punjab</p>
-            <p>
-              Theoretical and empirical work on how the shift from Annual Rental Value to Capital Value 
-              taxation changes revenue, compliance, and the distribution of tax burdens when inspectors 
-              retain discretion over assessments and enforcement.
-            </p>
+            <h3>Research</h3>
+            <p>Overview of thesis chapters and ongoing projects.</p>
+            <a href="research.html">Go to Research</a>
           </div>
-
           <div class="card">
-            <h3>Tracking tax compliance: Evidence from Pakistan’s track-and-trace system</h3>
-            <p class="meta">with collaborators at LUMS &amp; ICTD</p>
-            <p>
-              Administrative and firm-level evidence on how digital monitoring and invoicing affect 
-              VAT compliance, production, and firm behaviour in Pakistan’s excise and sales tax system.
-            </p>
+            <h3>Working papers</h3>
+            <p>Draft papers and works in progress.</p>
+            <a href="working-papers.html">Go to Working papers</a>
           </div>
-
           <div class="card">
-            <h3>Merit-based teacher recruitment and bureaucratic rules</h3>
-            <p class="meta">with provincial education departments</p>
-            <p>
-              Work on the political economy and implementation of merit-based recruitment rules for 
-              public-school teachers, combining policy timelines, protests data, and administrative records.
-            </p>
+            <h3>Policy work</h3>
+            <p>Advisory and applied policy collaborations.</p>
+            <a href="policy.html">Go to Policy work</a>
           </div>
-        </section>
-
-        <section id="working-papers">
-          <h2>Working papers</h2>
-          <p class="section-subtitle">Drafts and works in progress.</p>
           <div class="card">
-            <h3>Working paper title placeholder</h3>
-            <p class="meta">Updated Month Year · Co-authors</p>
-            <p>
-              Short summary of the paper and the main research contribution.
-            </p>
-            <p>
-              <a href="https://example.com/working-paper" target="_blank" rel="noopener noreferrer">
-                View working paper
-              </a>
-            </p>
+            <h3>Reports</h3>
+            <p>Authored or co-authored reports and policy briefs.</p>
+            <a href="reports.html">Go to Reports</a>
           </div>
-        </section>
-
-        <section id="policy">
-          <h2>Policy work</h2>
-          <p class="section-subtitle">Selected collaborations with government and policy partners.</p>
-          <ul>
-            <li>
-              Advisory work with the Excise &amp; Taxation Department, Punjab on property tax reform,
-              digital self-assessment portals, and valuation schedules.
-            </li>
-            <li>
-              Research and technical input on teacher recruitment and merit-based reforms with provincial
-              education departments, including analysis of recruitment rules and protest data.
-            </li>
-            <li>
-              Contributions to policy reports on property tax utilisation, equity, and subnational public finance.
-            </li>
-          </ul>
-        </section>
-
-        <section id="reports">
-          <h2>Reports</h2>
-          <p class="section-subtitle">Recent reports and policy briefs authored or co-authored.</p>
+        </div>
+        <aside>
           <div class="card">
-            <h3>Report title placeholder</h3>
-            <p class="meta">Year · Publisher/Institution</p>
-            <p>
-              Short description of the report’s focus and findings. Replace with your own summary and add a link.
-            </p>
-            <p>
-              <a href="https://example.com/report-link" target="_blank" rel="noopener noreferrer">
-                Read the report
-              </a>
-            </p>
+            <h3>Blogs</h3>
+            <p>Public commentary and blog posts.</p>
+            <a href="blogs.html">Go to Blogs</a>
           </div>
-          <p class="section-subtitle">
-            To add your own reports, duplicate the card above and replace the link with your report URL or a PDF file
-            in this repository (e.g., <code>reports/report-name.pdf</code>).
-          </p>
-        </section>
-
-        <section id="blogs">
-          <h2>Blogs</h2>
-          <p class="section-subtitle">Selected blog posts and commentary.</p>
           <div class="card">
-            <h3>Blog post title placeholder</h3>
-            <p class="meta">Publication · Month Year</p>
-            <p>
-              Brief summary of the post. Add a link to the post below.
-            </p>
-            <p>
-              <a href="https://example.com/blog-post" target="_blank" rel="noopener noreferrer">
-                Read the post
-              </a>
-            </p>
+            <h3>Teaching &amp; supervision</h3>
+            <p>Teaching, mentoring, and guest lectures.</p>
+            <a href="teaching.html">Go to Teaching</a>
           </div>
-        </section>
-
-        <section id="teaching">
-          <h2>Teaching &amp; supervision</h2>
-          <p class="section-subtitle">
-            Brief overview; expand as you accumulate more teaching.
-          </p>
-          <ul>
-            <li>Supervision and mentoring of research assistants on tax and education projects.</li>
-            <li>Guest lectures and trainings on tax administration, data, and empirical methods (to be expanded).</li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- RIGHT COLUMN: CONTACT + QUICK INFO -->
-      <aside>
-        <section id="contact">
-          <h2>Contact &amp; links</h2>
           <div class="card">
-            <ul class="contact-list">
-              <li>Email: <a href="mailto:YOUR.EMAIL@DOMAIN">YOUR.EMAIL@DOMAIN</a></li>
-              <li>Twitter: <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">@your_handle</a></li>
-              <li>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Profile</a></li>
-              <li>GitHub: <a href="https://github.com/ahsan-zia-farooqui" target="_blank" rel="noopener noreferrer">ahsan-zia-farooqui</a></li>
-              <li>
-                CV: 
-                <a href="Ahsan_Zia_Farooqui_CV.pdf" target="_blank" rel="noopener noreferrer">
-                  Download CV (PDF)
-                </a>
-                <span style="display:block;font-size:0.8rem;color:var(--muted);margin-top:2px;">
-                  (Upload your CV to this repository with this file name.)
-                </span>
-              </li>
-              <li>
-                Reports: Add PDFs in a <code>reports/</code> folder and link them above in the Reports section.
-              </li>
-            </ul>
+            <h3>Contact</h3>
+            <p>Get in touch or download my CV.</p>
+            <a href="contact.html">Go to Contact</a>
           </div>
-        </section>
-
-        <section>
-          <h2>Fields of interest</h2>
-          <div class="card">
-            <ul class="contact-list">
-              <li>Public economics</li>
-              <li>Development economics</li>
-              <li>Taxation and state capacity</li>
-              <li>Bureaucracy, discretion, and digital governance</li>
-            </ul>
-          </div>
-        </section>
-      </aside>
+        </aside>
+      </section>
     </div>
   </main>
 
