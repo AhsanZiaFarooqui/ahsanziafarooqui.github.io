@@ -2,297 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ahsan Zia Farooqui | Economics</title>
+  <title>Ahsan Zia Farooqui | PhD Candidate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --bg: #f7f7f7;
-      --fg: #222;
-      --accent: #1f6feb;
-      --muted: #666;
-      --border: #ddd;
-      --card: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .top-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0 10px 0;
-      gap: 12px;
-    }
-
-    .name-block h1 {
-      margin: 0;
-      font-size: 1.9rem;
-    }
-
-    .name-block p {
-      margin: 4px 0 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.94rem;
-    }
-
-    nav a {
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav a:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    main {
-      padding: 26px 0 40px 0;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.3fr);
-      gap: 32px;
-      align-items: flex-start;
-    }
-
-    section {
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      margin: 0 0 4px 0;
-      font-size: 1.25rem;
-    }
-
-    .section-subtitle {
-      margin: 0 0 10px 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    ul {
-      padding-left: 18px;
-      margin: 8px 0 0 0;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-    }
-
-    .card h3 {
-      margin: 0 0 4px 0;
-      font-size: 1.02rem;
-    }
-
-    .card .meta {
-      margin: 0 0 6px 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .contact-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 6px 0 0 0;
-      font-size: 0.92rem;
-    }
-
-    .contact-list li {
-      margin-bottom: 4px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 14px 0 20px 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-      background: var(--card);
-    }
-
-    @media (max-width: 800px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="top-bar">
-        <div class="name-block">
-          <h1>Ahsan Zia Farooqui</h1>
-          <p>PhD Economics, University of Sussex · Doctoral Fellow, ICTD · Senior Programs Manager &amp; Consulting Lead, IDEAS</p>
+    <div class="container hero">
+      <div class="card profile-card" aria-label="Profile photograph placeholder">
+        <div class="profile-photo">
+          <!-- Replace "headshot.jpg" with your photo file name and keep it in the repo. -->
+          <!-- <img src="headshot.jpg" alt="Portrait of Ahsan Zia Farooqui"> -->
+          Headshot placeholder
+        </div>
+        <p>PhD candidate focused on public finance, fiscal institutions, and bureaucratic systems.</p>
+      </div>
+      <div class="hero-intro">
+        <h1>Ahsan Zia Farooqui</h1>
+        <p>PhD Candidate in Economics, University of Sussex · Doctoral Fellow, ICTD</p>
+        <div class="hero-meta">
+          <span>Research focus: taxation, state capacity, and digital public infrastructure.</span>
+          <span>Based in Brighton, UK · Collaborating with Punjab Government partners.</span>
         </div>
         <nav>
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#policy">Policy work</a>
-          <a href="#teaching">Teaching &amp; supervision</a>
-          <a href="#contact">Contact / CV</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="working-papers.html">Working papers</a>
+          <a href="policy.html">Policy work</a>
+          <a href="reports.html">Reports</a>
+          <a href="blogs.html">Blogs</a>
+          <a href="teaching.html">Teaching &amp; supervision</a>
+          <a href="contact.html">Contact / CV</a>
         </nav>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="container layout">
-      <div>
-        <!-- LEFT COLUMN: ABOUT + RESEARCH -->
-        <section id="about">
-          <h2>About</h2>
-          <p>
-            I am a PhD student in Economics at the University of Sussex and a Doctoral Fellow at the 
-            International Centre for Tax and Development (ICTD). My research studies how tax systems 
-            and frontline bureaucrats shape state capacity, with a focus on Pakistan.
-          </p>
-          <p>
-            My current work centres on subnational taxation, bureaucratic discretion, and the design 
-            of digital public infrastructure in property and excise taxation. I also work closely with 
-            government partners through IDEAS on teacher recruitment, merit-based reforms, and education policy.
-          </p>
-        </section>
+    <div class="container">
+      <section class="page-title">
+        <h1>Welcome</h1>
+        <p>
+          Explore my research, working papers, policy work, reports, blogs, and teaching across separate pages.
+        </p>
+      </section>
 
-        <section id="research">
-          <h2>Research</h2>
-          <p class="section-subtitle">Selected ongoing projects and thesis chapters.</p>
-
+      <section class="layout">
+        <div>
           <div class="card">
-            <h3>Property tax, bureaucratic discretion, and effective progressivity in Punjab</h3>
-            <p class="meta">PhD thesis project · with Excise &amp; Taxation Department, Government of Punjab</p>
-            <p>
-              Theoretical and empirical work on how the shift from Annual Rental Value to Capital Value 
-              taxation changes revenue, compliance, and the distribution of tax burdens when inspectors 
-              retain discretion over assessments and enforcement.
-            </p>
+            <h3>Research</h3>
+            <p>Overview of thesis chapters and ongoing projects.</p>
+            <a href="research.html">Go to Research</a>
           </div>
-
           <div class="card">
-            <h3>Tracking tax compliance: Evidence from Pakistan’s track-and-trace system</h3>
-            <p class="meta">with collaborators at LUMS &amp; ICTD</p>
-            <p>
-              Administrative and firm-level evidence on how digital monitoring and invoicing affect 
-              VAT compliance, production, and firm behaviour in Pakistan’s excise and sales tax system.
-            </p>
+            <h3>Working papers</h3>
+            <p>Draft papers and works in progress.</p>
+            <a href="working-papers.html">Go to Working papers</a>
           </div>
-
           <div class="card">
-            <h3>Merit-based teacher recruitment and bureaucratic rules</h3>
-            <p class="meta">with provincial education departments</p>
-            <p>
-              Work on the political economy and implementation of merit-based recruitment rules for 
-              public-school teachers, combining policy timelines, protests data, and administrative records.
-            </p>
+            <h3>Policy work</h3>
+            <p>Advisory and applied policy collaborations.</p>
+            <a href="policy.html">Go to Policy work</a>
           </div>
-        </section>
-
-        <section id="policy">
-          <h2>Policy work</h2>
-          <p class="section-subtitle">Selected collaborations with government and policy partners.</p>
-          <ul>
-            <li>
-              Advisory work with the Excise &amp; Taxation Department, Punjab on property tax reform, 
-              digital self-assessment portals, and valuation schedules.
-            </li>
-            <li>
-              Research and technical input on teacher recruitment and merit-based reforms with provincial 
-              education departments, including analysis of recruitment rules and protest data.
-            </li>
-            <li>
-              Contributions to policy reports on property tax utilisation, equity, and subnational public finance.
-            </li>
-          </ul>
-        </section>
-
-        <section id="teaching">
-          <h2>Teaching &amp; supervision</h2>
-          <p class="section-subtitle">
-            Brief overview; expand as you accumulate more teaching.
-          </p>
-          <ul>
-            <li>Supervision and mentoring of research assistants on tax and education projects.</li>
-            <li>Guest lectures and trainings on tax administration, data, and empirical methods (to be expanded).</li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- RIGHT COLUMN: CONTACT + QUICK INFO -->
-      <aside>
-        <section id="contact">
-          <h2>Contact &amp; links</h2>
           <div class="card">
-            <ul class="contact-list">
-              <li>Email: <a href="mailto:YOUR.EMAIL@DOMAIN">YOUR.EMAIL@DOMAIN</a></li>
-              <li>Twitter: <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">@your_handle</a></li>
-              <li>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Profile</a></li>
-              <li>GitHub: <a href="https://github.com/ahsan-zia-farooqui" target="_blank" rel="noopener noreferrer">ahsan-zia-farooqui</a></li>
-              <li>
-                CV: 
-                <a href="Ahsan_Zia_Farooqui_CV.pdf" target="_blank" rel="noopener noreferrer">
-                  Download CV (PDF)
-                </a>
-                <span style="display:block;font-size:0.8rem;color:var(--muted);margin-top:2px;">
-                  (Upload your CV to this repository with this file name.)
-                </span>
-              </li>
-            </ul>
+            <h3>Reports</h3>
+            <p>Authored or co-authored reports and policy briefs.</p>
+            <a href="reports.html">Go to Reports</a>
           </div>
-        </section>
-
-        <section>
-          <h2>Fields of interest</h2>
+        </div>
+        <aside>
           <div class="card">
-            <ul class="contact-list">
-              <li>Public economics</li>
-              <li>Development economics</li>
-              <li>Taxation and state capacity</li>
-              <li>Bureaucracy, discretion, and digital governance</li>
-            </ul>
+            <h3>Blogs</h3>
+            <p>Public commentary and blog posts.</p>
+            <a href="blogs.html">Go to Blogs</a>
           </div>
-        </section>
-      </aside>
+          <div class="card">
+            <h3>Teaching &amp; supervision</h3>
+            <p>Teaching, mentoring, and guest lectures.</p>
+            <a href="teaching.html">Go to Teaching</a>
+          </div>
+          <div class="card">
+            <h3>Contact</h3>
+            <p>Get in touch or download my CV.</p>
+            <a href="contact.html">Go to Contact</a>
+          </div>
+        </aside>
+      </section>
     </div>
   </main>
 
