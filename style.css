@@ -194,7 +194,7 @@ ul {
 
 .page-title h1 {
   margin: 0;
-  font-size: 2.1rem;
+  font-size: 2.3rem;
   font-family: "Crimson Text", "Times New Roman", serif;
 }
 
@@ -206,6 +206,26 @@ ul {
 .back-link {
   display: inline-block;
   margin-top: 16px;
+}
+
+.page-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 1.05rem;
+  margin: 10px 0 24px;
+}
+
+.page-tabs a {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.page-tabs a:hover {
+  border-bottom-color: var(--accent);
+  text-decoration: none;
 }
 
 footer {
