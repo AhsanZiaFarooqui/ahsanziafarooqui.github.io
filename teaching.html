@@ -4,48 +4,131 @@
   <meta charset="UTF-8">
   <title>Teaching | Ahsan Zia Farooqui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Teaching, supervision, and research training by Ahsan Zia Farooqui.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+
+  <header class="site-header">
     <div class="container">
-      <section class="page-title">
-        <h1>Teaching &amp; supervision</h1>
-        <p>Teaching, mentoring, and guest lectures.</p>
-        <a class="back-link" href="index.html">← Back to home</a>
-      </section>
+      <div class="site-brand"><a href="index.html">Ahsan Zia Farooqui</a></div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="working-papers.html">Publications</a>
+        <a href="policy.html">Policy Work</a>
+        <a href="reports.html">Reports</a>
+        <a href="blogs.html">Blog &amp; Media</a>
+        <a href="teaching.html" class="active">Teaching</a>
+        <a href="contact.html">Contact &amp; CV</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <section class="page-header">
     <div class="container">
-      <section>
+      <h1>Teaching &amp; Supervision</h1>
+      <p>Research mentoring, training, and academic engagement</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container two-col">
+
+      <div>
+        <h2 class="section-heading">Research Team Leadership</h2>
+        <p class="section-lead">Building capacity in empirical research and impact evaluation</p>
+
         <div class="card">
-          <h3>Supervision</h3>
-          <p>Supervision and mentoring of research assistants on tax and education projects.</p>
+          <h3>Supervision of Research Assistants</h3>
+          <p class="meta">IDEAS Pakistan</p>
+          <p>
+            At IDEAS, I oversee multiple large-scale Randomized Controlled Trials aimed at improving governance,
+            voting behavior, policing, and tax morale in Pakistan. I supervise monitoring and evaluation
+            activities with a group of junior researchers, working in collaboration with leading economists
+            from Pakistan and the United States. This includes training in survey design, data collection
+            protocols, and analysis of experimental and administrative data.
+          </p>
         </div>
+
         <div class="card">
-          <h3>Guest lectures &amp; training</h3>
-          <p>Guest lectures and trainings on tax administration, data, and empirical methods.</p>
+          <h3>Impact Evaluation Consulting</h3>
+          <p class="meta">International NGOs &amp; UN Agencies</p>
+          <p>
+            I lead the consulting wing at IDEAS, providing evidence-based impact evaluation services to
+            various international NGOs including UN bodies working in Pakistan. I help organizations
+            design rigorous studies and evaluate program impact through primary evidence collected via
+            opinion-based surveys and experimental methods.
+          </p>
         </div>
-      </section>
+
+        <h2 class="section-heading" style="margin-top:32px;">Guest Lectures &amp; Training</h2>
+        <p class="section-lead">Sharing practical research expertise</p>
+
+        <div class="card">
+          <h3>Tax Administration, Data, and Empirical Methods</h3>
+          <p>
+            Guest lectures and training sessions on property tax systems, administrative data analysis,
+            causal inference methods, and field experiment design. Topics cover the practical challenges
+            of working with government agencies and implementing research at scale in developing countries.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Field Experiment Design and Implementation</h3>
+          <p>
+            Training on the design and implementation of large-scale field experiments, including
+            randomization strategies, power calculations, survey instrument design, and managing
+            field teams. Drawing on experience from policing, taxation, and education projects
+            across multiple districts in Punjab, Pakistan.
+          </p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="sidebar-card">
+          <h3>Areas of Expertise</h3>
+          <ul>
+            <li>Randomized Controlled Trials</li>
+            <li>Quasi-experimental methods</li>
+            <li>Survey design &amp; implementation</li>
+            <li>Administrative data analysis</li>
+            <li>Impact evaluation</li>
+            <li>Tax administration research</li>
+            <li>Government-researcher partnerships</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Research Contexts</h3>
+          <ul>
+            <li>Policing &amp; citizen trust</li>
+            <li>National &amp; subnational taxation</li>
+            <li>Education &amp; teacher recruitment</li>
+            <li>Procurement transparency</li>
+            <li>Vocational skills development</li>
+            <li>Poverty alleviation</li>
+          </ul>
+        </div>
+      </aside>
+
     </div>
   </main>
 
   <footer>
     <div class="container">
-      &copy; <span id="year"></span> Ahsan Zia Farooqui
+      <span>&copy; <span id="year"></span> Ahsan Zia Farooqui</span>
+      <div class="footer-links">
+        <a href="mailto:a.farooqui@sussex.ac.uk">Email</a>
+        <a href="https://twitter.com/AhsanFarooqui" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://www.linkedin.com/in/ahsan-farooqui-91751b36/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
