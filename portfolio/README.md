@@ -16,6 +16,14 @@ Static, dependency-free, synthetic demonstrations by Ahsan Zia Farooqui. The por
 
 All example names, household/property records, assignment mechanisms, prices and responses are synthetic or deliberately stylized. No user responses are stored or transmitted; browser state is ephemeral.
 
+## Remote-sensing measurement module
+
+`valuation.html#remote-sensing` includes a human-in-the-loop aerial/satellite/drone image tracing module. The user supplies a licensed image (processed locally), draws a scale reference between two points with a **known external ground distance**, and traces parcel and roof polygons. The shoelace formula converts polygon areas from image pixels to square feet using the calibrated pixel size. A separately provided floor count and floor-area factor convert roof footprint to **assumed** covered floor area; this is not inferred from imagery.
+
+The resultant numeric land and covered-area inputs feed the existing random forest and Bayesian neighborhood calibration valuation model; the machine learning does **not** ingest raw image pixels or automatically segment roofs. The included overhead diagram and annotations are entirely fictional. The calibration assumes an orthographic, undistorted image with approximately uniform ground scale; screenshots, perspective imagery, oblique satellite views, imagery collected at different dates, and roof overhangs can create material errors. No empirical accuracy claim has been established.
+
+For a research-grade v2, use properly georeferenced high-resolution imagery with clear reuse rights, independent cadastral boundaries, verified imagery dates and floor counts, an annotated training sample for segmentation if automation is desired, and spatially/temporally held-out sale-price validation.
+
 ## Local development
 
 Start a static HTTP server in the repository root (e.g. `python -m http.server 8000`), open `portfolio/`, and navigate to the demonstrations. Run automated mathematical checks with `node --test portfolio/tests/*.test.js`. Source modules have no external dependencies.
