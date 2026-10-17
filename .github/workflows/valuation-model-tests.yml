@@ -1,0 +1,26 @@
+name: Research portfolio tests
+on:
+  pull_request:
+    paths:
+      - 'portfolio/**'
+      - '.github/workflows/valuation-model-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/**'
+      - '.github/workflows/valuation-model-tests.yml'
+permissions:
+  contents: read
+jobs:
+  numerical-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax and run research-model tests
+        run: |
+          node --check portfolio/valuation-model.js
+          node --check portfolio/valuation-ui.js
+          node --test portfolio/tests/*.test.js
