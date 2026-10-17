@@ -1,0 +1,10 @@
+question_id,asked_if,prompt,response_options
+S0,Everyone,Are you 18 or older and resident in this municipality?,Yes | No | Prefer not to say (screen out)
+S1,S0=Yes,"In the last 12 months, did you personally use an online municipal service?",Yes | No | Do not remember
+Q1,S1=Yes,Which online municipal service did you most recently use?,Property records | Bills | Complaint | Permit | Other | Cannot recall
+Q2,S1=Yes,"Approximately how many minutes did you spend completing that request, excluding waiting for a response?",Numeric 0-600 | Cannot recall
+Q3,S1=Yes,Overall how satisfied were you with that experience?,Very dissatisfied | Dissatisfied | Neither | Satisfied | Very satisfied | Prefer not to say
+Q4,S1=Yes,Did you submit a complaint about that experience?,Yes | No | Do not remember
+Q5,Q4=Yes,What is the current status of the complaint?,Resolved | Pending | Closed without resolution | Do not know
+Q6,S1=Yes,Did you receive assistance from another person while using the service?,Yes | No | Prefer not to say
+Q7,S1=No,What is your main reason for not using an online service in the last 12 months?,No need | Prefer in-person | No internet | Unaware | Other | Prefer not to say

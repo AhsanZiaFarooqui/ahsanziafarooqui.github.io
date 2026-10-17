@@ -1,0 +1,8 @@
+question_id,asked_if,prompt,response_options
+S0,Everyone,Are you a resident aged 18 or older?,Yes | No
+Q1,Everyone,How much has the government's excellent digital portal improved speed and trust?,A lot | Somewhat | Not at all
+Q2,Everyone,How many minutes did your last online request take?,Numeric
+Q3,Everyone,Did the helpline resolve your complaint promptly?,Yes | No
+Q4,Everyone,Have you filed a portal complaint?,Yes | No
+Q5,Everyone,Why didn't you file a complaint?,Not necessary | Too complicated | Distrust
+Q6,Everyone,How much did you pay in unofficial fees?,Numeric required
