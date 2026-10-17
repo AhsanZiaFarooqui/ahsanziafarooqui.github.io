@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Interactive synthetic property valuation: random forest predictions with Bayesian neighborhood residual calibration and holdout evaluation."><title>Property Valuation Lab | Evidence Portfolio</title><link rel="stylesheet" href="style.css"><style>
+.valuation-metric{font-size:clamp(20px,2.8vw,31px);font-weight:760;line-height:1.2}.quiet{color:#586e80;font-size:14px}.status{padding:10px 14px;background:#eff5f8;border-left:4px solid #265e87;border-radius:5px}.status.error{background:#fff1f1;border-color:#9b3944}.danger{color:#9b3944}.highlight{font-weight:700;color:#17604f}input[type=file]{font-size:14px;max-width:100%}.lab-table td{text-align:right}.lab-table td:first-child,.lab-table th:first-child{text-align:left}.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}#forecast[hidden],#diagnostics[hidden]{display:none} .controls.compact{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))} .tight{margin-bottom:5px}
+</style></head><body>
+<header><div class="wrap"><a href="index.html"><strong>Evidence Portfolio</strong></a><nav aria-label="Portfolio navigation"><a href="index.html">All projects</a><a href="adaptive.html">AdaptiveChoice</a><a href="econeval.html">EconEval</a></nav></div></header>
+<main>
+  <p class="eyebrow">Housing economics · Machine learning · Bayesian calibration</p>
+  <h1>Property Valuation Lab</h1>
+  <p class="lede">Estimate the sale value of a comparable property using <strong>land area</strong>, <strong>covered floor area</strong>, and <strong>neighborhood</strong>. Explore a random forest model calibrated with Bayesian partial pooling.</p>
+  <div class="notice"><strong>Method and limitations.</strong> A browser-based random forest learns nonlinear patterns in <em>observed sale prices</em>. A separate Bayesian model shrinks neighborhood-specific out-of-sample residual adjustments toward zero. Predictions are demonstrative, not independent professional valuations. The example data are fictional; use verified transaction comparables for meaningful real-world analysis. No external model, API or server receives your uploaded rows.</div>
+
+  <div class="grid-2">
+    <section class="card" aria-labelledby="data-title">
+      <h2 id="data-title">1. Supply comparable sales</h2>
+      <p class="quiet">Start with synthetic sales, or import your own CSV in the browser. Never upload private or identifiable records to a public demo without permission.</p>
+      <div class="control"><label for="upload">CSV with sale transactions</label><input id="upload" type="file" accept=".csv,text/csv" aria-describedby="columns"></div>
+      <p class="mini" id="columns">Required columns: <code>land_area_sqft</code>, <code>covered_area_sqft</code>, <code>neighborhood</code>, <code>sale_price_pkr</code>. Optional <code>property_id</code> is strongly recommended to identify repeated properties. At least 80 rows; 2–20 neighborhoods with at least 12 sales each.</p>
+      <p><a id="template" href="#">Download CSV template</a> · <button type="button" class="secondary" id="reset-sample">Use synthetic sample</button></p>
+      <p id="dataset-info" class="status" role="status" aria-live="polite">Loading synthetic sample…</p>
+      <div class="controls compact" style="margin-top:15px">
+        <div class="control"><label for="seed">Holdout split seed</label><input type="number" id="seed" min="1" max="9999999" step="1" value="2026"></div>
+        <div class="control"><label for="tau">Bayesian prior SD (log units)</label><input type="number" id="tau" min="0.02" max="0.4" step="0.01" value="0.12"></div>
+      </div>
+      <div class="action-row"><button type="button" id="train">Train and evaluate model</button></div>
+      <p class="mini">Stratified 65% training, about 17.5% Bayesian calibration and 17.5% untouched holdout, within neighborhoods. Re-training uses the displayed seed.</p>
+    </section>
+    <section class="card" aria-labelledby="diag-title">
+      <h2 id="diag-title">2. Evaluate out-of-sample predictions</h2>
+      <div id="diagnostics" hidden>
+        <div class="metrics" style="margin-bottom:16px">
+          <div><div class="kicker">Holdout MAE</div><div class="valuation-metric" id="mae">—</div></div>
+          <div><div class="kicker">Holdout MAPE</div><div class="valuation-metric" id="mape">—</div></div>
+          <div><div class="kicker">90% interval coverage</div><div class="valuation-metric" id="coverage">—</div></div>
+          <div><div class="kicker">RF only MAE</div><div class="valuation-metric" id="rf-mae">—</div></div>
+        </div>
+        <p id="split-info" class="quiet"></p>
+        <p id="model-warning" class="status" role="status"></p>
+        <details><summary>What do these diagnostics establish?</summary><p class="quiet">The evaluation set was not used to fit either the forest or Bayesian adjustment. The interval is a <em>plug-in Gaussian predictive approximation</em> conditional on the trained forest, not a fully Bayesian credible interval or a conformal guarantee. Holdout coverage is reported precisely because the nominal 90% interval may be miscalibrated.</p></details>
+      </div>
+      <p id="diag-placeholder" class="quiet">Train a model to reveal error metrics. Do not confuse training fit with predictive accuracy.</p>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:20px" aria-labelledby="predict-title">
+    <h2 id="predict-title">3. Predict a similar property's sale value</h2>
+    <div class="controls">
+      <div class="control"><label for="neighborhood">Neighborhood</label><select id="neighborhood"></select></div>
+      <div class="control"><label for="land">Land area (sq ft)</label><input type="number" id="land" min="100" step="1" value="1500"></div>
+      <div class="control"><label for="covered">Covered floor area (sq ft)</label><input type="number" id="covered" min="100" step="1" value="1700"></div>
+    </div>
+    <p class="mini">Covered floor area may exceed land area in multi-storey buildings. Keep measurement definitions consistent across all comparables.</p>
+    <div class="action-row"><button type="button" id="predict">Estimate value</button></div>
+    <div id="forecast" hidden>
+      <div class="grid-2" style="margin-top:18px">
+        <div class="card"><div class="kicker">Estimated median sale value</div><div class="valuation-metric" id="estimate">—</div><p class="mini">Forest plus Bayesian neighborhood residual adjustment; indicative, not an appraised transaction price.</p></div>
+        <div class="card"><div class="kicker">Approximate 90% predictive range</div><div class="valuation-metric" id="interval">—</div><p class="mini">Conditional approximation; check observed holdout coverage before trusting this range.</p></div>
+      </div>
+      <p id="extrapolation" class="status" role="status" style="margin-top:14px"></p>
+      <p id="adjustment" class="quiet"></p>
+      <h3>Closest sample comparables in the selected neighborhood</h3>
+      <div class="responsive-table"><table class="lab-table"><thead><tr><th>Neighborhood</th><th>Land (sq ft)</th><th>Covered (sq ft)</th><th>Observed sale price</th></tr></thead><tbody id="comparables"></tbody></table></div>
+    </div>
+  </section>
+  <section class="card" style="margin-top:20px"><h2>Model specification and responsible interpretation</h2>
+    <div class="grid-2">
+      <div><h3>Random forest</h3><p>48 seeded bootstrap regression trees predict <code>log(sale_price_pkr)</code> using land area, covered floor area and categorical neighborhood membership. Each split searches both continuous thresholds and neighborhood equality, without imposing a numeric ordering on neighborhoods.</p></div>
+      <div><h3>Bayesian partial pooling</h3><p>On a disjoint calibration sample, neighborhood residual means update Gaussian priors centered at zero. Small neighborhoods receive greater shrinkage. Predicted log value = forest log prediction + posterior residual adjustment.</p></div>
+    </div>
+    <details><summary>What this model deliberately does not capture</summary><p>Transaction date, exact location, legal title, road frontage, construction quality, condition, structural type, amenities, flooding risk, neighborhood boundaries, incentives, and selection into observed sales can all matter. In a changing market, mixing historical sales without controlling for dates is unsound. This is a research portfolio demonstrator, not a valuation service for buying, lending, or taxation.</p></details>
+    <details><summary>How would this be validated in a research study?</summary><p>Use geographically and temporally held-out transactions, assess subgroup performance, compare to hedonic regression and nonadaptive alternatives, evaluate interval coverage, and inspect errors for spatial dependence. Retrain only within a documented training protocol. A single random holdout may overstate performance when nearby or repeated properties appear in both samples.</p></details>
+  </section>
+</main><footer>Independent synthetic research demonstration. No original dissertation datasets or private property records are included. Source: <a href="https://github.com/AhsanZiaFarooqui/ahsanziafarooqui.github.io/tree/main/portfolio">GitHub</a>.</footer>
+<script type="module" src="valuation-ui.js"></script>
+</body></html>
