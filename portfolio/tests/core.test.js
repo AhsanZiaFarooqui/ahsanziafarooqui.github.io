@@ -15,3 +15,10 @@ test('incidence allocation conserves statutory burden',()=>{let pop=sampleHouseh
 test('review rubric handles missed and false positives',()=>{let s=evaluateReview(['arithmetic','dependencies','madeup']);assert.equal(s.correct,2);assert.equal(s.missed.length,2);assert.deepEqual(s.falsePositives,['madeup'])});
 import {TASKS,grade} from '../econ-tasks.js';
 test('EconEval bank has 10 unique authored cases with rubrics and keys',()=>{assert.equal(TASKS.length,10);assert.equal(new Set(TASKS.map(x=>x.id)).size,10);for(let t of TASKS){assert.ok(t.prompt.length>30&&t.solution.length>30&&t.checks.length>=3);assert.ok(grade(t.verdict,t));assert.ok(!grade(t.verdict==='incorrect'?'correct':'incorrect',t));}});
+import {readdirSync,readFileSync,existsSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+test('all seven documented demonstrations resolve to local HTML',()=>{for(const page of ['adaptive.html','econeval.html','data-audit.html','professional-review.html','roi-survey.html','property.html','incidence.html'])assert.ok(existsSync(path.join(root,page)),page)});
+test('local source/style/script links from HTML pages resolve',()=>{for(let file of readdirSync(root).filter(x=>x.endsWith('.html'))){let html=readFileSync(path.join(root,file),'utf8');for(let match of html.matchAll(/(?:href|src)="([^"]+)"/g)){let target=match[1];if(!/^(https?:|\/|#|mailto:)/.test(target))assert.ok(existsSync(path.join(root,target)),`${file}: ${target}`);}}});
+test('EconEval has a balanced diagnostic rather than trivial all-incorrect guessing',()=>{const counts=TASKS.reduce((a,t)=>(a[t.verdict]=(a[t.verdict]||0)+1,a),{});for(const key of ['correct','incorrect','unsupported'])assert.ok(counts[key]>=3,`${key} examples`)});
