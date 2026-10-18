@@ -65,6 +65,10 @@ const results=[];
               if(slug!=='index') {
                 const table=page.locator('.table-scroll').first();
                 await table.focus();assert.equal(await table.getAttribute('tabindex'),'0');
+                if(await table.evaluate(e=>e.scrollWidth>e.clientWidth)) {
+                  await table.press('ArrowRight');
+                  await page.waitForFunction(()=>document.querySelector('.table-scroll').scrollLeft>0);
+                }
                 if(slugs.includes(slug)) {
                 const downloadWait=page.waitForEvent('download');
                 await page.locator('a[href="verify.py"]').first().click();
