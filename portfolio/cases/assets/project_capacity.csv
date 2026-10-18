@@ -1,0 +1,3 @@
+scenario,enumerators,completions_per_day,days,availability_factor
+draft,20,4,20,1
+illustrative_alternative,27,5,25,0.85

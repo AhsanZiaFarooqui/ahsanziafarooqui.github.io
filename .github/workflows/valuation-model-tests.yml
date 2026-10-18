@@ -19,8 +19,35 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reproduce expert-review evidence
+        run: python3 portfolio/cases/verify.py
       - name: Check JavaScript syntax and run research-model tests
         run: |
           node --check portfolio/valuation-model.js
           node --check portfolio/valuation-ui.js
           node --test portfolio/tests/*.test.js
+
+  case-browser-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned development-only browser tools
+        run: |
+          npm install --prefix "$RUNNER_TEMP/case-browser" --no-audit --no-fund playwright@1.62.1
+          "$RUNNER_TEMP/case-browser/node_modules/.bin/playwright" install --with-deps chromium firefox
+      - name: Test navigation, evidence downloads, keyboard and viewport layouts
+        env:
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/case-browser/node_modules/playwright
+          CASE_AUDIT_OUTPUT: ${{ runner.temp }}/case-audit
+        run: node portfolio/tests/cases-browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: expert-review-browser-evidence
+          path: ${{ runner.temp }}/case-audit

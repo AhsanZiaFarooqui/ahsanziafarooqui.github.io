@@ -49,3 +49,7 @@ No external research data or proprietary packages are included. Source code is p
 - The Bayesian calibration stage uses disjoint holdout-from-training residuals (not the final test set) and conjugate normal shrinkage for neighborhood-specific mean residuals. Forest parameters remain fixed.
 - Prediction interval: a plug-in normal approximation for log residuals, incorporating Gaussian neighborhood posterior uncertainty. It does not integrate forest parameter uncertainty and must not be advertised as a fully Bayesian credible interval. Coverage is reported empirically on the untouched test sample.
 - User-uploaded CSV never leaves their browser. This does not establish suitability for property tax assessments, lending, mortgages, or valuations of properties with different market structures. For actual work, use temporally and spatially held-out transactions and review legal/ethical requirements.
+
+## Written expert-review cases
+
+[Three synthetic review cases](cases/index.html) provide survey, econometric and professional-delivery audits. See the [evidence map and reproduction guide](cases/README.md) for underlying fixtures and dependency-free Python/Node checks. These authored AI-style exercises are distinct from the interactive demonstrations and from actual model or client evaluations.
