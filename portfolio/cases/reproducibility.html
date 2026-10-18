@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence and reproduction guide | Evidence Portfolio</title><link rel="stylesheet" href="cases.css"></head><body><a class="skip" href="#main">Skip to content</a><header><nav aria-label="Case navigation"><a href="../index.html">← Evidence Portfolio</a> · <a href="index.html">Review case studies</a></nav></header><main id="main" tabindex="-1"><article class="paper"><h1>Expert-review cases: evidence and reproduction</h1>
+<p>These three cases are entirely synthetic, original authored exercises. The flawed responses are AI-style examples, not captured outputs from a named model or actual client engagements. No confidential research data are included. Passing the checks demonstrates internal consistency, not external validation, measured model performance or professional accreditation.</p>
+<h2>Inspect the evidence</h2>
+<div class="table-scroll" role="region" aria-label="Evidence map" tabindex="0"><table>
+<thead>
+<tr>
+<th scope="col">Case</th>
+<th scope="col">Readable review</th>
+<th scope="col">Supplied work product and inputs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Survey</td>
+<td><a href="survey-instrument-review.html">Case 01</a>, <a href="survey-instrument-review.md">Markdown</a></td>
+<td><a href="assets/survey_draft.csv">Flawed draft</a>, <a href="assets/survey_revised.csv">revised draft</a>, <a href="assets/survey_dispositions.csv">contact dispositions</a></td>
+</tr>
+<tr>
+<td>Quantitative</td>
+<td><a href="quantitative-analysis-review.html">Case 02</a>, <a href="quantitative-analysis-review.md">Markdown</a></td>
+<td><a href="assets/quantitative_readout.md">Flawed readout and provenance</a>, <a href="assets/circle_panel_dirty.csv">dirty export</a>, <a href="assets/circle_panel.csv">reference panel</a></td>
+</tr>
+<tr>
+<td>Professional delivery</td>
+<td><a href="professional-deliverable-review.html">Case 03</a>, <a href="professional-deliverable-review.md">Markdown</a></td>
+<td><a href="assets/project_plan.md">Flawed plan</a>, <a href="assets/project_budget.csv">budget</a>, <a href="assets/project_capacity.csv">capacity</a>, <a href="assets/project_schedule.csv">schedule</a></td>
+</tr>
+</tbody></table></div>
+<p>The panels have fields <code>circle</code> (synthetic identifier), <code>treated</code> (0/1 circle group, constant across years), <code>year</code> (2023/2024), and <code>tax_collection_m_pkrs</code> (annual nominal PKR millions per circle). The dirty export appends two corrupt rows. The reference panel is supplied ground truth, not the output of an automatic repair rule. Never resolve conflicting real observations by retaining the first row without checking provenance.</p>
+<p>The questionnaire CSVs contain <code>question_id</code>, <code>asked_if</code>, <code>prompt</code>, <code>response_options</code>. Conditions refer only to answered earlier questions; <code>AND</code> means both conditions must hold. A skipped or unanswered gate cannot activate a later item. Q5 inherits the prior routing through Q4. See Case 01 for termination rules and descriptive denominators. The disposition CSV aggregates mutually exclusive contact statuses; it does not separate enough dispositions to compute a standardized response rate.</p>
+<p>Project budget amounts are PKR millions. Capacity multiplies enumerators, completions per productive enumerator-day, planned days and productive availability. Availability is not response rate. Schedule dates are ISO calendar dates. The brief fixes a ceiling of PKR 5.8m and target of 2,500 completions. The alternative staffing scenario is a sensitivity calculation, not an approved or costed solution.</p>
+<h2>Run the checks</h2>
+<p>Requires Git plus Python 3.10+ and/or Node.js 22+. No additional packages are needed for these numerical checks. Start in a terminal, not the browser console:</p>
+<pre><code class="language-sh">git clone https://github.com/AhsanZiaFarooqui/ahsanziafarooqui.github.io.git
+cd ahsanziafarooqui.github.io
+python3 portfolio/cases/verify.py
+node --test portfolio/tests/cases.test.js
+</code></pre>
+<p>On Windows, <code>py -3 portfolio/cases/verify.py</code> can replace the Python command. Use either language if only one runtime is available; running both provides cross-language calculations. All paths are relative to the repository root. Downloading only <code>verify.py</code> is insufficient: it reads the sibling <code>assets/</code> directory. Obtain the whole repository through Git or GitHub&#39;s <strong>Code → Download ZIP</strong>, extract it and enter the extracted directory.</p>
+<p>Python prints the observed inputs and derived results, ending with <code>Case-study checks passed</code>. Node must report zero failed tests. Any nonzero exit or exception indicates failure. Expected results:</p>
+<ul>
+<li>Panel: 40 reference rows, 20 circles; dirty export 42 rows, two duplicated keys, one blank; means 80/110 versus 75/90; post-only contrast 20 and descriptive DiD 15 million PKR per circle.</li>
+<li>Survey: 200 contacts, 150 known eligible, 30 unknown, 20 ineligible; 96/150 = 64.0%, and 96/180 = 53.3%. These are completion proportions.</li>
+<li>Project: 6.4m budget, 0.6m over ceiling; 1,600 planned completions, 900 shortfall; alternative expectation 2,868.75; pilot dated before contracting and supplied frame delivery.</li>
+</ul>
+<p>Run all portfolio checks with <code>node --test portfolio/tests/*.test.js</code>. To preview locally, run <code>python3 -m http.server 8000</code> from the repository root and open <code>http://localhost:8000/portfolio/cases/</code>.</p>
+<h2>Browser delivery checks</h2>
+<p><a href="../tests/cases-browser.cjs">Browser smoke-check source</a> tests desktop and narrow viewport layouts, navigation, local links and downloads, keyboard bypass and table access. It uses Playwright as a development-only dependency; it is not required to read cases or run numerical checks. CI installs the pinned browser test version and runs Chrome/Chromium and Firefox. Mobile-width emulation is not a physical iOS/Android or screen-reader certification.</p>
+<p><a href="AUDIT-2026-10-18.md">Audit record</a> distinguishes original deployment observations from corrected-branch checks and remaining limitations. <a href="check_delivery.py">HTTP delivery checker</a> verifies same-origin links and byte identity against a checkout; run <code>python3 portfolio/cases/check_delivery.py</code> after deployment from the matching revision.</p>
+</article></main></body></html>

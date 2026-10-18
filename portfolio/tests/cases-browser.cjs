@@ -42,7 +42,7 @@ const results=[];
             await page.getByRole('link',{name:'Research Tools',exact:true}).click();
             await page.getByRole('link',{name:'Three independently checkable review cases →',exact:true}).click();
             assert.match(await page.title(),/Expert Evaluation Case Studies/);
-            for(const slug of ['index',...slugs]) {
+            for(const slug of ['index',...slugs,'reproducibility']) {
               if(slug!=='index') {
                 await page.locator(`a[href="${slug}.html"]`).click();
                 assert.match(await page.locator('main').innerText(),/synthetic/i);
@@ -65,10 +65,12 @@ const results=[];
               if(slug!=='index') {
                 const table=page.locator('.table-scroll').first();
                 await table.focus();assert.equal(await table.getAttribute('tabindex'),'0');
+                if(slugs.includes(slug)) {
                 const downloadWait=page.waitForEvent('download');
                 await page.locator('a[href="verify.py"]').first().click();
                 const download=await downloadWait;
                 assert.deepEqual(await fs.readFile(await download.path()),await fs.readFile(resolve(root,'portfolio/cases/verify.py')));
+                }
               }
               if(output)await page.screenshot({path:resolve(output,`${name}-${width}-${slug}.png`),fullPage:true});
               results.push({browser:name,width,page:slug,result:'pass'});
