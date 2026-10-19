@@ -10,10 +10,13 @@ const root=resolve(__dirname,'../..');
 (async()=>{
   const fixture=await fs.readFile(resolve(root,'portfolio/fixtures/synthetic-property.geojson'));
   const server=createServer(async(req,res)=>{try{
-    const path=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
+    const pathname=new URL(req.url,'http://localhost').pathname;
+    if(pathname==='/favicon.ico'){res.writeHead(204).end();return;}
+    const path=resolve(root,'.'+decodeURIComponent(pathname));
     if(!path.startsWith(root+sep)){res.writeHead(403).end();return;}
     const type={'.html':'text/html','.css':'text/css','.js':'text/javascript','.geojson':'application/geo+json','.md':'text/plain'}[extname(path)]||'application/octet-stream';
-    res.writeHead(200,{'Content-Type':type});res.end(await fs.readFile(path));
+    const body=await fs.readFile(path);
+    res.writeHead(200,{'Content-Type':type});res.end(body);
   }catch{res.writeHead(404).end('Not found');}});
   await new Promise(r=>server.listen(0,'127.0.0.1',r));
   const base=`http://127.0.0.1:${server.address().port}`;
