@@ -24,10 +24,16 @@ jobs:
           python-version: '3.12'
       - name: Reproduce expert-review evidence
         run: python3 portfolio/cases/verify.py
+      - name: Verify deterministic synthetic geospatial fixtures
+        run: |
+          python3 portfolio/fixtures/generate-geojson.py
+          git diff --exit-code -- portfolio/fixtures
       - name: Check JavaScript syntax and run research-model tests
         run: |
           node --check portfolio/valuation-model.js
           node --check portfolio/valuation-ui.js
+          node --check portfolio/geojson-measure.js
+          node --check portfolio/geojson-ui.js
           node --test portfolio/tests/*.test.js
 
   case-browser-tests:
@@ -46,8 +52,18 @@ jobs:
           PLAYWRIGHT_MODULE: ${{ runner.temp }}/case-browser/node_modules/playwright
           CASE_AUDIT_OUTPUT: ${{ runner.temp }}/case-audit
         run: node portfolio/tests/cases-browser.cjs
+      - name: Check GeoJSON import and preserved manual workflow
+        env:
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/case-browser/node_modules/playwright
+          GEO_AUDIT_OUTPUT: ${{ runner.temp }}/geo-audit
+        run: node portfolio/tests/geojson-browser.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: expert-review-browser-evidence
           path: ${{ runner.temp }}/case-audit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: geospatial-browser-evidence
+          path: ${{ runner.temp }}/geo-audit

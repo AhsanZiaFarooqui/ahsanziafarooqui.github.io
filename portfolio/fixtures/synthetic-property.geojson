@@ -1,0 +1,139 @@
+{
+  "type": "FeatureCollection",
+  "synthetic": true,
+  "description": "Fictional polygons at illustrative coordinates; not cadastral records, imagery or independent ground truth.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "parcel"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.3,
+              31.5
+            ],
+            [
+              74.3003,
+              31.5
+            ],
+            [
+              74.3003,
+              31.5003
+            ],
+            [
+              74.3,
+              31.5003
+            ],
+            [
+              74.3,
+              31.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "roof"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.30005,
+              31.50005
+            ],
+            [
+              74.3002,
+              31.50005
+            ],
+            [
+              74.3002,
+              31.5002
+            ],
+            [
+              74.30005,
+              31.5002
+            ],
+            [
+              74.30005,
+              31.50005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "reference_parcel"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.3,
+              31.5
+            ],
+            [
+              74.30032,
+              31.5
+            ],
+            [
+              74.30032,
+              31.5003
+            ],
+            [
+              74.3,
+              31.5003
+            ],
+            [
+              74.3,
+              31.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "reference_roof"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.30005,
+              31.50005
+            ],
+            [
+              74.30022,
+              31.50005
+            ],
+            [
+              74.30022,
+              31.5002
+            ],
+            [
+              74.30005,
+              31.5002
+            ],
+            [
+              74.30005,
+              31.50005
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
