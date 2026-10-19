@@ -24,6 +24,12 @@ The resultant numeric land and covered-area inputs feed the existing random fore
 
 For a research-grade v2, use properly georeferenced high-resolution imagery with clear reuse rights, independent cadastral boundaries, verified imagery dates and floor counts, an annotated training sample for segmentation if automation is desired, and spatially/temporally held-out sale-price validation.
 
+### First v2 component: synthetic GeoJSON measurement
+
+`valuation.html#geospatial` now imports synthetic RFC 7946 WGS84 parcel/roof Polygon features, checks geometry and coordinate conventions, reports ellipsoidal horizontal areas in m²/sq ft, and optionally compares areas against supplied synthetic reference polygons. It rejects unsupported CRSs instead of guessing or interpreting degrees as metres. Roof footprint stays separate from covered floor area. The existing manual tracing workflow remains available.
+
+See [the input contract, area method, reproducible fixtures and limitations](GEOSPATIAL.md). This component does not georeference imagery, segment roofs, establish label independence, or change the valuation model's randomized split. [Issue #11](https://github.com/AhsanZiaFarooqui/ahsanziafarooqui.github.io/issues/11) remains open for licensed imagery, ground-truth segmentation evaluation and spatial/temporal valuation validation.
+
 ## Local development
 
 Start a static HTTP server in the repository root (e.g. `python -m http.server 8000`), open `portfolio/`, and navigate to the demonstrations. Run automated mathematical checks with `node --test portfolio/tests/*.test.js`. Source modules have no external dependencies.

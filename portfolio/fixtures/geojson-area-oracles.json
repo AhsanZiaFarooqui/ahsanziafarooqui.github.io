@@ -1,0 +1,89 @@
+{
+  "method": "Analytic WGS84 ellipsoidal integral for longitude/latitude rectangles (not geodesic edges)",
+  "triangles": [
+    {
+      "ring": [
+        [
+          12,
+          31.5
+        ],
+        [
+          12.099,
+          31.5
+        ],
+        [
+          12,
+          31.599
+        ],
+        [
+          12,
+          31.5
+        ]
+      ],
+      "areaSqm": 51602405.854997896,
+      "method": "Surface-density midpoint integral with Richardson extrapolation"
+    }
+  ],
+  "rectangles": [
+    {
+      "bounds": [
+        12,
+        -85,
+        12.001,
+        -84.999
+      ],
+      "areaSqm": 1087.3124993047963
+    },
+    {
+      "bounds": [
+        12,
+        -70,
+        12.001,
+        -69.999
+      ],
+      "areaSqm": 4260.2696971438545
+    },
+    {
+      "bounds": [
+        12,
+        0,
+        12.001,
+        0.001
+      ],
+      "areaSqm": 12309.072078679854
+    },
+    {
+      "bounds": [
+        12,
+        31.5,
+        12.001,
+        31.501
+      ],
+      "areaSqm": 10533.621467497998
+    },
+    {
+      "bounds": [
+        12,
+        70,
+        12.001,
+        70.001
+      ],
+      "areaSqm": 4260.06605502269
+    },
+    {
+      "bounds": [
+        12,
+        84.999,
+        12.001,
+        85.0
+      ],
+      "areaSqm": 1087.3124993047963
+    }
+  ],
+  "sceneAreasSqm": {
+    "parcel": 948.029411763874,
+    "roof": 237.00741508761908,
+    "reference_parcel": 1011.2313725690892,
+    "reference_roof": 268.608403752496
+  }
+}

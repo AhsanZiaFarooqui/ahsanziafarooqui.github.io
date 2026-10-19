@@ -6,7 +6,7 @@
 <main>
   <p class="eyebrow">Housing economics · Machine learning · Bayesian calibration</p>
   <h1>Property Valuation Lab</h1>
-  <p class="lede">Estimate the sale value of a comparable property using <strong>land area</strong>, <strong>covered floor area</strong>, and <strong>neighborhood</strong>. Explore a random forest model calibrated with Bayesian partial pooling. A remote-sensing image tracing module can measure a parcel and roof footprint for the valuation inputs.</p>
+  <p class="lede">Estimate the sale value of a comparable property using <strong>land area</strong>, <strong>covered floor area</strong>, and <strong>neighborhood</strong>. Explore a random forest model calibrated with Bayesian partial pooling. Manual image tracing and synthetic GeoJSON import demonstrate parcel and roof-footprint measurement.</p>
   <div class="notice"><strong>Method and limitations.</strong> A browser-based random forest learns nonlinear patterns in <em>observed sale prices</em>. A separate Bayesian model shrinks neighborhood-specific out-of-sample residual adjustments toward zero. Predictions are demonstrative, not independent professional valuations. The example data are fictional; use verified transaction comparables for meaningful real-world analysis. No external model, API or server receives your uploaded rows.</div>
 
   <div class="grid-2">
@@ -90,6 +90,26 @@
     <details><summary>Remote-sensing provenance and reliability</summary><p>The image and annotations stay in the browser and are not sent to our server. This module does not estimate parcel ownership, market value, number of floors, or building condition from pixels. Imagery from different dates may not match the sale date or current building. Roof outlines can contain overhangs, shadows, and georegistration errors. For serious analysis, use georeferenced and licensed imagery, validated parcel boundaries, ground-truth floor measurements, blind holdout appraisal records, and spatially blocked validation.</p></details>
   </section>
 
+  <section class="card" id="geospatial" style="margin-top:20px" aria-labelledby="geo-title">
+    <p class="eyebrow">Remote sensing v2 · Synthetic geospatial checks</p>
+    <h2 id="geo-title">5. Import georeferenced parcel and roof polygons</h2>
+    <p>Measure fictional <strong>GeoJSON polygons</strong> without an image scale reference. Standard RFC 7946 coordinates must be <strong>WGS84 longitude, latitude in decimal degrees</strong>. Legacy CRS declarations, projected metre/foot coordinates and unsupported geometries are rejected. Manual image tracing above remains available.</p>
+    <p class="notice">This measures horizontal parcel and roof footprints. It does not establish total covered floor area, automatically segment imagery or validate a property valuation. The coordinates are checked for consistency; their true location and provenance cannot be established from the file.</p>
+    <p><label for="geo-confirm"><input id="geo-confirm" type="checkbox"> I confirm that my file uses WGS84 [longitude, latitude] degrees and contains fictional geometry.</label></p>
+    <div class="control"><label for="geo-file">Synthetic GeoJSON (max 256 KiB)</label><input id="geo-file" type="file" accept=".geojson,.json,application/geo+json,application/json" aria-describedby="geo-contract"></div>
+    <p class="mini" id="geo-contract">FeatureCollection with <code>synthetic: true</code> and unique <code>properties.role</code> values <code>parcel</code>, <code>roof</code>; optionally <code>reference_parcel</code> and <code>reference_roof</code>. Polygon holes supported. Maximum 500 positions per feature, 10 rings, scene extent 0.1° per axis, latitude ±85°. Roof must be strictly inside parcel. MultiPolygon, altitude, antimeridian and polar scenes require preprocessing outside this demonstration.</p>
+    <p><button type="button" id="geo-sample">Measure synthetic fixture</button> · <a href="fixtures/synthetic-property.geojson" download>Download synthetic GeoJSON</a> · <a href="GEOSPATIAL.md">Format, measurement method and validation limits</a></p>
+    <p id="geo-status" class="status" role="status" aria-live="polite">Select a synthetic GeoJSON file or measure the included fictional fixture. Files stay in your browser.</p>
+    <div id="geo-results" hidden>
+      <div class="responsive-table" tabindex="0" role="region" aria-label="Footprint areas"><table class="lab-table"><thead><tr><th>Polygon</th><th>Area (m²)</th><th>Area (sq ft)</th></tr></thead><tbody id="geo-table"></tbody></table></div>
+      <p id="geo-reference-status" class="quiet"></p>
+      <div id="geo-error-table" class="responsive-table" tabindex="0" role="region" aria-label="Synthetic reference area errors"><table class="lab-table"><thead><tr><th>Polygon</th><th>Signed error (m²)</th><th>Absolute error (m²)</th><th>Signed error (%)</th><th>Absolute error (%)</th></tr></thead><tbody id="geo-errors"></tbody></table></div>
+      <canvas id="geo-preview" width="700" height="350" style="display:block;width:100%;height:auto;border:1px solid #b9cbd5;margin-top:14px" role="img" aria-label="Schematic of synthetic parcel and roof polygons with optional reference boundaries; north is up"></canvas>
+      <p class="mini">Schematic only, north up; no imagery registration. Solid green: parcel; solid brown: roof. Dashed blue: reference parcel; dashed magenta: reference roof. Area errors alone do not detect equal-area displacement.</p>
+      <p id="geo-method" class="quiet"></p><p id="geo-warnings" class="quiet"></p>
+    </div>
+  </section>
+
   <section class="card" style="margin-top:20px"><h2>Model specification and responsible interpretation</h2>
     <div class="grid-2">
       <div><h3>Random forest</h3><p>48 seeded bootstrap regression trees predict <code>log(sale_price_pkr)</code> using land area, covered floor area and categorical neighborhood membership. Each split searches both continuous thresholds and neighborhood equality, without imposing a numeric ordering on neighborhoods.</p></div>
@@ -101,4 +121,5 @@
 </main><footer>Independent synthetic research demonstration. No original dissertation datasets or private property records are included. Source: <a href="https://github.com/AhsanZiaFarooqui/ahsanziafarooqui.github.io/tree/main/portfolio">GitHub</a>.</footer>
 <script type="module" src="valuation-ui.js"></script>
 <script type="module" src="remote-sensing-ui.js"></script>
+<script type="module" src="geojson-ui.js"></script>
 </body></html>
