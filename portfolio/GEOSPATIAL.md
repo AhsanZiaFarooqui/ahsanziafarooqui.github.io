@@ -55,7 +55,7 @@ python3 portfolio/fixtures/generate-geojson.py
 node --test portfolio/tests/*.test.js
 ```
 
-The stdlib-only generator writes deterministic fictional polygons and exact rectangular-integral area oracles; no external imagery or coordinates from actual cadastral properties are used. Node tests check geometry, holes, containment, CRS/axis limitations, limits, latitudes, orientation, units, reference errors and missing references. Existing manual-tracing/model tests run alongside them. The area oracles use an analytic rectangular surface integral, not the JavaScript edge quadrature. They establish arithmetic consistency, not independent GIS certification.
+The stdlib-only generator writes deterministic fictional polygons and exact rectangular-integral area oracles; no external imagery or coordinates from actual cadastral properties are used. Node tests check geometry, holes, containment, CRS/axis limitations, limits, latitudes, orientation, units, reference errors and missing references. Existing manual-tracing/model tests run alongside them. The area oracles use an analytic rectangular surface integral and a separate surface-density integral for an oblique triangle near the maximum scene extent, rather than the JavaScript boundary quadrature. They establish arithmetic consistency, not independent GIS certification.
 
 Browser checks use the same development-only Playwright version as existing delivery checks:
 

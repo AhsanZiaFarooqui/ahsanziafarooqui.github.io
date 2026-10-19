@@ -75,6 +75,7 @@ test('unsupported, repeated or missing roles and non-synthetic inputs fail',()=>
   }
   assert.throws(()=>measureGeoJSON('{'),/Invalid GeoJSON/);
   assert.throws(()=>measureGeoJSON(' '.repeat(262145)),/256 KiB/);
+  const unicode=scene();unicode.description='測'.repeat(100000);assert.throws(()=>measureGeoJSON(JSON.stringify(unicode)),/256 KiB/);
 });
 test('open, degenerate and duplicate rings fail without silent repair',()=>{
   const open=rect(0,0,.001,.001);open.pop();assert.throws(()=>measureGeoJSON(changeRing(open)),/not closed/);

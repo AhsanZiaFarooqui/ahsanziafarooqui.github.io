@@ -47,7 +47,7 @@ function contained(roof,parcel,label){
 }
 function noLegacyCRS(obj){if(obj&&Object.hasOwn(obj,'crs'))fail('Legacy/custom CRS is unsupported. Reproject to RFC 7946 WGS84 longitude, latitude and remove the legacy crs member.');}
 export function measureGeoJSON(input){
-  if(typeof input==='string'){if(input.length>262144)fail('GeoJSON exceeds 256 KiB.');try{input=JSON.parse(input);}catch{fail('Invalid GeoJSON JSON text.');}}
+  if(typeof input==='string'){if(input.length>262144||new TextEncoder().encode(input).byteLength>262144)fail('GeoJSON exceeds 256 KiB.');try{input=JSON.parse(input);}catch{fail('Invalid GeoJSON JSON text.');}}
   noLegacyCRS(input);
   if(input?.type!=='FeatureCollection'||!Array.isArray(input.features)||input.features.length<2||input.features.length>4)fail('Use a FeatureCollection with parcel, roof and optional reference_parcel/reference_roof Polygon features.');
   if(input.synthetic!==true)fail('This demonstration accepts only synthetic fixtures: set the collection synthetic member to true for fictional geometries.');
