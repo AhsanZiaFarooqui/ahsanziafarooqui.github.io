@@ -7,9 +7,11 @@ import {explain} from './ai.ts';
 import {validInput} from '../src/ai-contract.ts';
 try{loadEnvFile('.env');}catch{}
 const root=resolve('dist');const requests=new Map<string,{time:number;count:number}>();
+let configuredAiOrigin='';
+try{const config=JSON.parse(await readFile(resolve(root,'config.json'),'utf8'));if(typeof config.aiEndpoint==='string'&&/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev\/?$/i.test(config.aiEndpoint))configuredAiOrigin=new URL(config.aiEndpoint).origin;}catch{}
 const server=createServer(async(req,res)=>{
  res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','no-referrer');res.setHeader('Cache-Control','no-store');
- res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'");
+ res.setHeader('Content-Security-Policy',`default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' ${configuredAiOrigin}; object-src 'none'; base-uri 'none'; frame-ancestors 'none'`);
  const send=(status:number,value:unknown)=>{res.writeHead(status,{'Content-Type':'application/json'});res.end(JSON.stringify(value));};
  const url=new URL(req.url||'/',`http://${req.headers.host||'localhost'}`);
  if(url.pathname==='/api/status'&&req.method==='GET')return send(200,{mode:process.env.OPENAI_API_KEY&&!process.env.OPENAI_API_KEY.startsWith('replace_')?'configured':'built-in'});

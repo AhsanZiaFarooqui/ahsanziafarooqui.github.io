@@ -31,8 +31,12 @@ The reproducible [audit report](synthetic-audit.md) and [raw output](synthetic-a
 ## What was not verified
 
 - **Real browser rendering and interaction:** the UI tool reported no available browsers. Both Edge and in-app-browser creation returned “Browser is not available.” Mobile/desktop screenshots, actual keyboard interaction, screen-reader output and OS-level reduced-motion behaviour could not be checked. DOM/state tests are not a browser or layout engine. Follow `docs/browser-checklist.md` before a learner trial.
-- **Live AI:** the free Cloudflare binding has not yet been connected, and no local server credential was configured. Valid provider responses were mocked, not live. Enabling steps are in the README; account/model availability and provider prose quality remain unverified.
+- **Live AI:** the account owner confirmed configured status for the free Cloudflare binding, but no live model response has been verified. No local paid-provider credential was configured. Valid provider responses were mocked, not live. Enabling steps are in the README; account/model availability and provider prose quality remain unverified.
 - **Static TypeScript type checking:** the native build strips types and verifies parseable syntax; no TypeScript compiler was installed. Package download attempts were denied by the environment, so the application was implemented without package dependencies. Runtime tests do not substitute for a static type check.
 - **Educational validation:** no real learners, calibrated likelihoods, validated cut-offs, classroom observations, impact evidence or retention study. Adult subject review and voluntary supervised trials remain necessary.
 
 No synthetic test sessions are preloaded into the real dashboard. Test fixtures use an isolated in-memory store; audit output remains under `reports/`.
+
+## Publication
+
+GitHub Pages build and deployment succeeded for commit 680ad510e8d9a0eb2d07cc98ae6a9d1336e9cc65. The public app is https://ahsanziafarooqui.github.io/brick-by-brick/. Source is isolated under brick-by-brick/source; existing site files were preserved. The account owner confirmed that https://brick-maths-ai.ahsan-zia-farooqui.workers.dev/api/status returns configured. The endpoint address is set in public/config.json. A configured binding alone does not verify a live model response.

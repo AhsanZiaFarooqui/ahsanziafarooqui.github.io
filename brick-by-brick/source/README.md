@@ -22,12 +22,12 @@ The application uses TypeScript, standard DOM/SVG APIs and Node's built-in HTTP 
 - 13 targeted lessons with real captioned H.264 MP4 mini-movies, plus a fourteenth Fractions of an Hour movie. An interactive SVG step view remains available, with continuous clock hands, exact fraction comparisons and same-length whole strips. The hour hand stays synchronised across twelve. Play, Pause, Replay, Previous/Next, Explain differently and Try it myself all work.
 - An optional Fractions of an Hour activity distinguishes durations from clock readings.
 - A 32-state Bayesian model per module; EIG-based follow-ups; no ability score shown to children. See the [technical note](docs/technical-note.md).
-- A free-plan Cloudflare Workers AI endpoint for alternate explanations and supported examples. It validates structured output and falls back on quota/provider/validation failure. **Cloudflare live deployment is awaiting the account owner; live AI has not been verified.** Each explanation is labelled live or built-in. The diagnostic engine works fully without AI.
+- A free-plan Cloudflare Workers AI endpoint for alternate explanations and supported examples. It validates structured output and falls back on quota/provider/validation failure. **The Cloudflare binding is connected (the account owner confirmed configured status); a live model response has not yet been verified.** Each explanation is labelled live or built-in. The diagnostic engine works fully without AI.
 - Local anonymous sessions, separate guided/check evidence, parent/teacher explanations, optional evaluation labels, JSON/CSV export, scoped reset/delete and a blank local project journal.
 
 ## Share it and enable free AI
 
-The static app is prepared for GitHub Pages at https://ahsanziafarooqui.github.io/brick-by-brick/. Its source lives in the same repository under `brick-by-brick/source`.
+The static app is published on GitHub Pages at https://ahsanziafarooqui.github.io/brick-by-brick/. Its source lives in the same repository under `brick-by-brick/source`.
 
 Follow [Cloudflare setup](deploy/CLOUDFLARE-SETUP.md). A standalone Worker is ready at `deploy/cloudflare-worker.js`; paste it into the dashboard and add a Workers AI binding named `AI`. Keep **Workers Free**, without paid upgrades or purchased credits. The current free allowance is 10,000 neurons daily; quota exhaustion switches the app to built-in explanations. Set only the public Worker URL in `public/config.json`, then rebuild/publish. No API key goes in the browser. See [official pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/).
 
