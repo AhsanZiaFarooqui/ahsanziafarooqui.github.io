@@ -1,0 +1,4425 @@
+{
+  "schemaVersion": 1,
+  "assumptions": "Slip 0.10; guess 1 / number of distinct choices; provisional and uncalibrated.",
+  "skills": {
+    "T1": "Recognise the two hands",
+    "T2": "Count minutes in fives",
+    "T3": "Find the current hour",
+    "T4": "Use past and to",
+    "T5": "Read a five-minute time",
+    "F1": "Find a whole and equal parts",
+    "F2": "Read numerator and denominator",
+    "F3": "Match a picture to a fraction",
+    "F4": "Find equivalent fractions",
+    "F5": "Compare the same whole"
+  },
+  "items": [
+    {
+      "id": "t-read330",
+      "module": "time",
+      "skills": [
+        "T1",
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "swap-hands",
+        "numeral-minutes",
+        "next-hour"
+      ],
+      "prompt": "What time does this clock show?",
+      "visual": {
+        "kind": "clock",
+        "total": 210
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3:30"
+        },
+        {
+          "id": "d0",
+          "label": "6:15",
+          "misconception": "swap-hands",
+          "meaning": "May read long hand as hour and short hand as minutes; distinguish hand recognition and counting."
+        },
+        {
+          "id": "d1",
+          "label": "3:6",
+          "misconception": "numeral-minutes",
+          "meaning": "May treat numeral 6 as six minutes."
+        },
+        {
+          "id": "d2",
+          "label": "4:30",
+          "misconception": "next-hour",
+          "meaning": "May choose approaching hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-330",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 3 plus 30/60 of the way to the next number; long thin hand at numeral 6. No AM or PM is shown.",
+      "hint": "Find the shorter hand first. Count five minutes for each number reached by the long hand."
+    },
+    {
+      "id": "t-hand",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand tells us the minutes?",
+      "visual": {
+        "kind": "clock",
+        "total": 440
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "The longer, thinner hand"
+        },
+        {
+          "id": "d0",
+          "label": "The shorter, thicker hand",
+          "misconception": "swap-hands",
+          "meaning": "Possible reversal of hand roles."
+        },
+        {
+          "id": "d1",
+          "label": "Both hands tell only hours",
+          "misconception": "hand-roles",
+          "meaning": "May not distinguish the roles."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "hand-role",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 7 plus 20/60 of the way to the next number; long thin hand at numeral 4. No AM or PM is shown.",
+      "hint": "The minute hand reaches farther towards the little ticks."
+    },
+    {
+      "id": "t-quarterto",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "past-to",
+        "next-hour",
+        "quarter-half"
+      ],
+      "prompt": "Which phrase means 5:45?",
+      "visual": {
+        "kind": "clock",
+        "total": 345
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Quarter to 6"
+        },
+        {
+          "id": "d0",
+          "label": "Quarter past 6",
+          "misconception": "past-to",
+          "meaning": "May reverse past and to."
+        },
+        {
+          "id": "d1",
+          "label": "Quarter to 5",
+          "misconception": "next-hour",
+          "meaning": "May name current hour with to."
+        },
+        {
+          "id": "d2",
+          "label": "Half past 5",
+          "misconception": "quarter-half",
+          "meaning": "May confuse quarter and half."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "phrase-545",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 5 plus 45/60 of the way to the next number; long thin hand at numeral 9. No AM or PM is shown.",
+      "hint": "At :45, fifteen minutes remain until the next hour."
+    },
+    {
+      "id": "t-minute3",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "count-fives",
+        "past-to"
+      ],
+      "prompt": "The long hand points to 3. How many minutes past the hour?",
+      "visual": {
+        "kind": "clock",
+        "total": 495
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "15 minutes"
+        },
+        {
+          "id": "d0",
+          "label": "3 minutes",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used directly as minute count."
+        },
+        {
+          "id": "d1",
+          "label": "30 minutes",
+          "misconception": "count-fives",
+          "meaning": "Possible skip-count difficulty."
+        },
+        {
+          "id": "d2",
+          "label": "45 minutes",
+          "misconception": "past-to",
+          "meaning": "May count remaining minutes."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "minute-at3",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 8 plus 15/60 of the way to the next number; long thin hand at numeral 3. No AM or PM is shown.",
+      "hint": "Count 5, 10, 15 from twelve to three."
+    },
+    {
+      "id": "t-minute6",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "count-fives",
+        "full-turn"
+      ],
+      "prompt": "The long hand points to 6. How many minutes past?",
+      "visual": {
+        "kind": "clock",
+        "total": 90
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "30 minutes"
+        },
+        {
+          "id": "d0",
+          "label": "6 minutes",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used directly."
+        },
+        {
+          "id": "d1",
+          "label": "15 minutes",
+          "misconception": "count-fives",
+          "meaning": "Possible grouping confusion."
+        },
+        {
+          "id": "d2",
+          "label": "60 minutes",
+          "misconception": "full-turn",
+          "meaning": "Possible full-turn confusion."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "minute-at6",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 1 plus 30/60 of the way to the next number; long thin hand at numeral 6. No AM or PM is shown.",
+      "hint": "Each number is another group of five minutes."
+    },
+    {
+      "id": "t-minute9",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "How many minutes past when the long hand reaches 9?",
+      "visual": {
+        "kind": "clock",
+        "total": 165
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "45 minutes"
+        },
+        {
+          "id": "d0",
+          "label": "9 minutes",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used directly."
+        },
+        {
+          "id": "d1",
+          "label": "15 minutes",
+          "misconception": "past-to",
+          "meaning": "Remaining minutes used as elapsed."
+        },
+        {
+          "id": "d2",
+          "label": "40 minutes",
+          "misconception": "count-fives",
+          "meaning": "May miscount one group."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "minute-at9",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 2 plus 45/60 of the way to the next number; long thin hand at numeral 9. No AM or PM is shown.",
+      "hint": "Nine groups of five minutes have passed."
+    },
+    {
+      "id": "t-minute7",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "The minute hand points to 7. How many minutes past?",
+      "visual": {
+        "kind": "clock",
+        "total": 275
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "35 minutes"
+        },
+        {
+          "id": "d0",
+          "label": "7 minutes",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used directly."
+        },
+        {
+          "id": "d1",
+          "label": "25 minutes",
+          "misconception": "past-to",
+          "meaning": "Remaining minutes used as elapsed."
+        },
+        {
+          "id": "d2",
+          "label": "30 minutes",
+          "misconception": "count-fives",
+          "meaning": "One group short."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "minute-at7",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 4 plus 35/60 of the way to the next number; long thin hand at numeral 7. No AM or PM is shown.",
+      "hint": "Count seven groups of five."
+    },
+    {
+      "id": "t-shorthour",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand tells us the hour?",
+      "visual": {
+        "kind": "clock",
+        "total": 610
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "The shorter, thicker hand"
+        },
+        {
+          "id": "d0",
+          "label": "The longer, thinner hand",
+          "misconception": "swap-hands",
+          "meaning": "Possible hand reversal."
+        },
+        {
+          "id": "d1",
+          "label": "Only the numbers tell the hour",
+          "misconception": "hand-roles",
+          "meaning": "May not use the hands."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "hour-role",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 10 plus 10/60 of the way to the next number; long thin hand at numeral 2. No AM or PM is shown.",
+      "hint": "The shorter hand points around the hours."
+    },
+    {
+      "id": "t-handtravel",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand makes one full turn in an hour?",
+      "visual": {
+        "kind": "clock",
+        "total": 660
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "The minute hand"
+        },
+        {
+          "id": "d0",
+          "label": "The hour hand",
+          "misconception": "swap-hands",
+          "meaning": "Possible confusion between hand speeds."
+        },
+        {
+          "id": "d1",
+          "label": "Both hands",
+          "misconception": "hand-roles",
+          "meaning": "May equate speeds."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "hand-speed",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 0/60 of the way to the next number; long thin hand at numeral 12. No AM or PM is shown.",
+      "hint": "The minute hand travels through sixty little ticks in one hour."
+    },
+    {
+      "id": "t-hour345",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "The short hand is between 3 and 4. Which hour has already started?",
+      "visual": {
+        "kind": "clock",
+        "total": 225
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3"
+        },
+        {
+          "id": "d0",
+          "label": "4",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour chosen."
+        },
+        {
+          "id": "d1",
+          "label": "9",
+          "misconception": "swap-hands",
+          "meaning": "Long-hand numeral used as hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "hour-345",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 3 plus 45/60 of the way to the next number; long thin hand at numeral 9. No AM or PM is shown.",
+      "hint": "Name the hour the short hand has already passed."
+    },
+    {
+      "id": "t-hour850",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "Which hour has already started on this clock?",
+      "visual": {
+        "kind": "clock",
+        "total": 530
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "8"
+        },
+        {
+          "id": "d0",
+          "label": "9",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour chosen."
+        },
+        {
+          "id": "d1",
+          "label": "10",
+          "misconception": "swap-hands",
+          "meaning": "Long-hand numeral chosen."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "hour-850",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 8 plus 50/60 of the way to the next number; long thin hand at numeral 10. No AM or PM is shown.",
+      "hint": "The short hand has passed eight but has not reached nine."
+    },
+    {
+      "id": "t-moving",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "fixed-hour",
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "At 3:30, where should the hour hand be?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Halfway between 3 and 4"
+        },
+        {
+          "id": "d0",
+          "label": "Exactly on 3",
+          "misconception": "fixed-hour",
+          "meaning": "May believe the hour hand jumps only on the hour."
+        },
+        {
+          "id": "d1",
+          "label": "Exactly on 4",
+          "misconception": "next-hour",
+          "meaning": "May round up to next hour."
+        },
+        {
+          "id": "d2",
+          "label": "Exactly on 6",
+          "misconception": "swap-hands",
+          "meaning": "May confuse hand positions."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "movement-half",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "The hour hand moves a little with every minute."
+    },
+    {
+      "id": "t-moving45",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "fixed-hour",
+        "hour-position",
+        "next-hour"
+      ],
+      "prompt": "At 3:45, where should the hour hand be?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Three-quarters of the way from 3 to 4"
+        },
+        {
+          "id": "d0",
+          "label": "Exactly on 3",
+          "misconception": "fixed-hour",
+          "meaning": "May believe hour hand stays still."
+        },
+        {
+          "id": "d1",
+          "label": "Halfway from 3 to 4",
+          "misconception": "hour-position",
+          "meaning": "May ignore additional minutes."
+        },
+        {
+          "id": "d2",
+          "label": "Exactly on 4",
+          "misconception": "next-hour",
+          "meaning": "May choose approaching hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "movement-quarter",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Forty-five minutes is three-quarters of an hour."
+    },
+    {
+      "id": "t-hour1225",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "Which hour has already started?",
+      "visual": {
+        "kind": "clock",
+        "total": 745
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "12"
+        },
+        {
+          "id": "d0",
+          "label": "1",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour chosen at wraparound."
+        },
+        {
+          "id": "d1",
+          "label": "5",
+          "misconception": "swap-hands",
+          "meaning": "Long-hand numeral chosen."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "hour-1225",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 12 plus 25/60 of the way to the next number; long thin hand at numeral 5. No AM or PM is shown.",
+      "hint": "After twelve comes one, but the hand has not reached one yet."
+    },
+    {
+      "id": "t-oclock",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "quarter-half",
+        "past-to",
+        "swap-hands"
+      ],
+      "prompt": "Which phrase matches this clock?",
+      "visual": {
+        "kind": "clock",
+        "total": 540
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "9 o’clock"
+        },
+        {
+          "id": "d0",
+          "label": "Half past 9",
+          "misconception": "quarter-half",
+          "meaning": "May confuse position at twelve with half past."
+        },
+        {
+          "id": "d1",
+          "label": "Quarter to 9",
+          "misconception": "past-to",
+          "meaning": "Phrase-position confusion."
+        },
+        {
+          "id": "d2",
+          "label": "12 o’clock",
+          "misconception": "swap-hands",
+          "meaning": "Long hand read as hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "phrase-900",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 0/60 of the way to the next number; long thin hand at numeral 12. No AM or PM is shown.",
+      "hint": "O’clock means no extra minutes after the hour."
+    },
+    {
+      "id": "t-half",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "quarter-half",
+        "numeral-minutes",
+        "next-hour"
+      ],
+      "prompt": "Which digital time means half past 2?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2:30"
+        },
+        {
+          "id": "d0",
+          "label": "2:15",
+          "misconception": "quarter-half",
+          "meaning": "Half confused with quarter."
+        },
+        {
+          "id": "d1",
+          "label": "2:6",
+          "misconception": "numeral-minutes",
+          "meaning": "Minute numeral used directly."
+        },
+        {
+          "id": "d2",
+          "label": "3:30",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour chosen."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "phrase-230",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Half of sixty minutes is thirty minutes."
+    },
+    {
+      "id": "t-past",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "What does quarter past 7 mean?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "7:15"
+        },
+        {
+          "id": "d0",
+          "label": "7:45",
+          "misconception": "past-to",
+          "meaning": "Past confused with to."
+        },
+        {
+          "id": "d1",
+          "label": "6:45",
+          "misconception": "past-to",
+          "meaning": "Quarter to seven substituted."
+        },
+        {
+          "id": "d2",
+          "label": "7:25",
+          "misconception": "count-fives",
+          "meaning": "Possible quarter-size confusion."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "phrase-715",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "A quarter hour is fifteen minutes. Past means after."
+    },
+    {
+      "id": "t-to",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "past-to",
+        "next-hour"
+      ],
+      "prompt": "Which time means quarter to 12?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "11:45"
+        },
+        {
+          "id": "d0",
+          "label": "12:15",
+          "misconception": "past-to",
+          "meaning": "To confused with past."
+        },
+        {
+          "id": "d1",
+          "label": "12:45",
+          "misconception": "next-hour",
+          "meaning": "Next hour used in digital reading."
+        },
+        {
+          "id": "d2",
+          "label": "11:15",
+          "misconception": "past-to",
+          "meaning": "Minutes remaining used as minutes past."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "phrase-1145",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Fifteen minutes remain until twelve."
+    },
+    {
+      "id": "t-read315",
+      "module": "time",
+      "skills": [
+        "T1",
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "next-hour",
+        "past-to"
+      ],
+      "prompt": "What time is shown?",
+      "visual": {
+        "kind": "clock",
+        "total": 195
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3:15"
+        },
+        {
+          "id": "d0",
+          "label": "3:3",
+          "misconception": "numeral-minutes",
+          "meaning": "Follow up with minute-hand position item."
+        },
+        {
+          "id": "d1",
+          "label": "4:15",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour chosen."
+        },
+        {
+          "id": "d2",
+          "label": "3:45",
+          "misconception": "past-to",
+          "meaning": "Elapsed and remaining minutes mixed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-315",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 3 plus 15/60 of the way to the next number; long thin hand at numeral 3. No AM or PM is shown.",
+      "hint": "Read the current hour and then count minutes past."
+    },
+    {
+      "id": "t-read435",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this clock.",
+      "visual": {
+        "kind": "clock",
+        "total": 275
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "4:35"
+        },
+        {
+          "id": "d0",
+          "label": "5:35",
+          "misconception": "next-hour",
+          "meaning": "May select approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "4:7",
+          "misconception": "numeral-minutes",
+          "meaning": "May use minute-hand numeral as minute count."
+        },
+        {
+          "id": "d2",
+          "label": "4:25",
+          "misconception": "past-to",
+          "meaning": "May use remaining minutes as elapsed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-435",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 4 plus 35/60 of the way to the next number; long thin hand at numeral 7. No AM or PM is shown.",
+      "hint": "Use the shorter hand for the current hour. Then count the minutes in fives."
+    },
+    {
+      "id": "t-read1020",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this clock.",
+      "visual": {
+        "kind": "clock",
+        "total": 620
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "10:20"
+        },
+        {
+          "id": "d0",
+          "label": "11:20",
+          "misconception": "next-hour",
+          "meaning": "May select approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "10:4",
+          "misconception": "numeral-minutes",
+          "meaning": "May use minute-hand numeral as minute count."
+        },
+        {
+          "id": "d2",
+          "label": "10:40",
+          "misconception": "past-to",
+          "meaning": "May use remaining minutes as elapsed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-1020",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 10 plus 20/60 of the way to the next number; long thin hand at numeral 4. No AM or PM is shown.",
+      "hint": "Use the shorter hand for the current hour. Then count the minutes in fives."
+    },
+    {
+      "id": "t-read1255",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this clock.",
+      "visual": {
+        "kind": "clock",
+        "total": 775
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "12:55"
+        },
+        {
+          "id": "d0",
+          "label": "1:55",
+          "misconception": "next-hour",
+          "meaning": "May select approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "12:11",
+          "misconception": "numeral-minutes",
+          "meaning": "May use minute-hand numeral as minute count."
+        },
+        {
+          "id": "d2",
+          "label": "12:05",
+          "misconception": "past-to",
+          "meaning": "May use remaining minutes as elapsed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-1255",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 12 plus 55/60 of the way to the next number; long thin hand at numeral 11. No AM or PM is shown.",
+      "hint": "Use the shorter hand for the current hour. Then count the minutes in fives."
+    },
+    {
+      "id": "t-read640",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this clock.",
+      "visual": {
+        "kind": "clock",
+        "total": 400
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6:40"
+        },
+        {
+          "id": "d0",
+          "label": "7:40",
+          "misconception": "next-hour",
+          "meaning": "May select approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "6:8",
+          "misconception": "numeral-minutes",
+          "meaning": "May use minute-hand numeral as minute count."
+        },
+        {
+          "id": "d2",
+          "label": "6:20",
+          "misconception": "past-to",
+          "meaning": "May use remaining minutes as elapsed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-640",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 6 plus 40/60 of the way to the next number; long thin hand at numeral 8. No AM or PM is shown.",
+      "hint": "Use the shorter hand for the current hour. Then count the minutes in fives."
+    },
+    {
+      "id": "t-read905",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this clock.",
+      "visual": {
+        "kind": "clock",
+        "total": 545
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "9:05"
+        },
+        {
+          "id": "d0",
+          "label": "10:05",
+          "misconception": "next-hour",
+          "meaning": "May select approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "9:1",
+          "misconception": "numeral-minutes",
+          "meaning": "May use minute-hand numeral as minute count."
+        },
+        {
+          "id": "d2",
+          "label": "9:55",
+          "misconception": "past-to",
+          "meaning": "May use remaining minutes as elapsed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "read-905",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 5/60 of the way to the next number; long thin hand at numeral 1. No AM or PM is shown.",
+      "hint": "Use the shorter hand for the current hour. Then count the minutes in fives."
+    },
+    {
+      "id": "t-read1150",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this clock.",
+      "visual": {
+        "kind": "clock",
+        "total": 710
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "11:50"
+        },
+        {
+          "id": "d0",
+          "label": "12:50",
+          "misconception": "next-hour",
+          "meaning": "May select approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "11:10",
+          "misconception": "numeral-minutes",
+          "meaning": "May use minute-hand numeral as minute count."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "connecting",
+      "family": "read-1150",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 50/60 of the way to the next number; long thin hand at numeral 10. No AM or PM is shown.",
+      "hint": "Use the shorter hand for the current hour. Then count the minutes in fives."
+    },
+    {
+      "id": "f-picture34",
+      "module": "fractions",
+      "skills": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 4,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3/4"
+        },
+        {
+          "id": "d0",
+          "label": "4/3",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total parts; follow separately with total and selected counts."
+        },
+        {
+          "id": "d1",
+          "label": "1/4",
+          "misconception": "unshaded",
+          "meaning": "May report unshaded part."
+        },
+        {
+          "id": "d2",
+          "label": "3/3",
+          "misconception": "whole-count",
+          "meaning": "May count only shaded pieces as the whole."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "picture-34",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 3 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count all equal parts for the bottom number, then shaded parts for the top."
+    },
+    {
+      "id": "f-compare-symbol",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "For the same whole, which is larger?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/2"
+        },
+        {
+          "id": "d0",
+          "label": "1/4",
+          "misconception": "denominator-size",
+          "meaning": "Needs equal-whole visual follow-up before interpretation."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "May not relate notation to amount."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "compare-symbol24",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Imagine the same strip shared into two pieces or four pieces."
+    },
+    {
+      "id": "f-equivalent",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "different-symbols",
+        "equivalence"
+      ],
+      "prompt": "Which fraction is the same amount as 1/3?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2/6"
+        },
+        {
+          "id": "d0",
+          "label": "1/6",
+          "misconception": "different-symbols",
+          "meaning": "May focus on numerator alone."
+        },
+        {
+          "id": "d1",
+          "label": "3/6",
+          "misconception": "equivalence",
+          "meaning": "May not scale both numbers."
+        },
+        {
+          "id": "d2",
+          "label": "None: different symbols mean different amounts",
+          "misconception": "different-symbols",
+          "meaning": "May reject equivalent notation."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "equiv-symbol36",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Split each third into two equal pieces; the whole and shaded amount stay the same."
+    },
+    {
+      "id": "f-total",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "unit-piece"
+      ],
+      "prompt": "How many equal large parts make the whole strip?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 6,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6"
+        },
+        {
+          "id": "d0",
+          "label": "2",
+          "misconception": "swap-fraction",
+          "meaning": "May count only selected parts."
+        },
+        {
+          "id": "d1",
+          "label": "4",
+          "misconception": "unshaded",
+          "meaning": "May count unshaded parts."
+        },
+        {
+          "id": "d2",
+          "label": "12",
+          "misconception": "unit-piece",
+          "meaning": "May confuse stud units with grouped pieces."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "count-total6",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 6 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count all large outlined groups, shaded and unshaded."
+    },
+    {
+      "id": "f-selected",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unit-piece",
+        "whole-count"
+      ],
+      "prompt": "How many large parts are shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 4,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2"
+        },
+        {
+          "id": "d0",
+          "label": "4",
+          "misconception": "swap-fraction",
+          "meaning": "May give total instead of selected count."
+        },
+        {
+          "id": "d1",
+          "label": "6",
+          "misconception": "unit-piece",
+          "meaning": "May count shaded stud cells instead of large groups."
+        },
+        {
+          "id": "d2",
+          "label": "12",
+          "misconception": "whole-count",
+          "meaning": "May count all unit cells."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "count-selected4",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count the shaded large outlined groups."
+    },
+    {
+      "id": "f-compare-visual",
+      "module": "fractions",
+      "skills": [
+        "F1",
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "These wholes are the same size. Which shaded amount is larger?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 2,
+        "units": 8,
+        "second": {
+          "n": 1,
+          "d": 4
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "The top amount: 1/2"
+        },
+        {
+          "id": "d0",
+          "label": "The bottom amount: 1/4",
+          "misconception": "denominator-size",
+          "meaning": "Repeated visual evidence can support denominator-size concern."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "May not attend to highlighted length."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "connecting",
+      "family": "compare-visual24",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 2 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 4 equal grouped parts and 1 shaded.",
+      "hint": "Compare the shaded lengths from the same starting edge."
+    },
+    {
+      "id": "f-equal",
+      "module": "fractions",
+      "skills": [
+        "F1"
+      ],
+      "tags": [
+        "unequal-pieces"
+      ],
+      "prompt": "Are these three pieces equal parts of the whole?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 3,
+        "units": 4,
+        "unequal": true
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "No. One piece is larger."
+        },
+        {
+          "id": "d0",
+          "label": "Yes. There are three pieces.",
+          "misconception": "unequal-pieces",
+          "meaning": "May count pieces without comparing size."
+        },
+        {
+          "id": "d1",
+          "label": "Yes. They all belong to one strip.",
+          "misconception": "unequal-pieces",
+          "meaning": "May confuse belonging with equal size."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "unequal-equality",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip divided into three unequal pieces: one half and two quarters. The half is shaded.",
+      "hint": "Equal parts must each have the same size."
+    },
+    {
+      "id": "f-unequal-name",
+      "module": "fractions",
+      "skills": [
+        "F1",
+        "F3"
+      ],
+      "tags": [
+        "unequal-pieces",
+        "whole-count"
+      ],
+      "prompt": "One of three unequal pieces is shaded. Is the shaded amount one third?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 3,
+        "units": 4,
+        "unequal": true
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "No. It covers half the whole."
+        },
+        {
+          "id": "d0",
+          "label": "Yes. One of three always means one third.",
+          "misconception": "unequal-pieces",
+          "meaning": "May ignore unequal piece sizes."
+        },
+        {
+          "id": "d1",
+          "label": "No. It covers the whole.",
+          "misconception": "whole-count",
+          "meaning": "May not identify whole boundary."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "connecting",
+      "family": "unequal-fraction",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip divided into three unequal pieces: one half and two quarters. The half is shaded.",
+      "hint": "The shaded piece takes as much room as the two smaller pieces together."
+    },
+    {
+      "id": "f-whole",
+      "module": "fractions",
+      "skills": [
+        "F1"
+      ],
+      "tags": [
+        "whole-count"
+      ],
+      "prompt": "Which parts belong to the whole strip?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 4,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "All four large parts"
+        },
+        {
+          "id": "d0",
+          "label": "Only the shaded part",
+          "misconception": "whole-count",
+          "meaning": "May treat selected area as whole."
+        },
+        {
+          "id": "d1",
+          "label": "Only the three unshaded parts",
+          "misconception": "whole-count",
+          "meaning": "May exclude selected area."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "whole-boundary",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "The whole includes shaded and unshaded parts."
+    },
+    {
+      "id": "f-same-whole",
+      "module": "fractions",
+      "skills": [
+        "F1",
+        "F5"
+      ],
+      "tags": [
+        "different-wholes",
+        "denominator-size"
+      ],
+      "prompt": "A half of a tiny strip and a quarter of a much longer strip: can the fractions alone tell which piece is longer?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "No. We need to know the whole sizes."
+        },
+        {
+          "id": "d0",
+          "label": "The half must always be longer",
+          "misconception": "different-wholes",
+          "meaning": "May ignore different whole sizes."
+        },
+        {
+          "id": "d1",
+          "label": "The quarter must always be longer",
+          "misconception": "denominator-size",
+          "meaning": "May compare denominators only."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "connecting",
+      "family": "whole-size",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Fraction comparisons of amounts need the same whole, or its actual size."
+    },
+    {
+      "id": "f-denominator",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "denominator-size"
+      ],
+      "prompt": "In 3/8, what does the bottom number 8 tell us?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "The whole has 8 equal parts"
+        },
+        {
+          "id": "d0",
+          "label": "8 parts are selected",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse roles."
+        },
+        {
+          "id": "d1",
+          "label": "Each part has size 8 wholes",
+          "misconception": "denominator-size",
+          "meaning": "May invert unit fraction meaning."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "denominator-meaning",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "The bottom number names the number of equal parts in one whole."
+    },
+    {
+      "id": "f-numerator",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "In 2/3, what does the top number 2 tell us?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2 equal parts are selected"
+        },
+        {
+          "id": "d0",
+          "label": "The whole has 2 equal parts",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse numerator and denominator."
+        },
+        {
+          "id": "d1",
+          "label": "Each part has 2 wholes",
+          "misconception": "whole-count",
+          "meaning": "May lose whole reference."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "numerator-meaning",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "The top number counts selected parts."
+    },
+    {
+      "id": "f-picture12",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 2,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/2"
+        },
+        {
+          "id": "d0",
+          "label": "2/1",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total."
+        },
+        {
+          "id": "d1",
+          "label": "1/3",
+          "misconception": "whole-count",
+          "meaning": "May miscount total parts."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "picture-12",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 2 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count large equal outlined parts, not the little stud units."
+    },
+    {
+      "id": "f-picture13",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 3,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/3"
+        },
+        {
+          "id": "d0",
+          "label": "3/1",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total."
+        },
+        {
+          "id": "d1",
+          "label": "2/3",
+          "misconception": "unshaded",
+          "meaning": "May report unshaded parts."
+        },
+        {
+          "id": "d2",
+          "label": "1/4",
+          "misconception": "whole-count",
+          "meaning": "May miscount total parts."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "picture-13",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count large equal outlined parts, not the little stud units."
+    },
+    {
+      "id": "f-picture23",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 3,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2/3"
+        },
+        {
+          "id": "d0",
+          "label": "3/2",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total."
+        },
+        {
+          "id": "d1",
+          "label": "1/3",
+          "misconception": "unshaded",
+          "meaning": "May report unshaded parts."
+        },
+        {
+          "id": "d2",
+          "label": "2/4",
+          "misconception": "whole-count",
+          "meaning": "May miscount total parts."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "picture-23",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count large equal outlined parts, not the little stud units."
+    },
+    {
+      "id": "f-picture14",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 4,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/4"
+        },
+        {
+          "id": "d0",
+          "label": "4/1",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total."
+        },
+        {
+          "id": "d1",
+          "label": "3/4",
+          "misconception": "unshaded",
+          "meaning": "May report unshaded parts."
+        },
+        {
+          "id": "d2",
+          "label": "1/5",
+          "misconception": "whole-count",
+          "meaning": "May miscount total parts."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "picture-14",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count large equal outlined parts, not the little stud units."
+    },
+    {
+      "id": "f-picture38",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 8,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3/8"
+        },
+        {
+          "id": "d0",
+          "label": "8/3",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total."
+        },
+        {
+          "id": "d1",
+          "label": "5/8",
+          "misconception": "unshaded",
+          "meaning": "May report unshaded parts."
+        },
+        {
+          "id": "d2",
+          "label": "3/9",
+          "misconception": "whole-count",
+          "meaning": "May miscount total parts."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "picture-38",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 8 equal grouped parts; 3 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count large equal outlined parts, not the little stud units."
+    },
+    {
+      "id": "f-picture56",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "unshaded",
+        "whole-count"
+      ],
+      "prompt": "What fraction of this whole is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 5,
+        "d": 6,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "5/6"
+        },
+        {
+          "id": "d0",
+          "label": "6/5",
+          "misconception": "swap-fraction",
+          "meaning": "May reverse selected and total."
+        },
+        {
+          "id": "d1",
+          "label": "1/6",
+          "misconception": "unshaded",
+          "meaning": "May report unshaded parts."
+        },
+        {
+          "id": "d2",
+          "label": "5/7",
+          "misconception": "whole-count",
+          "meaning": "May miscount total parts."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "picture-56",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 6 equal grouped parts; 5 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count large equal outlined parts, not the little stud units."
+    },
+    {
+      "id": "f-equiv-visual",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "piece-count",
+        "different-symbols"
+      ],
+      "prompt": "Do these shaded amounts match?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 2,
+        "units": 8,
+        "second": {
+          "n": 2,
+          "d": 4
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Yes: 1/2 = 2/4"
+        },
+        {
+          "id": "d0",
+          "label": "No: 2/4 is larger",
+          "misconception": "piece-count",
+          "meaning": "May count pieces without their size."
+        },
+        {
+          "id": "d1",
+          "label": "No: different symbols must differ",
+          "misconception": "different-symbols",
+          "meaning": "May reject equivalent symbols."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "equiv-visual24",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 2 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 4 equal grouped parts and 2 shaded.",
+      "hint": "Each half can split into two quarters without adding any shaded length."
+    },
+    {
+      "id": "f-equiv36",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "piece-count",
+        "different-symbols"
+      ],
+      "prompt": "Two equal wholes: do the shaded lengths match?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 3,
+        "units": 12,
+        "second": {
+          "n": 2,
+          "d": 6
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Yes: 1/3 = 2/6"
+        },
+        {
+          "id": "d0",
+          "label": "No: 2/6 is larger",
+          "misconception": "piece-count",
+          "meaning": "May count pieces rather than amount."
+        },
+        {
+          "id": "d1",
+          "label": "No: different symbols cannot match",
+          "misconception": "different-symbols",
+          "meaning": "May reject equivalence."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "equiv-visual36",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 6 equal grouped parts and 2 shaded.",
+      "hint": "Splitting each third into two makes sixths."
+    },
+    {
+      "id": "f-equiv48",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "equivalence",
+        "piece-count",
+        "different-symbols"
+      ],
+      "prompt": "Which amount matches 2/4?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 4,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "4/8"
+        },
+        {
+          "id": "d0",
+          "label": "2/8",
+          "misconception": "equivalence",
+          "meaning": "May change denominator alone."
+        },
+        {
+          "id": "d1",
+          "label": "4/4",
+          "misconception": "piece-count",
+          "meaning": "May change numerator alone."
+        },
+        {
+          "id": "d2",
+          "label": "None",
+          "misconception": "different-symbols",
+          "meaning": "May reject equivalent notation."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "equiv-symbol48",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Split every quarter into two eighths."
+    },
+    {
+      "id": "f-compare36",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "For identical wholes, which shaded amount is larger?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 3,
+        "units": 12,
+        "second": {
+          "n": 1,
+          "d": 6
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "The top amount: 1/3"
+        },
+        {
+          "id": "d0",
+          "label": "The bottom amount: 1/6",
+          "misconception": "denominator-size",
+          "meaning": "Larger denominator may be mistaken for larger amount."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "May attend to identical numerators only."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "compare-visual36",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 6 equal grouped parts and 1 shaded.",
+      "hint": "More equal pieces in the same whole means each piece is smaller."
+    },
+    {
+      "id": "f-compare34",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "numerator-size",
+        "quantity"
+      ],
+      "prompt": "For the same whole, which is larger: 1/4 or 3/4?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3/4"
+        },
+        {
+          "id": "d0",
+          "label": "1/4",
+          "misconception": "numerator-size",
+          "meaning": "May not compare counts of same-sized pieces."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "May attend only to denominator."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "compare-same4",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "Both use quarters. Compare how many quarters are selected."
+    },
+    {
+      "id": "f-compare48",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "For the same whole, which is larger: 1/4 or 1/8?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/4"
+        },
+        {
+          "id": "d0",
+          "label": "1/8",
+          "misconception": "denominator-size",
+          "meaning": "May treat denominator as amount."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "May attend only to numerator."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "compare-symbol48",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "Text question.",
+      "hint": "A quarter contains two eighths of the same whole."
+    },
+    {
+      "id": "f-half8",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "equivalence",
+        "whole-count",
+        "different-symbols"
+      ],
+      "prompt": "How many eighths cover half of a whole?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 2,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "4 eighths"
+        },
+        {
+          "id": "d0",
+          "label": "2 eighths",
+          "misconception": "equivalence",
+          "meaning": "May repeat denominator of half."
+        },
+        {
+          "id": "d1",
+          "label": "8 eighths",
+          "misconception": "whole-count",
+          "meaning": "May select whole."
+        },
+        {
+          "id": "d2",
+          "label": "1 eighth",
+          "misconception": "different-symbols",
+          "meaning": "May preserve numerator without scaling."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "equiv-half8",
+      "phases": [
+        "diagnostic"
+      ],
+      "accessible": "One whole strip with 2 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Split the whole into eight; half covers four of them."
+    },
+    {
+      "id": "t1-guided-0",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand shows minutes?",
+      "visual": {
+        "kind": "clock",
+        "total": 140
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Longer and thinner"
+        },
+        {
+          "id": "d0",
+          "label": "Shorter and thicker",
+          "misconception": "swap-hands",
+          "meaning": "Hand role confusion."
+        },
+        {
+          "id": "d1",
+          "label": "Both do the same job",
+          "misconception": "hand-roles",
+          "meaning": "Roles not distinguished."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t1-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "Clock: short thick hand at 2 plus 20/60 of the way to the next number; long thin hand at numeral 4. No AM or PM is shown.",
+      "hint": "The short hand tells hours; the longer hand tells minutes."
+    },
+    {
+      "id": "t1-independent-1",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand shows hours?",
+      "visual": {
+        "kind": "clock",
+        "total": 385
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Shorter and thicker"
+        },
+        {
+          "id": "d0",
+          "label": "Longer and thinner",
+          "misconception": "swap-hands",
+          "meaning": "Hand role confusion."
+        },
+        {
+          "id": "d1",
+          "label": "Both do the same job",
+          "misconception": "hand-roles",
+          "meaning": "Roles not distinguished."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t1-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 6 plus 25/60 of the way to the next number; long thin hand at numeral 5. No AM or PM is shown.",
+      "hint": "The short hand tells hours; the longer hand tells minutes."
+    },
+    {
+      "id": "t1-independent-2",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand shows minutes?",
+      "visual": {
+        "kind": "clock",
+        "total": 580
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Longer and thinner"
+        },
+        {
+          "id": "d0",
+          "label": "Shorter and thicker",
+          "misconception": "swap-hands",
+          "meaning": "Hand role confusion."
+        },
+        {
+          "id": "d1",
+          "label": "Both do the same job",
+          "misconception": "hand-roles",
+          "meaning": "Roles not distinguished."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t1-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 40/60 of the way to the next number; long thin hand at numeral 8. No AM or PM is shown.",
+      "hint": "The short hand tells hours; the longer hand tells minutes."
+    },
+    {
+      "id": "t1-revisit-3",
+      "module": "time",
+      "skills": [
+        "T1"
+      ],
+      "tags": [
+        "swap-hands",
+        "hand-roles"
+      ],
+      "prompt": "Which hand shows hours?",
+      "visual": {
+        "kind": "clock",
+        "total": 710
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "Shorter and thicker"
+        },
+        {
+          "id": "d0",
+          "label": "Longer and thinner",
+          "misconception": "swap-hands",
+          "meaning": "Hand role confusion."
+        },
+        {
+          "id": "d1",
+          "label": "Both do the same job",
+          "misconception": "hand-roles",
+          "meaning": "Roles not distinguished."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t1-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 50/60 of the way to the next number; long thin hand at numeral 10. No AM or PM is shown.",
+      "hint": "The short hand tells hours; the longer hand tells minutes."
+    },
+    {
+      "id": "t2-guided-0",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "How many minutes past does the long hand show?",
+      "visual": {
+        "kind": "clock",
+        "total": 140
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "20"
+        },
+        {
+          "id": "d0",
+          "label": "4",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used as minutes."
+        },
+        {
+          "id": "d1",
+          "label": "40",
+          "misconception": "past-to",
+          "meaning": "Remaining instead of elapsed."
+        },
+        {
+          "id": "d2",
+          "label": "25",
+          "misconception": "count-fives",
+          "meaning": "One group too many."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "t2-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "Clock: short thick hand at 2 plus 20/60 of the way to the next number; long thin hand at numeral 4. No AM or PM is shown.",
+      "hint": "Each number is another group of five minutes."
+    },
+    {
+      "id": "t2-independent-1",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "How many minutes past does the long hand show?",
+      "visual": {
+        "kind": "clock",
+        "total": 385
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "25"
+        },
+        {
+          "id": "d0",
+          "label": "5",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used as minutes."
+        },
+        {
+          "id": "d1",
+          "label": "35",
+          "misconception": "past-to",
+          "meaning": "Remaining instead of elapsed."
+        },
+        {
+          "id": "d2",
+          "label": "30",
+          "misconception": "count-fives",
+          "meaning": "One group too many."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "t2-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 6 plus 25/60 of the way to the next number; long thin hand at numeral 5. No AM or PM is shown.",
+      "hint": "Each number is another group of five minutes."
+    },
+    {
+      "id": "t2-independent-2",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "How many minutes past does the long hand show?",
+      "visual": {
+        "kind": "clock",
+        "total": 580
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "40"
+        },
+        {
+          "id": "d0",
+          "label": "8",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used as minutes."
+        },
+        {
+          "id": "d1",
+          "label": "20",
+          "misconception": "past-to",
+          "meaning": "Remaining instead of elapsed."
+        },
+        {
+          "id": "d2",
+          "label": "45",
+          "misconception": "count-fives",
+          "meaning": "One group too many."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "starting",
+      "family": "t2-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 40/60 of the way to the next number; long thin hand at numeral 8. No AM or PM is shown.",
+      "hint": "Each number is another group of five minutes."
+    },
+    {
+      "id": "t2-revisit-3",
+      "module": "time",
+      "skills": [
+        "T2"
+      ],
+      "tags": [
+        "numeral-minutes",
+        "past-to",
+        "count-fives"
+      ],
+      "prompt": "How many minutes past does the long hand show?",
+      "visual": {
+        "kind": "clock",
+        "total": 710
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "50"
+        },
+        {
+          "id": "d0",
+          "label": "10",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral used as minutes."
+        },
+        {
+          "id": "d1",
+          "label": "55",
+          "misconception": "count-fives",
+          "meaning": "One group too many."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t2-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 50/60 of the way to the next number; long thin hand at numeral 10. No AM or PM is shown.",
+      "hint": "Each number is another group of five minutes."
+    },
+    {
+      "id": "t3-guided-0",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "Which hour has already started?",
+      "visual": {
+        "kind": "clock",
+        "total": 140
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2"
+        },
+        {
+          "id": "d0",
+          "label": "3",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "4",
+          "misconception": "swap-hands",
+          "meaning": "Minute numeral."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t3-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "Clock: short thick hand at 2 plus 20/60 of the way to the next number; long thin hand at numeral 4. No AM or PM is shown.",
+      "hint": "Read the number the short hand has passed."
+    },
+    {
+      "id": "t3-independent-1",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "Which hour has already started?",
+      "visual": {
+        "kind": "clock",
+        "total": 385
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6"
+        },
+        {
+          "id": "d0",
+          "label": "7",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "5",
+          "misconception": "swap-hands",
+          "meaning": "Minute numeral."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t3-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 6 plus 25/60 of the way to the next number; long thin hand at numeral 5. No AM or PM is shown.",
+      "hint": "Read the number the short hand has passed."
+    },
+    {
+      "id": "t3-independent-2",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "Which hour has already started?",
+      "visual": {
+        "kind": "clock",
+        "total": 580
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "9"
+        },
+        {
+          "id": "d0",
+          "label": "10",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "8",
+          "misconception": "swap-hands",
+          "meaning": "Minute numeral."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t3-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 40/60 of the way to the next number; long thin hand at numeral 8. No AM or PM is shown.",
+      "hint": "Read the number the short hand has passed."
+    },
+    {
+      "id": "t3-revisit-3",
+      "module": "time",
+      "skills": [
+        "T3"
+      ],
+      "tags": [
+        "next-hour",
+        "swap-hands"
+      ],
+      "prompt": "Which hour has already started?",
+      "visual": {
+        "kind": "clock",
+        "total": 710
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "11"
+        },
+        {
+          "id": "d0",
+          "label": "12",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "10",
+          "misconception": "swap-hands",
+          "meaning": "Minute numeral."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t3-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 50/60 of the way to the next number; long thin hand at numeral 10. No AM or PM is shown.",
+      "hint": "Read the number the short hand has passed."
+    },
+    {
+      "id": "t4-guided-0",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "next-hour",
+        "past-to"
+      ],
+      "prompt": "Which phrase matches this clock?",
+      "visual": {
+        "kind": "clock",
+        "total": 150
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "half past 2"
+        },
+        {
+          "id": "d0",
+          "label": "half past 3",
+          "misconception": "next-hour",
+          "meaning": "Wrong hour."
+        },
+        {
+          "id": "d1",
+          "label": "quarter past 2",
+          "misconception": "past-to",
+          "meaning": "Wrong fractional hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t4-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "Clock: short thick hand at 2 plus 30/60 of the way to the next number; long thin hand at numeral 6. No AM or PM is shown.",
+      "hint": "Half is thirty minutes; a quarter is fifteen. To means before the next hour."
+    },
+    {
+      "id": "t4-independent-1",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "next-hour",
+        "past-to"
+      ],
+      "prompt": "Which phrase matches this clock?",
+      "visual": {
+        "kind": "clock",
+        "total": 375
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "quarter past 6"
+        },
+        {
+          "id": "d0",
+          "label": "quarter past 7",
+          "misconception": "next-hour",
+          "meaning": "Wrong hour."
+        },
+        {
+          "id": "d1",
+          "label": "half past 6",
+          "misconception": "past-to",
+          "meaning": "Wrong fractional hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t4-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 6 plus 15/60 of the way to the next number; long thin hand at numeral 3. No AM or PM is shown.",
+      "hint": "Half is thirty minutes; a quarter is fifteen. To means before the next hour."
+    },
+    {
+      "id": "t4-independent-2",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "next-hour",
+        "past-to"
+      ],
+      "prompt": "Which phrase matches this clock?",
+      "visual": {
+        "kind": "clock",
+        "total": 585
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "quarter to 10"
+        },
+        {
+          "id": "d0",
+          "label": "quarter to 11",
+          "misconception": "next-hour",
+          "meaning": "Wrong hour."
+        },
+        {
+          "id": "d1",
+          "label": "half past 9",
+          "misconception": "past-to",
+          "meaning": "Wrong fractional hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t4-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 45/60 of the way to the next number; long thin hand at numeral 9. No AM or PM is shown.",
+      "hint": "Half is thirty minutes; a quarter is fifteen. To means before the next hour."
+    },
+    {
+      "id": "t4-revisit-3",
+      "module": "time",
+      "skills": [
+        "T4"
+      ],
+      "tags": [
+        "next-hour",
+        "past-to"
+      ],
+      "prompt": "Which phrase matches this clock?",
+      "visual": {
+        "kind": "clock",
+        "total": 660
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "11 o’clock"
+        },
+        {
+          "id": "d0",
+          "label": "12 o’clock",
+          "misconception": "next-hour",
+          "meaning": "Wrong hour."
+        },
+        {
+          "id": "d1",
+          "label": "half past 11",
+          "misconception": "past-to",
+          "meaning": "Wrong fractional hour."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "t4-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 0/60 of the way to the next number; long thin hand at numeral 12. No AM or PM is shown.",
+      "hint": "Half is thirty minutes; a quarter is fifteen. To means before the next hour."
+    },
+    {
+      "id": "t5-guided-0",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this time.",
+      "visual": {
+        "kind": "clock",
+        "total": 140
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2:20"
+        },
+        {
+          "id": "d0",
+          "label": "3:20",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "2:4",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral as minutes."
+        },
+        {
+          "id": "d2",
+          "label": "2:40",
+          "misconception": "past-to",
+          "meaning": "Remaining minutes."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "t5-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "Clock: short thick hand at 2 plus 20/60 of the way to the next number; long thin hand at numeral 4. No AM or PM is shown.",
+      "hint": "Combine the current hour with the minutes counted in fives."
+    },
+    {
+      "id": "t5-independent-1",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this time.",
+      "visual": {
+        "kind": "clock",
+        "total": 385
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6:25"
+        },
+        {
+          "id": "d0",
+          "label": "7:25",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "6:5",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral as minutes."
+        },
+        {
+          "id": "d2",
+          "label": "6:35",
+          "misconception": "past-to",
+          "meaning": "Remaining minutes."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "t5-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 6 plus 25/60 of the way to the next number; long thin hand at numeral 5. No AM or PM is shown.",
+      "hint": "Combine the current hour with the minutes counted in fives."
+    },
+    {
+      "id": "t5-independent-2",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this time.",
+      "visual": {
+        "kind": "clock",
+        "total": 580
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "9:40"
+        },
+        {
+          "id": "d0",
+          "label": "10:40",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "9:8",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral as minutes."
+        },
+        {
+          "id": "d2",
+          "label": "9:20",
+          "misconception": "past-to",
+          "meaning": "Remaining minutes."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.25,
+      "difficulty": "connecting",
+      "family": "t5-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Clock: short thick hand at 9 plus 40/60 of the way to the next number; long thin hand at numeral 8. No AM or PM is shown.",
+      "hint": "Combine the current hour with the minutes counted in fives."
+    },
+    {
+      "id": "t5-revisit-3",
+      "module": "time",
+      "skills": [
+        "T2",
+        "T3",
+        "T5"
+      ],
+      "tags": [
+        "next-hour",
+        "numeral-minutes",
+        "past-to"
+      ],
+      "prompt": "Read this time.",
+      "visual": {
+        "kind": "clock",
+        "total": 710
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "11:50"
+        },
+        {
+          "id": "d0",
+          "label": "12:50",
+          "misconception": "next-hour",
+          "meaning": "Approaching hour."
+        },
+        {
+          "id": "d1",
+          "label": "11:10",
+          "misconception": "numeral-minutes",
+          "meaning": "Numeral as minutes."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "connecting",
+      "family": "t5-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "Clock: short thick hand at 11 plus 50/60 of the way to the next number; long thin hand at numeral 10. No AM or PM is shown.",
+      "hint": "Combine the current hour with the minutes counted in fives."
+    },
+    {
+      "id": "f1-guided-0",
+      "module": "fractions",
+      "skills": [
+        "F1"
+      ],
+      "tags": [
+        "whole-count"
+      ],
+      "prompt": "Which description fits this whole?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 6,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6 equal large parts"
+        },
+        {
+          "id": "d0",
+          "label": "1 parts make the whole",
+          "misconception": "whole-count",
+          "meaning": "Selected count instead of whole."
+        },
+        {
+          "id": "d1",
+          "label": "Only the shaded area is the whole",
+          "misconception": "whole-count",
+          "meaning": "Whole boundary confusion."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f1-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "One whole strip with 6 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "The whole includes all the large outlined parts."
+    },
+    {
+      "id": "f1-independent-1",
+      "module": "fractions",
+      "skills": [
+        "F1"
+      ],
+      "tags": [
+        "whole-count"
+      ],
+      "prompt": "Which description fits this whole?",
+      "visual": {
+        "kind": "fraction",
+        "n": 5,
+        "d": 8,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "8 equal large parts"
+        },
+        {
+          "id": "d0",
+          "label": "5 parts make the whole",
+          "misconception": "whole-count",
+          "meaning": "Selected count instead of whole."
+        },
+        {
+          "id": "d1",
+          "label": "Only the shaded area is the whole",
+          "misconception": "whole-count",
+          "meaning": "Whole boundary confusion."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f1-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 8 equal grouped parts; 5 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "The whole includes all the large outlined parts."
+    },
+    {
+      "id": "f1-independent-2",
+      "module": "fractions",
+      "skills": [
+        "F1"
+      ],
+      "tags": [
+        "whole-count"
+      ],
+      "prompt": "Which description fits this whole?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 4,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "4 equal large parts"
+        },
+        {
+          "id": "d0",
+          "label": "2 parts make the whole",
+          "misconception": "whole-count",
+          "meaning": "Selected count instead of whole."
+        },
+        {
+          "id": "d1",
+          "label": "Only the shaded area is the whole",
+          "misconception": "whole-count",
+          "meaning": "Whole boundary confusion."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f1-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "The whole includes all the large outlined parts."
+    },
+    {
+      "id": "f1-revisit-3",
+      "module": "fractions",
+      "skills": [
+        "F1"
+      ],
+      "tags": [
+        "whole-count"
+      ],
+      "prompt": "Which description fits this whole?",
+      "visual": {
+        "kind": "fraction",
+        "n": 7,
+        "d": 8,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "8 equal large parts"
+        },
+        {
+          "id": "d0",
+          "label": "7 parts make the whole",
+          "misconception": "whole-count",
+          "meaning": "Selected count instead of whole."
+        },
+        {
+          "id": "d1",
+          "label": "Only the shaded area is the whole",
+          "misconception": "whole-count",
+          "meaning": "Whole boundary confusion."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f1-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "One whole strip with 8 equal grouped parts; 7 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "The whole includes all the large outlined parts."
+    },
+    {
+      "id": "f2-guided-0",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "In 1/6, what does 6 tell us?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6 equal parts make the whole"
+        },
+        {
+          "id": "d0",
+          "label": "6 parts are shaded",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed symbol roles."
+        },
+        {
+          "id": "d1",
+          "label": "6 separate wholes",
+          "misconception": "whole-count",
+          "meaning": "Incorrect reference unit."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f2-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "Text question.",
+      "hint": "The bottom number counts the equal parts in one whole."
+    },
+    {
+      "id": "f2-independent-1",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "In 5/8, what does 8 tell us?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "8 equal parts make the whole"
+        },
+        {
+          "id": "d0",
+          "label": "8 parts are shaded",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed symbol roles."
+        },
+        {
+          "id": "d1",
+          "label": "8 separate wholes",
+          "misconception": "whole-count",
+          "meaning": "Incorrect reference unit."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f2-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Text question.",
+      "hint": "The bottom number counts the equal parts in one whole."
+    },
+    {
+      "id": "f2-independent-2",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "In 2/4, what does 4 tell us?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "4 equal parts make the whole"
+        },
+        {
+          "id": "d0",
+          "label": "4 parts are shaded",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed symbol roles."
+        },
+        {
+          "id": "d1",
+          "label": "4 separate wholes",
+          "misconception": "whole-count",
+          "meaning": "Incorrect reference unit."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f2-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "Text question.",
+      "hint": "The bottom number counts the equal parts in one whole."
+    },
+    {
+      "id": "f2-revisit-3",
+      "module": "fractions",
+      "skills": [
+        "F2"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "In 7/8, what does 8 tell us?",
+      "visual": {
+        "kind": "none"
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "8 equal parts make the whole"
+        },
+        {
+          "id": "d0",
+          "label": "8 parts are shaded",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed symbol roles."
+        },
+        {
+          "id": "d1",
+          "label": "8 separate wholes",
+          "misconception": "whole-count",
+          "meaning": "Incorrect reference unit."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f2-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "Text question.",
+      "hint": "The bottom number counts the equal parts in one whole."
+    },
+    {
+      "id": "f3-guided-0",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "What fraction is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 6,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/6"
+        },
+        {
+          "id": "d0",
+          "label": "6/1",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed counts."
+        },
+        {
+          "id": "d1",
+          "label": "1/7",
+          "misconception": "whole-count",
+          "meaning": "Incorrect total."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f3-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "One whole strip with 6 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count shaded parts above the line, all equal parts below."
+    },
+    {
+      "id": "f3-independent-1",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "What fraction is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 5,
+        "d": 8,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "5/8"
+        },
+        {
+          "id": "d0",
+          "label": "8/5",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed counts."
+        },
+        {
+          "id": "d1",
+          "label": "5/9",
+          "misconception": "whole-count",
+          "meaning": "Incorrect total."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f3-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 8 equal grouped parts; 5 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count shaded parts above the line, all equal parts below."
+    },
+    {
+      "id": "f3-independent-2",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "What fraction is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 4,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2/4"
+        },
+        {
+          "id": "d0",
+          "label": "4/2",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed counts."
+        },
+        {
+          "id": "d1",
+          "label": "2/5",
+          "misconception": "whole-count",
+          "meaning": "Incorrect total."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f3-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count shaded parts above the line, all equal parts below."
+    },
+    {
+      "id": "f3-revisit-3",
+      "module": "fractions",
+      "skills": [
+        "F3"
+      ],
+      "tags": [
+        "swap-fraction",
+        "whole-count"
+      ],
+      "prompt": "What fraction is shaded?",
+      "visual": {
+        "kind": "fraction",
+        "n": 7,
+        "d": 8,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "7/8"
+        },
+        {
+          "id": "d0",
+          "label": "8/7",
+          "misconception": "swap-fraction",
+          "meaning": "Reversed counts."
+        },
+        {
+          "id": "d1",
+          "label": "7/9",
+          "misconception": "whole-count",
+          "meaning": "Incorrect total."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f3-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "One whole strip with 8 equal grouped parts; 7 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Count shaded parts above the line, all equal parts below."
+    },
+    {
+      "id": "f4-guided-0",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "equivalence",
+        "piece-count"
+      ],
+      "prompt": "Which fraction equals 2/3?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 3,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "4/6"
+        },
+        {
+          "id": "d0",
+          "label": "2/6",
+          "misconception": "equivalence",
+          "meaning": "Denominator only changed."
+        },
+        {
+          "id": "d1",
+          "label": "4/3",
+          "misconception": "piece-count",
+          "meaning": "Numerator only changed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f4-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Split each piece into two; both counts double."
+    },
+    {
+      "id": "f4-independent-1",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "equivalence",
+        "piece-count"
+      ],
+      "prompt": "Which fraction equals 3/4?",
+      "visual": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 4,
+        "units": 8
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6/8"
+        },
+        {
+          "id": "d0",
+          "label": "3/8",
+          "misconception": "equivalence",
+          "meaning": "Denominator only changed."
+        },
+        {
+          "id": "d1",
+          "label": "6/4",
+          "misconception": "piece-count",
+          "meaning": "Numerator only changed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f4-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 3 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Split each piece into two; both counts double."
+    },
+    {
+      "id": "f4-independent-2",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "equivalence",
+        "piece-count"
+      ],
+      "prompt": "Which fraction equals 3/6?",
+      "visual": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 6,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "6/12"
+        },
+        {
+          "id": "d0",
+          "label": "3/12",
+          "misconception": "equivalence",
+          "meaning": "Denominator only changed."
+        },
+        {
+          "id": "d1",
+          "label": "6/6",
+          "misconception": "piece-count",
+          "meaning": "Numerator only changed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f4-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 6 equal grouped parts; 3 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Split each piece into two; both counts double."
+    },
+    {
+      "id": "f4-revisit-3",
+      "module": "fractions",
+      "skills": [
+        "F4"
+      ],
+      "tags": [
+        "equivalence",
+        "piece-count"
+      ],
+      "prompt": "Which fraction equals 1/6?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 6,
+        "units": 12
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2/12"
+        },
+        {
+          "id": "d0",
+          "label": "1/12",
+          "misconception": "equivalence",
+          "meaning": "Denominator only changed."
+        },
+        {
+          "id": "d1",
+          "label": "2/6",
+          "misconception": "piece-count",
+          "meaning": "Numerator only changed."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f4-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "One whole strip with 6 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces.",
+      "hint": "Split each piece into two; both counts double."
+    },
+    {
+      "id": "f5-guided-0",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "These wholes are identical. Which shaded amount is larger?",
+      "visual": {
+        "kind": "fraction",
+        "n": 1,
+        "d": 2,
+        "units": 12,
+        "second": {
+          "n": 1,
+          "d": 6
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "1/2"
+        },
+        {
+          "id": "d0",
+          "label": "1/6",
+          "misconception": "denominator-size",
+          "meaning": "Larger denominator treated as larger piece."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "Numerators alone compared."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f5-guided-0",
+      "phases": [
+        "guided"
+      ],
+      "accessible": "One whole strip with 2 equal grouped parts; 1 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 6 equal grouped parts and 1 shaded.",
+      "hint": "Compare shaded lengths using the same whole."
+    },
+    {
+      "id": "f5-independent-1",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "These wholes are identical. Which shaded amount is larger?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 3,
+        "units": 12,
+        "second": {
+          "n": 2,
+          "d": 6
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2/3"
+        },
+        {
+          "id": "d0",
+          "label": "2/6",
+          "misconception": "denominator-size",
+          "meaning": "Larger denominator treated as larger piece."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "Numerators alone compared."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f5-independent-1",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 6 equal grouped parts and 2 shaded.",
+      "hint": "Compare shaded lengths using the same whole."
+    },
+    {
+      "id": "f5-independent-2",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "These wholes are identical. Which shaded amount is larger?",
+      "visual": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 4,
+        "units": 8,
+        "second": {
+          "n": 3,
+          "d": 8
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "3/4"
+        },
+        {
+          "id": "d0",
+          "label": "3/8",
+          "misconception": "denominator-size",
+          "meaning": "Larger denominator treated as larger piece."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "Numerators alone compared."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f5-independent-2",
+      "phases": [
+        "independent"
+      ],
+      "accessible": "One whole strip with 4 equal grouped parts; 3 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 8 equal grouped parts and 3 shaded.",
+      "hint": "Compare shaded lengths using the same whole."
+    },
+    {
+      "id": "f5-revisit-3",
+      "module": "fractions",
+      "skills": [
+        "F5"
+      ],
+      "tags": [
+        "denominator-size",
+        "quantity"
+      ],
+      "prompt": "These wholes are identical. Which shaded amount is larger?",
+      "visual": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 3,
+        "units": 12,
+        "second": {
+          "n": 2,
+          "d": 4
+        }
+      },
+      "format": "choice",
+      "choices": [
+        {
+          "id": "answer",
+          "label": "2/3"
+        },
+        {
+          "id": "d0",
+          "label": "2/4",
+          "misconception": "denominator-size",
+          "meaning": "Larger denominator treated as larger piece."
+        },
+        {
+          "id": "d1",
+          "label": "They are equal",
+          "misconception": "quantity",
+          "meaning": "Numerators alone compared."
+        }
+      ],
+      "correct": "answer",
+      "slip": 0.1,
+      "guess": 0.3333333333333333,
+      "difficulty": "starting",
+      "family": "f5-revisit-3",
+      "phases": [
+        "revisit"
+      ],
+      "accessible": "One whole strip with 3 equal grouped parts; 2 shaded. Small stud cells are units, not extra fraction pieces. A second whole of identical length has 4 equal grouped parts and 2 shaded.",
+      "hint": "Compare shaded lengths using the same whole."
+    }
+  ]
+}

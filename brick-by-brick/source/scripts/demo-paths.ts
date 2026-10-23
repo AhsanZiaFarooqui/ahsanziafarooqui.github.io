@@ -1,0 +1,3 @@
+import {newSession,recordAnswer} from '../src/session.ts';
+import {itemById} from '../src/bank.ts';
+for(const module of ['time','fractions'] as const)for(const correct of [true,false]){let s=newSession(module);const path=[];while(s.stage==='diagnostic'){const item=itemById(s.currentItemId!);path.push(item.id);s=recordAnswer(s,correct?'correct':'incorrect',correct?item.correct:item.choices[1].id);}console.log(JSON.stringify({label:'SIMULATED DEMONSTRATION ONLY',module,history:correct?'correct on each question':'first wrong option on each question',path,tutorial:s.tutorialId,reason:s.tutorialReason}));}

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "hands",
+    "title": "Meet the two hands",
+    "seconds": 59,
+    "captions": "hands.vtt",
+    "video": "hands.mp4",
+    "poster": "hands.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "fives",
+    "title": "Count the minutes in fives",
+    "seconds": 58,
+    "captions": "fives.vtt",
+    "video": "fives.mp4",
+    "poster": "fives.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "moving-hour",
+    "title": "Why the hour hand moves",
+    "seconds": 60,
+    "captions": "moving-hour.vtt",
+    "video": "moving-hour.mp4",
+    "poster": "moving-hour.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "half-past",
+    "title": "What does half past mean?",
+    "seconds": 46,
+    "captions": "half-past.vtt",
+    "video": "half-past.mp4",
+    "poster": "half-past.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "quarters",
+    "title": "Quarter past or quarter to?",
+    "seconds": 59,
+    "captions": "quarters.vtt",
+    "video": "quarters.mp4",
+    "poster": "quarters.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "read-time",
+    "title": "Read a clock in two small steps",
+    "seconds": 55,
+    "captions": "read-time.vtt",
+    "video": "read-time.mp4",
+    "poster": "read-time.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "whole",
+    "title": "First, find the whole",
+    "seconds": 53,
+    "captions": "whole.vtt",
+    "video": "whole.mp4",
+    "poster": "whole.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "equal-parts",
+    "title": "Pieces must be the same size",
+    "seconds": 55,
+    "captions": "equal-parts.vtt",
+    "video": "equal-parts.mp4",
+    "poster": "equal-parts.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "fraction-symbols",
+    "title": "What do the two numbers mean?",
+    "seconds": 55,
+    "captions": "fraction-symbols.vtt",
+    "video": "fraction-symbols.mp4",
+    "poster": "fraction-symbols.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "picture-fraction",
+    "title": "Turn a picture into a fraction",
+    "seconds": 52,
+    "captions": "picture-fraction.vtt",
+    "video": "picture-fraction.mp4",
+    "poster": "picture-fraction.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "half-quarters",
+    "title": "How can one half equal two quarters?",
+    "seconds": 56,
+    "captions": "half-quarters.vtt",
+    "video": "half-quarters.mp4",
+    "poster": "half-quarters.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "third-sixths",
+    "title": "One third becomes two sixths",
+    "seconds": 48,
+    "captions": "third-sixths.vtt",
+    "video": "third-sixths.mp4",
+    "poster": "third-sixths.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "compare",
+    "title": "Which is bigger: a half or a quarter?",
+    "seconds": 56,
+    "captions": "compare.vtt",
+    "video": "compare.mp4",
+    "poster": "compare.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  },
+  {
+    "id": "hour-fractions",
+    "title": "Fractions of one hour",
+    "seconds": 62,
+    "captions": "hour-fractions.vtt",
+    "video": "hour-fractions.mp4",
+    "poster": "hour-fractions.png",
+    "audio": "No embedded audio; optional local device narration in app."
+  }
+]
