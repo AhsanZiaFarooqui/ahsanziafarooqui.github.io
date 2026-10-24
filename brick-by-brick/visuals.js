@@ -1,5 +1,5 @@
-import {el,svg,button} from './dom.js?v=394f6e12dba5';
-import {clockState,digital,timeWords,filledUnits} from './math.js?v=394f6e12dba5';
+import {el,svg,button} from './dom.js?v=8397d2acd19c';
+import {clockState,digital,timeWords,filledUnits} from './math.js?v=8397d2acd19c';
                                        
 const point=(angle       ,r       )=>({x:160+Math.sin(angle*Math.PI/180)*r,y:160-Math.cos(angle*Math.PI/180)*r});
 export function clock(total       ,options                                                                                  ={}) {

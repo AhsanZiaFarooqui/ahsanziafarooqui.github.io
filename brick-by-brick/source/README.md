@@ -33,7 +33,7 @@ Follow [Cloudflare setup](deploy/CLOUDFLARE-SETUP.md). A standalone Worker is re
 
 The optional original local OpenAI adapter remains in the source for development, with placeholders in `.env.example`. It is **not used by the free deployment** and requires a separately billed credential if enabled. Leave its key blank for this project.
 
-Videos contain large visible captions and downloadable WebVTT captions. They **do not contain embedded speech**. Read aloud optionally uses an installed local English device voice; availability and timing vary. Nothing autoplays. The checked interactive step view and full transcript remain usable without playback or speech. Movies use original generic interlocking bricks, with no brand affiliation.
+All 14 MP4 videos now contain embedded English synthetic narration and visible captions, with separate WebVTT tracks. Play starts the video and voice together; pause, replay and chapter controls keep them together. No AI request or device speech voice is needed during playback. Nothing autoplays. The interactive step view and transcript remain available. Movies use original generic interlocking bricks, with no brand affiliation.
 
 ## Verify it
 
@@ -63,4 +63,4 @@ The student must identify and document a real difficulty, understand and choose 
 
 ## Narration preparation
 
-See [audio setup](docs/audio-setup.md) for the free one-time speech generation and MP4 embedding pipeline. The existing MP4 files still have no embedded audio until that pipeline has been completed and checked.
+See [audio setup](docs/audio-setup.md) for the free one-time speech generation and MP4 embedding pipeline. The generated voice tracks have been embedded in all 14 MP4s. Narration is synthetic, not a student recording.

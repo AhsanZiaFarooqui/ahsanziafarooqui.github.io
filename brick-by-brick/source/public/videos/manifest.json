@@ -6,7 +6,7 @@
     "captions": "hands.vtt",
     "video": "hands.mp4",
     "poster": "hands.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "fives",
@@ -15,7 +15,7 @@
     "captions": "fives.vtt",
     "video": "fives.mp4",
     "poster": "fives.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "moving-hour",
@@ -24,7 +24,7 @@
     "captions": "moving-hour.vtt",
     "video": "moving-hour.mp4",
     "poster": "moving-hour.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "half-past",
@@ -33,7 +33,7 @@
     "captions": "half-past.vtt",
     "video": "half-past.mp4",
     "poster": "half-past.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "quarters",
@@ -42,7 +42,7 @@
     "captions": "quarters.vtt",
     "video": "quarters.mp4",
     "poster": "quarters.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "read-time",
@@ -51,7 +51,7 @@
     "captions": "read-time.vtt",
     "video": "read-time.mp4",
     "poster": "read-time.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "whole",
@@ -60,7 +60,7 @@
     "captions": "whole.vtt",
     "video": "whole.mp4",
     "poster": "whole.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "equal-parts",
@@ -69,7 +69,7 @@
     "captions": "equal-parts.vtt",
     "video": "equal-parts.mp4",
     "poster": "equal-parts.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "fraction-symbols",
@@ -78,7 +78,7 @@
     "captions": "fraction-symbols.vtt",
     "video": "fraction-symbols.mp4",
     "poster": "fraction-symbols.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "picture-fraction",
@@ -87,7 +87,7 @@
     "captions": "picture-fraction.vtt",
     "video": "picture-fraction.mp4",
     "poster": "picture-fraction.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "half-quarters",
@@ -96,7 +96,7 @@
     "captions": "half-quarters.vtt",
     "video": "half-quarters.mp4",
     "poster": "half-quarters.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "third-sixths",
@@ -105,7 +105,7 @@
     "captions": "third-sixths.vtt",
     "video": "third-sixths.mp4",
     "poster": "third-sixths.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "compare",
@@ -114,7 +114,7 @@
     "captions": "compare.vtt",
     "video": "compare.mp4",
     "poster": "compare.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   },
   {
     "id": "hour-fractions",
@@ -123,6 +123,6 @@
     "captions": "hour-fractions.vtt",
     "video": "hour-fractions.mp4",
     "poster": "hour-fractions.png",
-    "audio": "No embedded audio; optional local device narration in app."
+    "audio": "Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS."
   }
 ]

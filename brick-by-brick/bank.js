@@ -1,5 +1,5 @@
                                                                    
-import {digital, timeWords} from './math.js?v=394f6e12dba5';
+import {digital, timeWords} from './math.js?v=8397d2acd19c';
 
 export const skillNames                      = {T1:'Recognise the two hands',T2:'Count minutes in fives',T3:'Find the current hour',T4:'Use past and to',T5:'Read a five-minute time',F1:'Find a whole and equal parts',F2:'Read numerator and denominator',F3:'Match a picture to a fraction',F4:'Find equivalent fractions',F5:'Compare the same whole'};
 export const skillsFor=(m       )         => m==='time'?['T1','T2','T3','T4','T5']:['F1','F2','F3','F4','F5'];

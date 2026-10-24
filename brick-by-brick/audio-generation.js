@@ -1,6 +1,6 @@
-import {movies} from './movies.js?v=394f6e12dba5';
-import {apiUrl} from './runtime-config.js?v=394f6e12dba5';
-import {narrationSamples,wavBytes} from './audio-utils.js?v=394f6e12dba5';
+import {movies} from './movies.js?v=8397d2acd19c';
+import {apiUrl} from './runtime-config.js?v=8397d2acd19c';
+import {narrationSamples,wavBytes} from './audio-utils.js?v=8397d2acd19c';
 const generate=document.getElementById('generate')                     ,progress=document.getElementById('progress') ,preview=document.getElementById('preview')                    ,downloadArea=document.getElementById('download') ;
 const base64=(bytes           )=>new Promise        ((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=reject;reader.readAsDataURL(new Blob([bytes]));});
 generate.addEventListener('click',async()=>{

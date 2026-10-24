@@ -4,7 +4,7 @@ Implementation and checks: 23–24 October 2026, Windows PowerShell, Node 24.14.
 
 ## Automated coverage
 
-**45 tests passed** in Node's native test runner, including:
+**46 tests passed** in Node's native test runner, including:
 
 - Clock angles at 3:30 and 3:45, continuous movement minute by minute, wraparound, past/to wording and no inferred AM/PM.
 - Exact rational equivalence/comparison, correct unit subdivision, equal SVG whole widths and unchanged highlights during equivalence lessons.
@@ -20,9 +20,9 @@ The actual local server also returned HTTP 200 for `/`, `/main.js`, `/style.css`
 
 ## Video and deployment checks
 
-Fourteen H.264 MP4s, PNG posters and WebVTT tracks are present. Each targeted lesson maps to a movie. Tests validate scene mathematics, caption coverage, chapter boundaries, MP4 codec/container markers, duration (within three frames of the storyboard after encoder trimming), video byte-range responses, and player controls in the DOM harness. The movies have no embedded audio; optional local browser speech is not yet verified on real devices.
+Fourteen H.264 MP4s, PNG posters and WebVTT tracks are present. Each targeted lesson maps to a movie. Tests validate scene mathematics, caption coverage, chapter boundaries, MP4 codec/container markers, duration (within three frames of the storyboard after encoder trimming), video byte-range responses, and player controls in the DOM harness. Every movie now has an embedded AAC narration track and an H264 video track. Tests check real track handlers, sample counts, offsets into media data and matching duration. The native player controls both tracks together.
 
-The standalone Cloudflare Worker was built and exercised locally. Mocked live success, constrained context, origin rejection, missing binding, provider/quota failure and invalid quantities passed. No live Cloudflare response is claimed.
+The standalone Cloudflare Worker was built and exercised locally. Mocked live success, constrained context, origin rejection, missing binding, provider/quota failure and invalid quantities passed. The owner subsequently verified a real live response through the parent-area test, as recorded below.
 
 ## Synthetic audit
 
@@ -31,7 +31,7 @@ The reproducible [audit report](synthetic-audit.md) and [raw output](synthetic-a
 ## What was not verified
 
 - **Real browser rendering and interaction:** the UI tool reported no available browsers. Both Edge and in-app-browser creation returned “Browser is not available.” Mobile/desktop screenshots, actual keyboard interaction, screen-reader output and OS-level reduced-motion behaviour could not be checked. DOM/state tests are not a browser or layout engine. Follow `docs/browser-checklist.md` before a learner trial.
-- **Live AI:** the account owner confirmed configured status for the free Cloudflare binding, but no live model response has been verified. No local paid-provider credential was configured. Valid provider responses were mocked, not live. Enabling steps are in the README; account/model availability and provider prose quality remain unverified.
+- **AI content quality:** the account owner confirmed a real LIVE_VERIFIED response on the fixed clock probe. This does not establish correctness of all generated wording, all topics, or all future provider responses. The optional paid local adapter was not enabled.
 - **Static TypeScript type checking:** the native build strips types and verifies parseable syntax; no TypeScript compiler was installed. Package download attempts were denied by the environment, so the application was implemented without package dependencies. Runtime tests do not substitute for a static type check.
 - **Educational validation:** no real learners, calibrated likelihoods, validated cut-offs, classroom observations, impact evidence or retention study. Adult subject review and voluntary supervised trials remain necessary.
 
@@ -49,4 +49,4 @@ A user-reported built-in response did not establish live AI success. Browser ass
 
 On 24 October 2026, the account owner ran Grown-ups > Test AI connection and reported LIVE_VERIFIED for https://brick-maths-ai.ahsan-zia-farooqui.workers.dev/api/explain. The fixed-example response was live and passed the visual parameter checks. This is user-assisted live verification, not a browser test run by the coding tools, and it does not prove all generated prose correct.
 
-A one-time narration generator and constrained Workers AI speech route are prepared and mocked tests pass. The existing MP4s remain silent until the owner generates the audio pack and the embedding script is run. Live speech generation, listening quality, and browser export remain unverified. See docs/audio-setup.md.
+The owner generated and downloaded the 14-movie speech pack through the setup page. All WAV files were checked for duration and non-silent samples, encoded to AAC, and combined with the existing H264 footage. The video payloads were verified byte-for-byte unchanged. A missing initial sync marker from the original encoder was repaired by reading actual H264 IDR samples; all 14 movies now start at a genuine indexed keyframe. VLC opened both tracks and decoded frame captures from the narrated clock movie. Human listening review, pronunciation quality, and real mobile browser audio playback remain to be checked. The generated audio does not require AI at playback time. See docs/audio-setup.md.

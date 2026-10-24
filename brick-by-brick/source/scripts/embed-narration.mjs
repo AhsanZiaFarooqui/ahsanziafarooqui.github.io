@@ -3,6 +3,7 @@ import {resolve} from 'node:path';
 import {gunzipSync} from 'node:zlib';
 import {spawn} from 'node:child_process';
 import {movies} from '../src/movies.ts';
+import {combineVideoAudio,inspectMp4} from './mp4-audio.mjs';
 const input=process.argv[2];if(!input)throw Error('Pass the downloaded brick-narration.json.gz path.');
 if((await stat(input)).size>100000000)throw Error('Unexpectedly large narration pack');
 let raw=await readFile(input);if(raw[0]===31&&raw[1]===139)raw=gunzipSync(raw,{maxOutputLength:180000000});
@@ -18,11 +19,13 @@ for(const movie of movies){const all=pack.movies.filter(m=>m.id===movie.id);if(a
  await writeFile(`media-work/narration/${movie.id}.wav`,wav);
 }
 const run=(file,args)=>new Promise((ok,no)=>{const p=spawn(file,args,{windowsHide:true,stdio:'ignore'});p.once('error',no);p.once('exit',code=>code?no(Error(`Video mux failed (${code})`)):ok());});
-for(const movie of movies){const source=resolve(`public/videos/${movie.id}.mp4`),out=resolve(`media-work/narration/${movie.id}.mp4`),wave=resolve(`media-work/narration/${movie.id}.wav`);
- await copyFile(source,resolve(`media-work/silent-videos/${movie.id}.mp4`));
- await run('C:/Program Files/VideoLAN/VLC/vlc.exe',['--intf','dummy','--no-one-instance','--ignore-config','--no-media-library','--no-metadata-network-access','--no-plugins-cache',source,`:input-slave=${new URL('file:///'+wave.replaceAll('\\','/')).href}`,'--sout',`#transcode{acodec=mp4a,ab=96,channels=1,samplerate=22050}:std{access=file,mux=mp4,dst=${out}}`,'vlc://quit']);
- const encoded=await readFile(out);if(encoded.length<10000||!encoded.includes(Buffer.from('mp4a'))||!encoded.includes(Buffer.from('avc1')))throw Error('Expected both AAC audio and H264 video');
- await copyFile(out,source);console.log(`Embedded spoken narration: ${movie.id}`);
+for(const movie of movies){const source=resolve(`public/videos/${movie.id}.mp4`),out=resolve(`media-work/narration/${movie.id}.m4a`),wave=resolve(`media-work/narration/${movie.id}.wav`);
+ const backup=resolve(`media-work/silent-videos/${movie.id}.mp4`);let video=await readFile(source);
+ if(inspectMp4(video).tracks.some(t=>t.kind==='soun'))video=await readFile(backup);else await copyFile(source,backup);
+ await run('C:/Program Files/VideoLAN/VLC/vlc.exe',['--intf','dummy','--no-one-instance','--ignore-config','--no-media-library','--no-metadata-network-access','--no-plugins-cache','--no-sub-autodetect-file',wave,'--sout',`#transcode{acodec=mp4a,ab=96,channels=1,samplerate=22050}:std{access=file,mux=mp4,dst=${out}}`,'vlc://quit']);
+ const combined=combineVideoAudio(video,await readFile(out)),report=inspectMp4(combined);
+ if(report.tracks.length!==2||!combined.includes(Buffer.from('avcC'))||!combined.includes(Buffer.from('mp4a')))throw Error('Expected actual H264 video and AAC audio tracks');
+ await writeFile(source,combined);console.log(`Embedded spoken narration: ${movie.id}`);
 }
 const manifest=JSON.parse(await readFile('public/videos/manifest.json','utf8'));for(const item of manifest)item.audio='Embedded English synthetic narration, generated from the checked captions using Cloudflare MeloTTS.';await writeFile('public/videos/manifest.json',JSON.stringify(manifest,null,2));
 await writeFile('media-work/narration/verification.json',JSON.stringify({movies:movies.length,source:'Cloudflare MeloTTS; generated in owner browser',checks:'PCM duration, non-silence, AAC/H264 track markers; listening review still required'},null,2));

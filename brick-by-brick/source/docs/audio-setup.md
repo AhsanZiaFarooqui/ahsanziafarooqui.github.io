@@ -1,6 +1,6 @@
 # Prepare embedded narration without a paid service
 
-The initial MP4s contain captions only. This setup prepares actual audio tracks, using Cloudflare MeloTTS within the Workers AI free allowance. Keep Workers Free. Do not buy credits or enable paid billing. Generating speech is separate from the adaptive live explanation function.
+The shipped MP4s now have embedded narration. The initial version contained captions only; the procedure below regenerates the voices when scripts change. This setup prepares actual audio tracks, using Cloudflare MeloTTS within the Workers AI free allowance. Keep Workers Free. Do not buy credits or enable paid billing. Generating speech is separate from the adaptive live explanation function.
 
 1. Rebuild `npm run build:worker` if needed. Replace the Cloudflare dashboard Worker code with all of `deploy/cloudflare-worker.js`, deploy, and keep the existing Workers AI binding named `AI`.
 2. Open the website's `generate-audio.html` setup page. Click **Generate narration files** and leave the tab open. It speaks only the whitelisted script captions, never learner text. Completed scene audio is cached in that browser so a retry can resume.

@@ -5,7 +5,8 @@ await mkdir('dist',{recursive:true});
 const sourceFiles=(await readdir('src')).filter(f=>f.endsWith('.ts')||f.endsWith('.css')).sort();
 const digest=createHash('sha256');
 for(const file of sourceFiles)digest.update(await readFile(`src/${file}`));
-digest.update(await readFile('public/config.json'));digest.update(await readFile('index.html'));
+async function hashPublic(dir){for(const entry of (await readdir(dir,{withFileTypes:true})).sort((a,b)=>a.name.localeCompare(b.name))){const path=`${dir}/${entry.name}`;digest.update(path);if(entry.isDirectory())await hashPublic(path);else digest.update(await readFile(path));}}
+await hashPublic('public');digest.update(await readFile('index.html'));
 const version=digest.digest('hex').slice(0,12);
 for(const file of await readdir('src')) if(file.endsWith('.ts')) {
  const code=stripTypeScriptTypes(await readFile(`src/${file}`,'utf8'),{mode:'strip'}).replace(/(from\s+['"]\.\/[^'"]+)\.ts(['"])/g,`$1.js?v=${version}$2`);
