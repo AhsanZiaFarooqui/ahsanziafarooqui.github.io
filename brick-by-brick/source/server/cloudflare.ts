@@ -2,6 +2,7 @@ import {examples,fallback,parameters,safeLearnerText,validInput,validOutput} fro
 import {outputSchema} from '../src/ai-schema.ts';
 import {itemById,items} from '../src/bank.ts';
 import {tutorialById} from '../src/tutorials.ts';
+import {narrationResponse} from './narration.ts';
 interface Env {AI?:{run:(model:string,input:unknown)=>Promise<{response?:unknown}>}; ALLOWED_ORIGIN?:string}
 const CF_MODEL='@cf/meta/llama-3.3-70b-instruct-fp8-fast';
 const cfRequests=new Map<string,{start:number;count:number}>();
@@ -16,6 +17,7 @@ export async function cloudflareFetch(request:Request,env:Env):Promise<Response>
  if(url.pathname==='/api/status'&&request.method==='GET')return respond({mode:env.AI?'configured':'built-in',provider:'Cloudflare Workers AI',freePlanRequired:true});
  if(!accepted)return respond({error:'This endpoint is reserved for the maths app.'},403);
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{...headers,'Access-Control-Allow-Methods':'POST, GET, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Access-Control-Max-Age':'600'}});
+ if(url.pathname==='/api/narration')return narrationResponse(request,env.AI,headers);
  if(url.pathname!=='/api/explain'||request.method!=='POST')return respond({error:'Not found'},404);
  if(!request.headers.get('Content-Type')?.startsWith('application/json'))return respond({error:'JSON required'},415);
  const ip=request.headers.get('CF-Connecting-IP')||'local',now=Date.now();const old=cfRequests.get(ip);const rate=old&&now-old.start<60000?old:{start:now,count:0};rate.count++;cfRequests.set(ip,rate);

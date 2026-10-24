@@ -22,7 +22,7 @@ The application uses TypeScript, standard DOM/SVG APIs and Node's built-in HTTP 
 - 13 targeted lessons with real captioned H.264 MP4 mini-movies, plus a fourteenth Fractions of an Hour movie. An interactive SVG step view remains available, with continuous clock hands, exact fraction comparisons and same-length whole strips. The hour hand stays synchronised across twelve. Play, Pause, Replay, Previous/Next, Explain differently and Try it myself all work.
 - An optional Fractions of an Hour activity distinguishes durations from clock readings.
 - A 32-state Bayesian model per module; EIG-based follow-ups; no ability score shown to children. See the [technical note](docs/technical-note.md).
-- A free-plan Cloudflare Workers AI endpoint for alternate explanations and supported examples. It validates structured output and falls back on quota/provider/validation failure. **The Cloudflare binding is connected (the account owner confirmed configured status); a live model response has not yet been verified.** Each explanation is labelled live or built-in. The diagnostic engine works fully without AI.
+- A free-plan Cloudflare Workers AI endpoint for alternate explanations and supported examples. It validates structured output and falls back on quota/provider/validation failure. **The account owner verified a live response through Grown-ups > Test AI connection (LIVE_VERIFIED, 24 October 2026). Visual parameters were checked; arbitrary prose still needs review.** Each explanation is labelled live or built-in. The diagnostic engine works fully without AI.
 - Local anonymous sessions, separate guided/check evidence, parent/teacher explanations, optional evaluation labels, JSON/CSV export, scoped reset/delete and a blank local project journal.
 
 ## Share it and enable free AI
@@ -60,3 +60,7 @@ The student must identify and document a real difficulty, understand and choose 
 ## Source map
 
 `src/model.ts`: probabilities and question policy. `src/bank.ts`: authored items and practice families. `src/tutorials.ts`: checked teaching steps and selection. `src/session.ts`: progression, post-teaching evidence, storage/CSV. `src/math.ts`: arithmetic. `src/animation.ts`: deterministic player state. `src/visuals.ts`: SVG renderer. `src/main.ts`: child and grown-up flows. `server/ai.ts`: provider call and fallback. `server/index.ts`: local server. `tests/`: automated checks. `scripts/`: native build, audit and metadata generation.
+
+## Narration preparation
+
+See [audio setup](docs/audio-setup.md) for the free one-time speech generation and MP4 embedding pipeline. The existing MP4 files still have no embedded audio until that pipeline has been completed and checked.

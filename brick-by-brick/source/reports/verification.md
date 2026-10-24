@@ -4,7 +4,7 @@ Implementation and checks: 23–24 October 2026, Windows PowerShell, Node 24.14.
 
 ## Automated coverage
 
-**43 tests passed** in Node's native test runner, including:
+**45 tests passed** in Node's native test runner, including:
 
 - Clock angles at 3:30 and 3:45, continuous movement minute by minute, wraparound, past/to wording and no inferred AM/PM.
 - Exact rational equivalence/comparison, correct unit subdivision, equal SVG whole widths and unchanged highlights during equivalence lessons.
@@ -44,3 +44,9 @@ GitHub Pages build and deployment succeeded for commit 680ad510e8d9a0eb2d07cc98a
 ## Connection troubleshooting update
 
 A user-reported built-in response did not establish live AI success. Browser assets now share a content-derived version, configuration bypasses stale caches, and pending connection status is updated after the request finishes. Grown-ups includes an explicit fixed-example connection test with HTTP, network/CORS, binding, format, fallback and live-success results. Tests cover these distinctions and verify that the test creates no learner session. No Cloudflare code or billing change is required for this frontend update.
+
+## User-verified live AI and narration preparation
+
+On 24 October 2026, the account owner ran Grown-ups > Test AI connection and reported LIVE_VERIFIED for https://brick-maths-ai.ahsan-zia-farooqui.workers.dev/api/explain. The fixed-example response was live and passed the visual parameter checks. This is user-assisted live verification, not a browser test run by the coding tools, and it does not prove all generated prose correct.
+
+A one-time narration generator and constrained Workers AI speech route are prepared and mocked tests pass. The existing MP4s remain silent until the owner generates the audio pack and the embedding script is run. Live speech generation, listening quality, and browser export remain unverified. See docs/audio-setup.md.

@@ -1,5 +1,5 @@
-import {el,button} from './dom.js?v=fe8d0075f5b4';
-import {movieById,chapterAt,chapterStarts} from './movies.js?v=fe8d0075f5b4';
+import {el,button} from './dom.js?v=394f6e12dba5';
+import {movieById,chapterAt,chapterStarts} from './movies.js?v=394f6e12dba5';
 export function moviePlayer(id       ){
  const movie=movieById(id),starts=chapterStarts(movie);
  const video=el('video',{class:'lesson-movie',src:`./videos/${id}.mp4`,poster:`./videos/${id}.png`,preload:'metadata',playsinline:true,controls:true,'aria-label':`${movie.title}, captioned brick-style video`});
