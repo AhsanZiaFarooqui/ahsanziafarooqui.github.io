@@ -10,13 +10,16 @@ import {shuffle,score} from './math.ts';
 import {animation} from './animation.ts';
 import {moviePlayer} from './movie-player.ts';
 import {apiUrl} from './runtime-config.ts';
+import {checkAiConnection} from './connection-check.ts';
 import type {Timeline,AnimationAction} from './animation.ts';
 import {fallback,trustedAiVisual,validOutput} from './ai-contract.ts';
 import type {AiResult} from './ai-contract.ts';
 
 const root=document.getElementById('root')!;
 let store:Store;try{store=loadStore(localStorage);}catch{store=emptyStore();}
-let storageError=false,activeId:string|undefined,screen:'home'|'learn'|'adult'|'bridge'='home',cleanup=()=>{},renderVersion=0,aiMode='built-in';
+let storageError=false,activeId:string|undefined,screen:'home'|'learn'|'adult'|'bridge'='home',cleanup=()=>{},renderVersion=0,aiMode='checking';
+function connectionLabel(){return aiMode==='checking'?'Checking the AI connection…':aiMode==='configured'?'AI connection configured. Each response says whether it was live or built-in.':'Built-in explanations are available. The live AI connection has not been confirmed.';}
+function refreshConnectionLabel(){for(const node of root.querySelectorAll('[data-ai-connection]'))node.textContent=connectionLabel();}
 const current=()=>store.sessions.find(s=>s.id===activeId)!;
 function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(store));storageError=false;}catch{storageError=true;}}
 function commit(s:Session){const index=store.sessions.findIndex(x=>x.id===s.id);if(index<0)store.sessions.push(s);else store.sessions[index]=s;activeId=s.id;save();}
@@ -95,7 +98,7 @@ function explainDifferently(area:HTMLElement,s:Session){
  const input=el('textarea',{id:'reasoning',rows:2,maxlength:300,placeholder:'For example: I counted the little studs.'});
  const output=el('div',{class:'ai-output'});
  const send=button('Help with my explanation',()=>request(true),'secondary');
- area.replaceChildren(el('div',{class:'panel'},el('h2',{},'Let’s try a different way.'),el('p',{class:'mode-label'},aiMode==='configured'?'AI connection configured. Each response says whether it was live or built-in.':'Built-in explanation mode · live AI is not connected.'),el('label',{for:'reasoning'},'Optional: how were you thinking about it?'),input,el('p',{class:'small'},'Please leave out names and personal details. If live AI is configured, this short explanation is sent to the AI provider when you press the button. It is not saved in your session.'),send,output));
+ area.replaceChildren(el('div',{class:'panel'},el('h2',{},'Let’s try a different way.'),el('p',{class:'mode-label','data-ai-connection':true},connectionLabel()),el('label',{for:'reasoning'},'Optional: how were you thinking about it?'),input,el('p',{class:'small'},'Please leave out names and personal details. If live AI is configured, this short explanation is sent to the AI provider when you press the button. It is not saved in your session.'),send,output));
  request(false);
  async function request(includeText:boolean){send.disabled=true;output.replaceChildren(el('p',{role:'status'},'Finding another way to explain…'));let response:AiResult;
  try{const last=s.observations.at(-1);const evidence=evidenceStatus(s.posterior,s.observations,s.module).find(e=>e.skill===t.skill)!;
@@ -122,6 +125,9 @@ function bridge(main:HTMLElement){
 }
 const journalPrompts=['What difficulty did I notice?','Which design decisions did I make?','Why did I choose these examples?','What did classmates say?','What did I change?','What did I learn?','What help did I receive from adults, AI and coding tools?'];
 function adult(main:HTMLElement){
+ const connectionResult=el('div',{'aria-live':'polite'});
+ const checkButton=button('Test AI connection',async()=>{checkButton.disabled=true;connectionResult.replaceChildren(el('p',{},'Checking one fixed maths example. No learner answers are sent…'));const checked=await checkAiConnection();connectionResult.replaceChildren(el('p',{},checked.message),el('p',{class:'small'},`Support code: ${checked.code}`),el('p',{class:'small'},`Endpoint: ${checked.endpoint}`));checkButton.disabled=false;},'secondary');
+ main.append(el('section',{class:'panel'},el('h2',{},'AI connection'),el('p',{},'This optional test uses one fixed clock example and a small amount of the free AI allowance. It does not create a learner session or save test results.'),checkButton,connectionResult));
  main.append(el('div',{class:'activity-heading'},el('div',{class:'eyebrow'},'PARENT / TEACHER AREA'),el('h1',{},'See the learning journey.'),el('p',{class:'lead'},'Provisional evidence, useful questions, and room to reflect. This is an adaptive diagnostic tutor, not a validated ability test.')));
  const exportStore=()=>({schemaVersion:1,exportedAt:new Date().toISOString(),sessions:store.sessions,bridgeVisits:store.bridgeVisits});
  const deletion=el('div');
@@ -135,10 +141,10 @@ function adult(main:HTMLElement){
  for(const o of s.observations){const item=itemById(o.itemId);summary.append(el('details',{class:'observation'},el('summary',{},`${o.phase} · ${item.id} · ${o.outcome}${o.hints?' · hint shown':''}`),el('p',{},item.prompt),el('p',{},`Required skills: ${item.skills.join(', ')}. Answer: ${item.choices.find(c=>c.id===o.choiceId)?.label||o.outcome}.`),el('p',{},o.reason),el('p',{},`Prior: ${o.prior.map(x=>x.toFixed(3)).join(', ')}. Posterior: ${o.posterior.map(x=>x.toFixed(3)).join(', ')}.`),el('p',{},o.misconception?`Provisional interpretation: ${item.choices.find(c=>c.id===o.choiceId)?.meaning}`:'No wrong-option interpretation.')));}
  summary.append(button('Reset this session',()=>{store.sessions=store.sessions.filter(x=>x.id!==s.id);save();render();},'quiet'));main.append(summary);
  }
- main.append(el('section',{class:'panel limitations'},el('h2',{},'How to read this evidence'),el('p',{},'The model tracks 32 possible combinations of five skills. Correctness updates those probabilities using assumed guessing and slip rates. Expected information gain helps choose a useful next diagnostic question. Wrong choices are clues, not diagnoses.'),el('p',{},'Watching a lesson never marks a skill as mastered. Guided responses do not update mastery. Independent checks start from a separate uncertain prior of 0.5 per skill; the diagnostic snapshot stays intact. One correct answer is limited evidence. Thresholds and item parameters are uncalibrated.'),el('p',{},'The AI only changes wording or chooses a checked visual/example. It cannot score answers or alter the learner model. Visual parameters are validated; arbitrary prose cannot be completely verified.'),el('p',{class:'mode-label'},aiMode==='configured'?'Live AI configured; each returned response labels whether it was live or a fallback.':'Built-in explanation mode. The live AI connection has not been confirmed.')));
+ main.append(el('section',{class:'panel limitations'},el('h2',{},'How to read this evidence'),el('p',{},'The model tracks 32 possible combinations of five skills. Correctness updates those probabilities using assumed guessing and slip rates. Expected information gain helps choose a useful next diagnostic question. Wrong choices are clues, not diagnoses.'),el('p',{},'Watching a lesson never marks a skill as mastered. Guided responses do not update mastery. Independent checks start from a separate uncertain prior of 0.5 per skill; the diagnostic snapshot stays intact. One correct answer is limited evidence. Thresholds and item parameters are uncalibrated.'),el('p',{},'The AI only changes wording or chooses a checked visual/example. It cannot score answers or alter the learner model. Visual parameters are validated; arbitrary prose cannot be completely verified.'),el('p',{class:'mode-label','data-ai-connection':true},connectionLabel())));
  const journal=el('section',{class:'panel journal'},el('h2',{},'My project journal'),el('p',{},'These fields are blank until the student writes in them. Use anonymous notes about classmates; do not add names. Journal text stays separate from evidence exports.'));
  journalPrompts.forEach((prompt,k)=>{const input=el('textarea',{id:`journal-${k}`,rows:3,maxlength:3000});input.value=store.journal[prompt]||'';input.addEventListener('input',()=>{store.journal[prompt]=input.value;save();});journal.append(el('label',{for:`journal-${k}`},prompt),input);});
  journal.append(button('Export my journal',()=>download('my-project-journal.txt',journalPrompts.map(p=>`${p}\n${store.journal[p]||'[Not yet recorded]'}`).join('\n\n'),'text/plain'),'secondary'));main.append(journal);
 }
-apiUrl('/api/status').then(url=>fetch(url)).then(r=>r.json()).then(r=>{aiMode=r.mode==='configured'?'configured':'built-in';}).catch(()=>{});
+apiUrl('/api/status').then(url=>fetch(url,{cache:'no-store',signal:AbortSignal.timeout(10000)})).then(r=>{if(!r.ok)throw Error('status');return r.json();}).then(r=>{aiMode=r.mode==='configured'?'configured':'built-in';refreshConnectionLabel();}).catch(()=>{aiMode='unavailable';refreshConnectionLabel();});
 render();

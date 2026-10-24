@@ -1,4 +1,4 @@
-import {initial,itemById,items,skillsFor} from './bank.js';
+import {initial,itemById,items,skillsFor} from './bank.js?v=fe8d0075f5b4';
                                                                           
 export const assumptions={masteryPrior:.55,slip:.1,minQuestions:4,targetQuestions:6,maxQuestions:8,low:.3,high:.8,minGain:.025};
 export function normalise(p         ) {const sum=p.reduce((a,b)=>a+b,0);if(!Number.isFinite(sum)||sum<=0)throw Error('Invalid probability distribution');return p.map(v=>v/sum);}

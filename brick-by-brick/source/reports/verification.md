@@ -4,7 +4,7 @@ Implementation and checks: 23–24 October 2026, Windows PowerShell, Node 24.14.
 
 ## Automated coverage
 
-**40 tests passed** in Node's native test runner, including:
+**43 tests passed** in Node's native test runner, including:
 
 - Clock angles at 3:30 and 3:45, continuous movement minute by minute, wraparound, past/to wording and no inferred AM/PM.
 - Exact rational equivalence/comparison, correct unit subdivision, equal SVG whole widths and unchanged highlights during equivalence lessons.
@@ -40,3 +40,7 @@ No synthetic test sessions are preloaded into the real dashboard. Test fixtures 
 ## Publication
 
 GitHub Pages build and deployment succeeded for commit 680ad510e8d9a0eb2d07cc98ae6a9d1336e9cc65. The public app is https://ahsanziafarooqui.github.io/brick-by-brick/. Source is isolated under brick-by-brick/source; existing site files were preserved. The account owner confirmed that https://brick-maths-ai.ahsan-zia-farooqui.workers.dev/api/status returns configured. The endpoint address is set in public/config.json. A configured binding alone does not verify a live model response.
+
+## Connection troubleshooting update
+
+A user-reported built-in response did not establish live AI success. Browser assets now share a content-derived version, configuration bypasses stale caches, and pending connection status is updated after the request finishes. Grown-ups includes an explicit fixed-example connection test with HTTP, network/CORS, binding, format, fallback and live-success results. Tests cover these distinctions and verify that the test creates no learner session. No Cloudflare code or billing change is required for this frontend update.

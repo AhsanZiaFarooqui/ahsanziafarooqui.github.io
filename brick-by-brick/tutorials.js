@@ -1,6 +1,6 @@
                                                                                          
-import {evidenceStatus, marginals, misconceptionEvidence} from './model.js';
-import {skillsFor} from './bank.js';
+import {evidenceStatus, marginals, misconceptionEvidence} from './model.js?v=fe8d0075f5b4';
+import {skillsFor} from './bank.js?v=fe8d0075f5b4';
 const c=(total       ,counts=false)       =>({kind:'clock',total,labels:true,counts,digital:true});
 const f=(n       ,d       ,units       ,second                     )       =>({kind:'fraction',n,d,units,second,labels:true});
 const step=(caption       ,visual       )           =>({caption,visual});
