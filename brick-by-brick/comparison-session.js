@@ -1,9 +1,9 @@
                                              
                                                
-import {validOutput} from './ai-contract.js?v=01e72359e68d';
-import {skillsFor} from './bank.js?v=01e72359e68d';
-import {tutorialById} from './tutorials.js?v=01e72359e68d';
-import {BLUEPRINT_VERSION,otherForm,quizForms,quizItem} from './assessment-bank.js?v=01e72359e68d';
+import {validOutput} from './ai-contract.js?v=1ba93cb048bd';
+import {skillsFor} from './bank.js?v=1ba93cb048bd';
+import {tutorialById} from './tutorials.js?v=1ba93cb048bd';
+import {BLUEPRINT_VERSION,otherForm,quizForms,quizItem} from './assessment-bank.js?v=1ba93cb048bd';
                                                         
 
                                          

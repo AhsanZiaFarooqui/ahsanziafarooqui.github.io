@@ -4,7 +4,7 @@ import type {Visual} from './types.ts';
 const point=(angle:number,r:number)=>({x:160+Math.sin(angle*Math.PI/180)*r,y:160-Math.cos(angle*Math.PI/180)*r});
 export function clock(total:number,options:{labels?:boolean;counts?:boolean;digital?:boolean;arc?:number;accessible?:string}={}) {
  const state=clockState(total);const box=el('div',{class:'clock-visual'});
- const face=svg('svg',{viewBox:'0 0 320 320',role:'img','aria-label':options.accessible||`Clock showing ${digital(total)}. Short orange hand: hour. Long blue hand: minutes.`});
+ const face=svg('svg',{viewBox:'0 0 320 320',role:'img','aria-label':options.accessible||`Clock showing ${digital(Math.round(total))}. Short orange hand: hour. Long blue hand: minutes.`});
  face.append(svg('circle',{cx:160,cy:160,r:151,fill:'#fffdf8',stroke:'#d9dfd6','stroke-width':3}));
  if(options.arc){const end=point(options.arc*6,140);face.append(svg('path',{d:`M160 160 L160 20 A140 140 0 ${options.arc>30?1:0} 1 ${end.x} ${end.y} Z`,fill:'#c9e8df'}));}
  for(let i=0;i<60;i++){const a=point(i*6,i%5?142:135),b=point(i*6,147);face.append(svg('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:i%5?'#939f99':'#344e4a','stroke-width':i%5?1.5:3}));}
@@ -36,7 +36,7 @@ export function fraction(v:Extract<Visual,{kind:'fraction'}>,accessible?:string,
  return box;
 }
 export function visual(v:Visual,accessible?:string,previous?:Visual,progress=1):HTMLElement {
- if(v.kind==='clock'){const total=previous?.kind==='clock'?previous.total+(v.total-previous.total)*progress:v.total;return clock(total,{...v,accessible});}
+ if(v.kind==='clock'){const total=previous?.kind==='clock'?previous.total+(v.total-previous.total)*progress:v.total;return clock(total,{...v,arc:v.arc!==undefined?clockState(total).m:undefined,accessible});}
  if(v.kind==='fraction')return fraction(v,accessible,progress);
  return el('div',{class:'symbol-visual','aria-hidden':'true'},el('span',{},'Think it through'),el('span',{class:'tiny-bricks'},'▰ ▰ ▰'));
 }

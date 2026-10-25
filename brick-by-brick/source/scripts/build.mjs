@@ -12,7 +12,7 @@ for(const file of await readdir('src')) if(file.endsWith('.ts')) {
  const code=stripTypeScriptTypes(await readFile(`src/${file}`,'utf8'),{mode:'strip'}).replace(/(from\s+['"]\.\/[^'"]+)\.ts(['"])/g,`$1.js?v=${version}$2`);
  await writeFile(`dist/${file.replace(/\.ts$/,'.js')}`,code);
 }
-await writeFile('dist/index.html',(await readFile('index.html','utf8')).replace('./main.js',`./main.js?v=${version}`).replace('./style.css',`./style.css?v=${version}`));
+await writeFile('dist/index.html',(await readFile('index.html','utf8')).replace('./comparison-main.js',`./comparison-main.js?v=${version}`).replace('./style.css',`./style.css?v=${version}`));
 await copyFile('src/style.css','dist/style.css');
 await cp('public','dist',{recursive:true});
 console.log('Built browser ES modules in dist. Native TypeScript stripping checks syntax, not static types.');

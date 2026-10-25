@@ -1,14 +1,14 @@
-import {el,button} from './dom.js?v=01e72359e68d';
-import {clock,clockExplorer,visual} from './visuals.js?v=01e72359e68d';
-import {skillNames} from './bank.js?v=01e72359e68d';
-import {tutorialById} from './tutorials.js?v=01e72359e68d';
-import {moviePlayer} from './movie-player.js?v=01e72359e68d';
-import {apiUrl} from './runtime-config.js?v=01e72359e68d';
-import {checkAiConnection} from './connection-check.js?v=01e72359e68d';
-import {fallback,trustedAiVisual,validOutput} from './ai-contract.js?v=01e72359e68d';
+import {el,button} from './dom.js?v=1ba93cb048bd';
+import {clock,clockExplorer,visual} from './visuals.js?v=1ba93cb048bd';
+import {skillNames} from './bank.js?v=1ba93cb048bd';
+import {tutorialById} from './tutorials.js?v=1ba93cb048bd';
+import {moviePlayer} from './movie-player.js?v=1ba93cb048bd';
+import {apiUrl} from './runtime-config.js?v=1ba93cb048bd';
+import {checkAiConnection} from './connection-check.js?v=1ba93cb048bd';
+import {fallback,trustedAiVisual,validOutput} from './ai-contract.js?v=1ba93cb048bd';
                                                
                                        
-import {COMPARISON_KEY,emptyComparisonStore,parseComparisonStore,createLearningSession,currentQuestion,submitAnswer,scoreQuiz,conceptScores,startLearning,beginFinalQuiz,addDeviation,tailoringContext,resultWords,exportEvidence,summaryCsv,now} from './comparison-session.js?v=01e72359e68d';
+import {COMPARISON_KEY,emptyComparisonStore,parseComparisonStore,createLearningSession,currentQuestion,submitAnswer,scoreQuiz,conceptScores,startLearning,beginFinalQuiz,addDeviation,tailoringContext,resultWords,exportEvidence,summaryCsv,now} from './comparison-session.js?v=1ba93cb048bd';
                                                                                                
 
 const root=document.getElementById('root') ;

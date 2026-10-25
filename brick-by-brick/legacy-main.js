@@ -1,18 +1,18 @@
-import {el,button} from './dom.js?v=01e72359e68d';
-import {visual,clock,minuteBricks,clockExplorer} from './visuals.js?v=01e72359e68d';
-import {items,itemById,skillNames,skillsFor} from './bank.js?v=01e72359e68d';
-import {evidenceStatus,marginals,misconceptionEvidence,prior} from './model.js?v=01e72359e68d';
-import {chooseTutorial,tutorialById} from './tutorials.js?v=01e72359e68d';
-import {newSession,beginTeaching,recordAnswer,startPractice,retryTeaching,loadStore,emptyStore,csv,STORAGE_KEY} from './session.js?v=01e72359e68d';
+import {el,button} from './dom.js?v=1ba93cb048bd';
+import {visual,clock,minuteBricks,clockExplorer} from './visuals.js?v=1ba93cb048bd';
+import {items,itemById,skillNames,skillsFor} from './bank.js?v=1ba93cb048bd';
+import {evidenceStatus,marginals,misconceptionEvidence,prior} from './model.js?v=1ba93cb048bd';
+import {chooseTutorial,tutorialById} from './tutorials.js?v=1ba93cb048bd';
+import {newSession,beginTeaching,recordAnswer,startPractice,retryTeaching,loadStore,emptyStore,csv,STORAGE_KEY} from './session.js?v=1ba93cb048bd';
                                         
                                                              
-import {shuffle,score} from './math.js?v=01e72359e68d';
-import {animation} from './animation.js?v=01e72359e68d';
-import {moviePlayer} from './movie-player.js?v=01e72359e68d';
-import {apiUrl} from './runtime-config.js?v=01e72359e68d';
-import {checkAiConnection} from './connection-check.js?v=01e72359e68d';
+import {shuffle,score} from './math.js?v=1ba93cb048bd';
+import {animation} from './animation.js?v=1ba93cb048bd';
+import {moviePlayer} from './movie-player.js?v=1ba93cb048bd';
+import {apiUrl} from './runtime-config.js?v=1ba93cb048bd';
+import {checkAiConnection} from './connection-check.js?v=1ba93cb048bd';
                                                              
-import {fallback,trustedAiVisual,validOutput} from './ai-contract.js?v=01e72359e68d';
+import {fallback,trustedAiVisual,validOutput} from './ai-contract.js?v=1ba93cb048bd';
                                                
 
 const root=document.getElementById('root') ;

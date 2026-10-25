@@ -3,10 +3,12 @@ import {outputSchema} from '../src/ai-schema.ts';
 import {itemById,items} from '../src/bank.ts';
 import {tutorialById} from '../src/tutorials.ts';
 import {narrationResponse} from './narration.ts';
+import {cloudflareStudyFetch} from './study-cloudflare.ts';
 interface Env {AI?:{run:(model:string,input:unknown)=>Promise<{response?:unknown}>}; ALLOWED_ORIGIN?:string}
 const CF_MODEL='@cf/meta/llama-3.3-70b-instruct-fp8-fast';
 const cfRequests=new Map<string,{start:number;count:number}>();
 export async function cloudflareFetch(request:Request,env:Env):Promise<Response>{
+ if(new URL(request.url).pathname.startsWith('/api/study-'))return cloudflareStudyFetch(request,env);
  const url=new URL(request.url),origin=request.headers.get('Origin');
  const allowed=env.ALLOWED_ORIGIN||'https://ahsanziafarooqui.github.io';
  const accepted=origin===allowed||origin==='http://127.0.0.1:5173'||origin==='http://localhost:5173';

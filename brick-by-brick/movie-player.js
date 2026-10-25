@@ -1,5 +1,5 @@
-import {el,button} from './dom.js?v=01e72359e68d';
-import {movieById,chapterAt,chapterStarts} from './movies.js?v=01e72359e68d';
+import {el,button} from './dom.js?v=1ba93cb048bd';
+import {movieById,chapterAt,chapterStarts} from './movies.js?v=1ba93cb048bd';
 export function moviePlayer(id       ){
  const movie=movieById(id),starts=chapterStarts(movie);
  const revision=new URL(import.meta.url).searchParams.get('v')||'narrated-1';

@@ -1,37 +1,41 @@
-# My Brick by Brick project journal
+﻿# My Brick by Brick project journal
 
-Student-owned reflection. Leave entries blank until they describe something that actually happened. Avoid classmates' names. The same prompts are available in the app's Grown-ups area.
+Student-owned and deliberately blank. Fill in only experiences that actually happened. Do not include classmates’ names. Codex/adult implementation must not be described as independent student coding.
 
-**What difficulty did I notice, and what evidence do I have?**
+Date: __________
 
-______________________________________________________________________
-
-**Which design decisions did I make myself?**
+**What learning difficulty did I notice? What evidence did I actually see?**
 
 ______________________________________________________________________
 
-**Why did I choose the clock and fraction examples?**
+**Why did I choose reading time and fractions?**
 
 ______________________________________________________________________
 
-**What did classmates actually say? Was I allowed to record their feedback?**
+**How did I design or choose the building-brick visuals? What did I check?**
 
 ______________________________________________________________________
 
-**What did I change because of feedback or testing?**
+**Which decisions did I make myself, and why?**
 
 ______________________________________________________________________
 
-**What did I learn about maths, coding and helping other learners?**
+**What help did I receive from adults, teachers, Codex or other AI? Which features did they build? What do I understand and what have I checked?**
 
 ______________________________________________________________________
 
-**What help did I receive from adults, AI and coding tools? What did I check and understand myself?**
+**What did learners actually say? Was I allowed to record their anonymous feedback?**
 
 ______________________________________________________________________
 
-**What will I do next, and who will help maintain the project?**
+**What did I change because of testing or feedback?**
 
 ______________________________________________________________________
 
-Date of entry: __________  My next small action: __________
+**What did the actual results show, including no improvement, declines, missing quizzes and failures? Were these practice or randomised results?**
+
+______________________________________________________________________
+
+**What can these results not tell us? What would I improve or investigate next?**
+
+______________________________________________________________________

@@ -1,13 +1,25 @@
 {
-  "name": "brick-by-brick-maths", "version": "1.0.0", "private": true, "type": "module",
+  "name": "brick-by-brick-maths",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "node scripts/build.mjs && node --experimental-strip-types server/index.ts", "build": "node scripts/build.mjs",
-    "start": "node --experimental-strip-types server/index.ts", "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:ui": "node --experimental-strip-types --test tests/interface.test.ts", "audit:model": "node --experimental-strip-types scripts/audit.ts",
+    "dev": "node scripts/build.mjs && node --experimental-strip-types server/index.ts",
+    "build": "node scripts/build.mjs",
+    "start": "node --experimental-strip-types server/index.ts",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:ui": "node --experimental-strip-types --test tests/interface.test.ts tests/comparison-interface.test.ts",
+    "audit:model": "node --experimental-strip-types scripts/audit.ts",
     "bank:docs": "node --experimental-strip-types scripts/bank-docs.ts",
     "build:worker": "node scripts/build-worker.mjs",
     "movies:scripts": "node --experimental-strip-types scripts/movie-scripts.ts",
-    "check": "npm run build && npm run build:worker && npm test && npm run audit:model && npm run bank:docs"
+    "check": "npm run build && npm run build:worker && npm test && npm run audit:model && npm run bank:docs && npm run study:docs",
+    "study:docs": "node --experimental-strip-types scripts/study-docs.ts",
+    "test:study": "node --experimental-strip-types --test tests/study.test.ts tests/comparison-interface.test.ts tests/study-http.test.ts"
   },
-  "engines": {"node": ">=24"}, "dependencies": {}, "devDependencies": {}
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

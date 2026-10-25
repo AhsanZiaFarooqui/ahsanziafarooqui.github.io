@@ -1,58 +1,44 @@
-# Blank parent/teacher trial guide
+﻿# Adult-supervised trial guide
 
-This is an exploratory usability and learning-evidence activity, not a clinical assessment or an effectiveness experiment. Use only willing volunteer learners with appropriate adult/guardian permission. Follow the school's requirements for working with children. Do not pressure participation; stopping and “I’m not sure” are acceptable. Avoid collecting names or identifying details in the app or shared notes.
+## Before recruiting
 
-## Before trying it
+Explain the project, obtain appropriate parent/guardian and school permission where applicable, and ask for the learner’s willing assent. Participation is optional and they can stop at any point. Do not enter names, birthdays, school names or voice recordings. An adult coordinates anonymous BBB-XXXXXX codes and one primary comparison topic per participant. Keep permission records outside the app. Do not recycle codes.
 
-- The student records a real difficulty she noticed and how she knows it is worth investigating. Leave this blank until she has evidence.
-- An adult checks clock wording, equal-whole visuals, item keys, accessible text and live AI outputs if enabled.
-- Finish the real-browser checklist on the device being used, including keyboard controls and reduced motion if relevant.
-- Explain that this helper is being tested too: an awkward question may be the app's problem.
-- Decide whether to use built-in mode or live AI. Explain the optional short-text transmission before enabling/using it; omit names.
+Read the hypothesis: **Do tutorials tailored to initial answers improve quiz scores more than standard explanations of the same concepts?** Improvement, no difference and poorer results are all possible. Do not promise a benefit.
 
-## One short visit
+Review the fixed assessment forms, lesson explanations, diagram accuracy and reading suitability. Pilot the two forms and planned 6–10-minute tutorials with appropriate permission. These forms are not validated instruments. Freeze the app/content version and document the protocol before collecting the main sample. Choose a sample-size plan with suitable research guidance; this prototype does not provide power calculations or significance claims.
 
-1. In Grown-ups choose **Start a time trial** or **Start a fractions trial**. This labels the visit as evaluation.
-2. Let the learner answer without teaching during diagnosis. Record whether they misunderstood an instruction. Do not supply answers to maintain the distinction between independent and assisted work. If adult help is necessary, note it separately and exclude that answer from independent interpretation.
-3. Observe which follow-up is chosen. A differing path is evidence that the system adapts; it is not itself evidence that the adaptation is useful.
-4. Watch the selected lesson at the learner's pace. Try Pause and Next step. Use Explain differently when helpful. Ask whether the labels and moving parts make sense.
-5. Complete guided practice. A shown hint is recorded; this response does not count as independent mastery evidence.
-6. Try the different independent item. Note the outcome and whether the learner can explain the same mathematical idea. Initial diagnostic and final targeted items share skill goals but are not empirically equated; do not simply subtract whole-session scores.
-7. If desired, complete Fractions of an Hour or another module, then accept a fresh revisit. Alternatively return the next day; the app offers a revisit after 24 hours. Label the delay. A same-visit revisit is weaker retention evidence than a later one.
-8. Ask for optional feedback. Export JSON/CSV from Grown-ups. Use a separate new session for each volunteer. Review/export before deleting local records.
+Verify all eight live AI samples in Grown-ups, review them and explicitly enable the trial. No simulated-response trial is allowed. Restarting the server requires verification again. Successful samples do not guarantee every later call succeeds; the app records delivery and failures. AI sends only relevant initial item evidence, previous checked wording and optional fixed-choice clarification, not codes or personal information, to the configured provider.
 
-## Blank record — duplicate one sheet per anonymous visit
+## Run a session
 
-Anonymous visit code: __________   Topic: __________   Date/delay: __________
+1. Use the same device arrangements, instructions, quiet environment and allowed time conventions in both groups. Record deviations. Keep the device powered and avoid private browsing that clears local records.
+2. Choose one topic and Comparison. Show the explanation of random assignment before the initial quiz. Save the anonymous code. Form order is assigned by one fair random draw.
+3. Let the learner answer eight initial questions without hints, coaching or correctness feedback. Read instructions consistently only if permitted by the predeclared protocol; do not interpret answers for them. “I’m not sure” is permitted. Stopping early leaves the quiz incomplete and no assignment is made.
+4. Initial results show a score and concept counts, not answers or mastery labels. A second independent fair random draw assigns the tutorial, with no choice of arm. Do not restart to seek a preferred assignment.
+5. Both activities cover four concept areas and four guided tasks with the same controls. Let learners use hints, replay and explanation changes naturally. These are logged. Do not give one group extra adult help or attractive materials. AI failures use checked instruction and remain AI-assigned deviations.
+6. Give the fixed other-form final quiz without help or feedback. Do not replace difficult questions or count unfinished quizzes as zeros. Learners can stop and resume their saved session; note interruptions or extra teaching.
+7. Show the honest before/after result. Optional feedback is anonymous and fixed-choice. The other tutorial becomes available only after the outcome is recorded, outside the primary trial.
 
-Device/browser and accessibility needs relevant to interaction (no diagnosis): __________
+## Preserve and report evidence
 
-Built-in or live AI; response label actually observed: __________
+Export JSON and CSV after each supervised batch. Back up exports. Add testing-condition or technical deviations to the session record in Grown-ups; keep a separate anonymous protocol log with code, date, type and details, without names. Do not conceal, relabel or automatically exclude fallback sessions. Investigate suspicious or duplicate records before analysis and document any decision.
 
-Initial item IDs, outcomes, instruction confusion, adult help: __________
+Use separate practice and randomised summaries, and keep topics separate. Report all assigned learners, tutorial starts, completions, failures and missing outcomes by group. Show gain distributions and both positive and negative outcomes. The dashboard’s difference in mean gains uses complete pairs only: it is **not** a full intention-to-treat estimate when follow-up is missing. Missing scores can distort the comparison. Do not automatically declare a winner or infer an AI effect from a single learner’s improvement.
 
-Follow-up IDs and whether the choices seemed useful: __________
+This compares the whole tailored package with standard teaching. It cannot separate the effects of personalisation from generative-AI selection. Parallel forms need validation; small samples and incomplete follow-up require cautious wording. Prespecify any further statistical analysis and seek suitable supervision; no inferential significance is supplied by the app.
 
-Tutorial offered; what the learner noticed; confusing step: __________
+Browser-local data do not combine across devices. Follow the JSON aggregation procedure in study-data-dictionary.md. Use disjoint code lists and check the collecting device’s counts. Deleting a record also removes local duplicate protection for its code; maintain an adult code register outside the app. Exports are not deleted when browser records are deleted.
 
-Guided item and hints shown: __________
+## Blank protocol / observation log
 
-Independent item, answer outcome, any adult assistance: __________
-
-Comparable skill-specific initial item(s), if any; important differences in items: __________
-
-Revisit item, delay/intervening activity, outcome: __________
-
-Engagement observations (separate from correctness): __________
-
-Learner's actual anonymous feedback, with permission to record: __________
-
-App problem discovered: __________
-
-Student's proposed change and reason: __________
-
-Change implemented and retest result: __________
-
-## Interpret modestly
-
-Report counts and denominators, uncertain/skipped answers, hints and assistance. Describe individual examples and usability problems. A few before–after visits cannot establish causal effectiveness: practice, changing items, adult help, familiarity and selection all matter. No fabricated gains, quotes, classroom observations or user counts belong in the showcase. If no trial has occurred, say “feedback and learning evidence still to be collected.”
+- Content version / build date: __________
+- Permission and assent procedure: __________
+- Planned sample and recruitment / stopping rule: __________
+- Primary-topic allocation procedure: __________
+- Conditions and reading assistance allowed: __________
+- Anonymous code / date: __________
+- Technical failure or help received: __________
+- Missing follow-up and known reason: __________
+- Actual learner feedback: __________
+- All outcomes and limitations reported: __________

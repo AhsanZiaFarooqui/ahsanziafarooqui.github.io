@@ -4,7 +4,7 @@ import {setupDom} from './dom-harness.ts';
 import {STORAGE_KEY} from '../src/session.ts';
 import {readFile} from 'node:fs/promises';
 test('DOM integration: full time and fractions journeys, player, hints, exports and scoped deletion',async()=>{
- const h=setupDom();await import('../src/main.ts');
+ const h=setupDom();await import('../src/legacy-main.ts');
  const click=(label:string)=>h.button(label).click();
  assert.match(h.root.textContent,/Let’s build yourmaths together/);assert.doesNotMatch(h.root.textContent,/posterior|ability score/);
  for(const topic of ['Read the Time','Explore Fractions']){
@@ -26,7 +26,7 @@ test('DOM integration: full time and fractions journeys, player, hints, exports 
  click('Try a revisit');assert.match(h.root.textContent,/Try a little revisit/);click('I’m not sure');click('See what’s next');click('Choose another topic');click('Grown-ups');assert.match(h.root.textContent,/Prior marginals/);click('Export anonymous JSON');click('Export anonymous CSV');click('Delete this app’s data');click('Yes, delete app data');assert.equal(h.data.has(STORAGE_KEY),false);assert.equal(h.data.get('unrelated-project'),'keep me');assert.match(h.root.textContent,/0 anonymous sessions/);
 });
 test('DOM integration: early stop is recorded as incomplete and independent failure offers a bounded retry',async()=>{
- const h=setupDom();await import('../src/main.ts?early-stop');h.button('Read the Time').click();h.button('Stop the check').click();assert.match(h.root.textContent,/stopped the check early/);h.button('Try it myself').click();h.button('I’m not sure').click();h.button('Try on my own').click();h.button('I’m not sure').click();h.button('See what’s next').click();assert.match(h.root.textContent,/another example help/);h.button('Explain another way').click();h.button('Try it myself').click();h.button('I’m not sure').click();h.button('See what’s next').click();assert.match(h.root.textContent,/A grown-up can try these pictures/);const s=JSON.parse(h.data.get(STORAGE_KEY)!).sessions[0];assert.equal(s.incomplete,true);assert.equal(s.attempts,2);
+ const h=setupDom();await import('../src/legacy-main.ts?early-stop');h.button('Read the Time').click();h.button('Stop the check').click();assert.match(h.root.textContent,/stopped the check early/);h.button('Try it myself').click();h.button('I’m not sure').click();h.button('Try on my own').click();h.button('I’m not sure').click();h.button('See what’s next').click();assert.match(h.root.textContent,/another example help/);h.button('Explain another way').click();h.button('Try it myself').click();h.button('I’m not sure').click();h.button('See what’s next').click();assert.match(h.root.textContent,/A grown-up can try these pictures/);const s=JSON.parse(h.data.get(STORAGE_KEY)!).sessions[0];assert.equal(s.incomplete,true);assert.equal(s.attempts,2);
 });
 test('SVG rendering keeps identical whole lengths and sixty clock ticks',async()=>{setupDom();const {clock,fraction}=await import('../src/visuals.ts');const c=clock(225);const lines=(c as any).querySelectorAll('line');assert.equal(lines.length,62);assert.equal(lines.find((n:any)=>n.getAttribute('data-hand')==='hour').getAttribute('data-angle'),'112.5');const f=fraction({kind:'fraction',n:1,d:3,units:12,second:{n:2,d:6}});const wholes=(f as any).querySelectorAll('[data-whole-width]');assert.equal(wholes.length,2);assert.equal(wholes[0].getAttribute('data-whole-width'),wholes[1].getAttribute('data-whole-width'));assert.equal(wholes[0].getAttribute('data-filled-units'),wholes[1].getAttribute('data-filled-units'));});
 test('responsive and reduced-motion rules exist; this is not visual browser QA',async()=>{const css=await readFile('src/style.css','utf8');assert.match(css,/@media\(max-width:560px\)/);assert.match(css,/prefers-reduced-motion:reduce/);assert.match(css,/:focus-visible/);assert.match(css,/min-height:48px/);});
@@ -34,7 +34,7 @@ test('responsive and reduced-motion rules exist; this is not visual browser QA',
 test('AI status updates after loading and adult connection check creates no learner session',async()=>{
  const h=setupDom();let release:(value:Response)=>void=()=>{};
  globalThis.fetch=(async()=>new Promise<Response>(resolve=>{release=resolve;})) as typeof fetch;
- await import('../src/main.ts?connection-status');await new Promise(resolve=>setTimeout(resolve,0));
+ await import('../src/legacy-main.ts?connection-status');await new Promise(resolve=>setTimeout(resolve,0));
  h.button('Grown-ups').click();assert.match(h.root.textContent,/Checking the AI connection/);
  release(Response.json({mode:'configured'}));await new Promise(resolve=>setTimeout(resolve,0));
  assert.match(h.root.textContent,/AI connection configured/);assert.doesNotMatch(h.root.textContent,/Checking the AI connection/);

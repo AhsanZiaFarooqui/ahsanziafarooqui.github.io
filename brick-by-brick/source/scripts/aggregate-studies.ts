@@ -1,0 +1,11 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {emptyStudy,mergeStudy,exportCsv} from '../src/study.ts';
+const [destination,...sources]=process.argv.slice(2);
+if(!destination||sources.length<1||!destination.endsWith('.json'))throw Error('Usage: aggregate-studies.ts output.json source-one.json [source-two.json ...]');
+if(sources.some(p=>resolve(p)===resolve(destination)))throw Error('Output must not be a source file');
+let combined=emptyStudy();for(const source of sources)combined=mergeStudy(combined,JSON.parse(await readFile(source,'utf8')));
+combined.activeId=null;
+await writeFile(destination,JSON.stringify(combined,null,2),{flag:'wx'});
+await writeFile(destination.replace(/\.json$/,'.csv'),exportCsv(combined),{flag:'wx'});
+console.log(`Combined ${combined.sessions.length} records without dropping duplicates or failures. Synthetic sessions remain labelled and excluded from real summaries.`);

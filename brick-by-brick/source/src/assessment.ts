@@ -1,0 +1,30 @@
+import type {Module,Visual} from './types.ts';
+export type Form='A'|'B';
+export interface Question {id:string;topic:Module;form:Form;concept:number;prompt:string;visual:Visual;description:string;options:string[];answer:number;explanation:string}
+export const concepts:Record<Module,string[]>={time:['Hands and o’clock','Counting minutes','Half past and quarter hours','Combining hours and minutes'],fractions:['Whole and equal parts','Numerator, denominator and pictures','Equivalent fractions','Comparing equal wholes']};
+const none:Visual={kind:'none'};
+const clock=(h:number,m:number):Visual=>({kind:'clock',total:h*60+m});
+const fraction=(n:number,d:number,second?:{n:number;d:number}):Visual=>({kind:'fraction',n,d,units:second?d*second.d:d,second});
+export const assessment:Question[]=[];
+function add(topic:Module,form:Form,concept:number,prompt:string,visual:Visual,description:string,options:string[],answer:number,explanation:string){assessment.push({id:`${topic}-${form}-${assessment.filter(q=>q.topic===topic&&q.form===form).length+1}`,topic,form,concept,prompt,visual,description,options,answer,explanation});}
+for(const form of ['A','B'] as Form[]){
+ const a=form==='A';
+ add('time',form,0,`Which hand tells the ${a?'hours':'minutes'}?`,clock(a?7:9,0),'A clock has a short thick orange hand and a long thin blue hand.', ['The short, thick hand','The long, thin hand','Both hands do the same job'],a?0:1,`${a?'Hours use the short hand':'Minutes use the long hand'}. The hands have different jobs.`);
+ add('time',form,0,'Read this clock.',clock(a?8:6,0),`Short hand at ${a?8:6}; long hand at 12.`,[a?'12:40':'12:30',a?'8:00':'6:00',a?'8:12':'6:12'],1,'The long hand at twelve means zero minutes past. Read the short hand for the hour.');
+ add('time',form,1,'How many minutes past does the long hand show?',clock(a?4:10,a?20:25),`Long hand at ${a?4:5}.`,[a?'4':'5',a?'40':'35',a?'20':'25'],2,`${a?4:5} groups of five make ${a?20:25} minutes.`);
+ add('time',form,1,'How many minutes past does the long hand show?',clock(a?8:6,a?50:55),`Long hand at ${a?10:11}.`,[a?'50':'55',a?'10':'11',a?'10 minutes to':'5 minutes to'],0,`${a?10:11} groups of five make ${a?50:55} minutes past. The question asks for minutes past.`);
+ add('time',form,2,'Which phrase matches this clock?',clock(a?4:10,30),`Long hand at 6; short hand halfway from ${a?4:10} to ${a?5:11}.`,[a?'Half past five':'Half past eleven',a?'Half past four':'Half past ten',a?'Quarter past four':'Quarter past ten'],1,'Half past is thirty minutes after the hour that has started.');
+ add('time',form,2,'Which phrase matches this clock?',clock(a?8:2,45),`Long hand at 9; short hand between ${a?8:2} and ${a?9:3}, closer to ${a?9:3}.`,[a?'Quarter past eight':'Quarter past two',a?'Quarter to eight':'Quarter to two',a?'Quarter to nine':'Quarter to three'],2,'Forty-five minutes have passed. Fifteen remain until the next hour: quarter to the next hour.');
+ add('time',form,3,'Read the hour and minutes together.',clock(a?5:9,a?10:20),`Short hand just after ${a?5:9}; long hand at ${a?2:4}.`,[a?'5:10':'9:20',a?'6:10':'10:20',a?'5:02':'9:04'],0,'Read the hour the short hand has passed. Count five minutes for each number reached by the long hand.');
+ add('time',form,3,'Read the hour and minutes together.',clock(a?11:12,a?40:35),`Short hand between ${a?11:12} and ${a?12:1}; long hand at ${a?8:7}.`,[a?'12:40':'1:35',a?'11:08':'12:07',a?'11:40':'12:35'],2,'The short hand moves continuously. The approaching hour has not started yet.');
+ add('fractions',form,0,'Which pieces belong to the whole strip?',fraction(a?2:3,5),`One outlined strip with five equal parts; ${a?2:3} shaded.`,['Only the shaded pieces','All five pieces','Only the unshaded pieces'],1,'The whole includes both shaded and unshaded pieces inside the border.');
+ add('fractions',form,0,`A strip is cut into ${a?'five':'six'} pieces. One piece is much larger than the others. Are these equal parts?`,none,'No picture is needed.',['Yes, because they came from one strip','Yes, because we can count them','No, the pieces must be the same size'],2,'Equal parts of one whole must have equal size, not just belong to the same strip.');
+ add('fractions',form,1,`In ${a?'3/7':'4/7'}, what does the bottom number 7 tell us?`,none,'Read the fraction in the question.',['Seven equal parts make the whole','Seven parts are selected','There are seven separate wholes'],0,'The denominator counts all equal parts in one whole. The numerator counts selected parts.');
+ add('fractions',form,1,'What fraction of the whole is shaded?',fraction(a?3:2,5),`One whole with five equal large parts; ${a?3:2} shaded.`,[a?'5/3':'5/2',a?'2/5':'3/5',a?'3/5':'2/5'],2,'Count all five equal parts below the line and the selected parts above it.');
+ add('fractions',form,2,`Which fraction equals ${a?'2/6':'4/6'}?`,none,'Use the same whole.',[a?'1/6':'2/6',a?'1/3':'2/3',a?'2/3':'1/3'],1,'Divide both numerator and denominator by two. The amount stays the same.');
+ add('fractions',form,2,`Which fraction equals ${a?'3/9':'6/9'}?`,none,'Use the same whole.',[a?'1/3':'2/3',a?'3/3':'6/3',a?'1/9':'2/9'],0,'Group each three ninths into a third. Divide both counts by three.');
+ add('fractions',form,3,`For the same-sized whole, which is larger: ${a?'1/5 or 1/10':'1/3 or 1/6'}?`,none,'Both fractions refer to identical whole sizes.',[a?'1/10':'1/6','They are equal',a?'1/5':'1/3'],2,'Dividing the same whole into more equal pieces makes each piece smaller.');
+ add('fractions',form,3,'These wholes are identical. Which shaded amount is larger?',fraction(a?2:3,7,{n:a?5:6,d:7}),`Two equal-sized wholes divided into seven equal parts each. Top: ${a?2:3} selected; bottom: ${a?5:6} selected.`,['The top amount','The bottom amount','They are equal'],1,'With the same whole and denominator, more selected parts means a larger fraction.');
+}
+export const formItems=(topic:Module,form:Form)=>assessment.filter(q=>q.topic===topic&&q.form===form);
+export const question=(id:string)=>{const q=assessment.find(q=>q.id===id);if(!q)throw Error('Unknown assessment item');return q;};

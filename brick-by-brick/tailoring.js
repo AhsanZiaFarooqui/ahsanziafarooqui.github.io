@@ -1,7 +1,7 @@
-import {segment,checkedExplanations,checkedFollowUps} from './curriculum.js?v=01e72359e68d';
-export {checkedExplanations,checkedFollowUps} from './curriculum.js?v=01e72359e68d';
-import {question} from './assessment.js?v=01e72359e68d';
-import {initialEvidence} from './study.js?v=01e72359e68d';
+import {segment,checkedExplanations,checkedFollowUps} from './curriculum.js?v=1ba93cb048bd';
+export {checkedExplanations,checkedFollowUps} from './curriculum.js?v=1ba93cb048bd';
+import {question} from './assessment.js?v=1ba93cb048bd';
+import {initialEvidence} from './study.js?v=1ba93cb048bd';
                                                       
                                                                                                                                                                                                      
                                                                                                                                                                            
