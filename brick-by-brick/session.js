@@ -1,7 +1,7 @@
                                                                   
-import {items,itemById} from './bank.js?v=8397d2acd19c';
-import {marginals,prior,selectNext,stopRule,update} from './model.js?v=8397d2acd19c';
-import {chooseTutorial,tutorialById} from './tutorials.js?v=8397d2acd19c';
+import {items,itemById} from './bank.js?v=01e72359e68d';
+import {marginals,prior,selectNext,stopRule,update} from './model.js?v=01e72359e68d';
+import {chooseTutorial,tutorialById} from './tutorials.js?v=01e72359e68d';
 export function newSession(module       ,evaluation=false)         {const p=prior(),next=selectNext(module,p,[]) ;return {id:crypto.randomUUID(),module,started:new Date().toISOString(),posterior:p,observations:[],stage:'diagnostic',currentItemId:next.item.id,selectionReason:next.reason,incomplete:false,checkPrior:prior(Array(5).fill(.5)),attempts:0,taught:[],evaluation};}
 export function beginTeaching(s        ,reason       ,incomplete=false)         {const pick=chooseTutorial(s.module,s.posterior,s.observations,s.taught,incomplete);return {...s,stage:'tutorial',currentItemId:undefined,diagnosticSnapshot:s.diagnosticSnapshot||[...s.posterior],tutorialId:pick.tutorial.id,tutorialReason:pick.reason,stopReason:reason,incomplete,checkPrior:prior(Array(5).fill(.5)),taught:[...new Set([...s.taught,pick.tutorial.id])]};}
 export function recordAnswer(s        ,outcome        ,choiceId        ,hints=false)         {

@@ -1,5 +1,5 @@
-import {tutorialById,tutorials} from './tutorials.js?v=8397d2acd19c';
-import {items} from './bank.js?v=8397d2acd19c';
+import {tutorialById,tutorials} from './tutorials.js?v=01e72359e68d';
+import {items} from './bank.js?v=01e72359e68d';
                                        
                                                                                                                                            
                                                                                                                                                                                                                                            

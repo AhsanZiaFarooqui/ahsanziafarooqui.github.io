@@ -1,5 +1,5 @@
-import {apiUrl} from './runtime-config.js?v=8397d2acd19c';
-import {validOutput} from './ai-contract.js?v=8397d2acd19c';
+import {apiUrl} from './runtime-config.js?v=01e72359e68d';
+import {validOutput} from './ai-contract.js?v=01e72359e68d';
                                                                                         
 // Adult-initiated test: one fixed maths example, no learner/session/history data.
 export async function checkAiConnection(fetcher             =fetch)                         {
